@@ -1,0 +1,128 @@
+{
+    "cli": {
+      "version": ">= 7.3.0",
+      "appVersionSource": "remote"
+    },
+    "build": {
+      "development-device": {
+        "bun": "1.2.20",
+        "developmentClient": true,
+        "channel": "development",
+        "distribution": "internal",
+        "env": {
+          "CHANNEL": "development",
+          "BUNDLE_ID": "com.strong.andsxy",
+          "EAS_BUILD_DISABLE_COCOAPODS_CACHE": "1"
+        },
+        "ios": {
+          "resourceClass": "m-medium",
+          "image": "macos-sequoia-15.3-xcode-16.2"
+        }
+      },
+      "development-simulator": {
+        "bun": "1.2.20",
+        "developmentClient": true,
+        "channel": "development",
+        "distribution": "internal",
+        "env": {
+          "CHANNEL": "development",
+          "EAS_BUILD_DISABLE_COCOAPODS_CACHE": "1"
+        },
+        "ios": {
+          "image": "latest",
+          "simulator": true
+        },
+        "android": {
+          "image": "auto",
+          "resourceClass": "large",
+          "buildType": "apk"
+        }
+      },
+      "preview": {
+        "bun": "1.0.0",
+        "autoIncrement": true,
+        "ios": {
+          "distribution": "store",
+          "resourceClass": "m-medium",
+          "image": "latest"
+        },
+        "android": {
+          "buildType": "apk"
+        }
+      },
+      "staging": {
+        "bun": "1.0.0",
+        "channel": "stage",
+        "autoIncrement": true,
+        "env": {
+          "CHANNEL": "stage",
+          "EAS_BUILD_DISABLE_COCOAPODS_CACHE": "1"
+        },
+        "ios": {
+          "image": "macos-sequoia-15.3-xcode-16.2",
+          "distribution": "store",
+          "resourceClass": "large"
+        },
+        "android": {
+          "image": "auto",
+          "buildType": "apk"
+        }
+      },
+      "production": {
+        "bun": "1.0.0",
+        "channel": "production",
+        "autoIncrement": true,
+        "env": {
+          "BUNDLE_ID": "com.strong.andsxy",
+          "CHANNEL": "production",
+          "EAS_BUILD_DISABLE_COCOAPODS_CACHE": "1"
+        },
+        "ios": {
+          "image": "macos-sequoia-15.3-xcode-16.2",
+          "resourceClass": "large"
+        },
+        "android": {
+          "image": "auto",
+          "resourceClass": "large",
+          "buildType": "app-bundle"
+        }
+      },
+      "staging-apk": {
+        "bun": "1.0.0",
+        "extends": "staging",
+        "android": {
+          "buildType": "apk"
+        }
+      },
+      "production-apk": {
+        "bun": "1.0.0",
+        "extends": "production",
+        "android": {
+          "resourceClass": "large",
+          "buildType": "apk"
+        }
+      }
+    },
+    "submit": {
+      "staging": {
+        "ios": {
+          "bundleIdentifier": "com.strong.andsxy",
+          "ascAppId": "1492688256",
+          "appleTeamId": "FYSL5V9UHX",
+          "appName": "STRNG"
+        }
+      },
+      "production": {
+        "ios": {
+          "bundleIdentifier": "com.strong.andsxy",
+          "ascAppId": "1492688256",
+          "appleTeamId": "FYSL5V9UHX"
+        },
+        "android": {
+          "applicationId": "com.strong.andsxy",
+          "track": "internal"
+        }
+      }
+    }
+  }
+  

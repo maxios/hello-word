@@ -1,42 +1,126 @@
 {
   "expo": {
-    "name": "strnger-app",
-    "slug": "strnger-app",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "strngerapp",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
+    "experiments": {
+      "tsconfigPaths": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true
-    },
+    "scheme": "strng",
     "web": {
       "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
+    "owner": "strng",
+    "extra": {
+      "eas": {
+        "projectId": "6f7d57c0-834f-45d1-a9eb-a717400bc2ba",
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "NotificationService",
+                  "bundleIdentifier": "com.strong.andsxy.richpush"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "name": "STRNG",
+    "slug": "strng",
+    "version": "3.3.1",
+    "runtimeVersion": "1.5",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#141414"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "associatedDomains": [
+        "applinks:api.vercel-prod.strngapp.com",
+        "strng://"
+      ],
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "supportsTablet": false,
+      "bundleIdentifier": "com.strong.andsxy",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "entitlements": {
+        "com.apple.developer.in-app-payments": [
+          "merchant.com.strong.andsxy"
+        ]
+      },
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        },
+        "UIBackgroundModes": [
+          "audio"
+        ],
+        "NSCameraUsageDescription": "STRNG needs access to your camera so you can take pictures and share them with your friends.",
+        "NSPhotoLibraryUsageDescription": "STRNG needs access to your photos so you can upload images to track your progress, save memories, and share them with your friends.",
+        "NSUserTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
+        "NSHealthShareUsageDescription": "STRNG needs access to your health data to track your steps, calories, and heart rate for better fitness insights.",
+        "NSHealthUpdateUsageDescription": "STRNG needs access to your health data to track your steps, calories, and heart rate for better fitness insights."
+      }
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "icon": "./assets/icon.png",
+      "package": "com.strong.andsxy",
+      "intentFilters": [
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "api.vercel-prod.strngapp.com"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/6f7d57c0-834f-45d1-a9eb-a717400bc2ba"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-secure-store",
+      "expo-router",
+      "expo-asset",
+      [
+        "expo-updates",
+        {
+          "username": "strng"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.1",
+            "useFrameworks": "static"
+          },
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0"
+          }
+        }
+      ],
+      "expo-tracking-transparency"
+    ]
   }
 }
