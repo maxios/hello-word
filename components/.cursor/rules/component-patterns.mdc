@@ -14,17 +14,13 @@ alwaysApply: true
 // ❌ Old Tamagui Pattern
 const StyledView = styled(View, {
   borderRadius: 20,
-  variants: { size: { small: { width: 50 } } }
+  variants: { size: { small: { width: 50 } } },
 });
 
-// ✅ New NativeWind Pattern  
+// ✅ New NativeWind Pattern
 const StyledView = ({ size, className, ...props }) => (
   <View
-    className={clsx(
-      'rounded-xl',
-      size === 'small' && 'w-[50px]',
-      className
-    )}
+    className={clsx("rounded-xl", size === "small" && "w-[50px]", className)}
     {...props}
   />
 );
@@ -36,7 +32,7 @@ const StyledView = ({ size, className, ...props }) => (
 - Use conditional classes for size variants
 - Include Text component with appropriate styling
 
-### Icon Components  
+### Icon Components
 
 - Keep using react-native-vector-icons or similar
 - Add className support for styling
@@ -55,6 +51,10 @@ interface ComponentProps {
 ```
 
 Note: `vh` and `vw` can be used in alternative to `DEVICE_WIDTH` and `DEVICE_HEIGHT`
+
+## Component Playground
+
+To implement component playground file follow the same pattern in `components/Button/Button.playground.tsx`
 
 ## Testing Requirements
 

@@ -11,9 +11,9 @@ import {
 
 // Import components to showcase
 import { playground } from "@/components";
-import { EyeIcon, EyeSlashIcon } from "@/components/icons";
+import { ChevronLeftIcon, EyeIcon, EyeSlashIcon } from "@/components/icons";
 import { ComponentShowcase } from "@/components/playground/ComponentShowcase";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 
 export default function Screen() {
   const { id, name } = useLocalSearchParams<{
@@ -34,6 +34,15 @@ export default function Screen() {
       <SafeAreaView className="flex-1">
         {/* Header Controls */}
         <View className="flex-row items-center justify-between border-b border-border p-4">
+          {/* Back Button */}
+          <TouchableOpacity
+            onPress={() => router.back()}
+            className="mr-4 rounded-md bg-transparent p-2"
+            accessibilityLabel="Go back"
+            accessibilityRole="button"
+          >
+            <ChevronLeftIcon className="h-5 w-5 text-foreground" />
+          </TouchableOpacity>
           <View className="flex-1">
             <Text className="text-2xl font-bold text-foreground">{name}</Text>
             <Text className="text-muted-foreground">
@@ -41,6 +50,7 @@ export default function Screen() {
             </Text>
           </View>
 
+          {/* Code Toggle Button */}
           <TouchableOpacity
             onPress={() => setShowCode(!showCode)}
             className="bg-card ml-4 flex-row items-center rounded-md border border-border px-3 py-2"
@@ -56,6 +66,7 @@ export default function Screen() {
           </TouchableOpacity>
         </View>
 
+        {/* Content */}
         <ScrollView className="flex-1 p-4">
           {/* Usage Guidelines */}
           <View className="mb-6 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950/20">

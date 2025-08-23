@@ -1,3 +1,4 @@
+import { playground } from "@/components";
 import { CategoryCard } from "@/components/playground/CategoryCard";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { clsx } from "clsx";
@@ -5,15 +6,15 @@ import { useRouter } from "expo-router";
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
 // Component categories overview
-const categories: PlaygroundCategory[] = [
-  {
-    id: "buttons",
-    name: "Buttons",
-    icon: "🔘",
-    description: "Interactive button components with various styles and states",
-    componentCount: 6,
-  },
-];
+const categories: PlaygroundCategory[] = Object.entries(playground).map(
+  ([key, value]) => ({
+    id: key,
+    name: value.meta.name,
+    icon: value.meta.icon,
+    description: value.meta.description,
+    componentCount: value.meta.componentCount,
+  }),
+);
 
 export default function PlaygroundOverview() {
   const colorScheme = useColorScheme();

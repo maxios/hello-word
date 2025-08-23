@@ -13,8 +13,11 @@ export default {
   presets: [nativewind],
   theme: {
     extend: {
+      borderWidth: {
+        '1': '1px',
+      },
       fontFamily: {
-        'heading': ['Poppins-700', 'system-ui', 'sans-serif'],
+        'heading': ['Poppins-800', 'system-ui', 'sans-serif'],
         'body': ['OpenSans-600', 'system-ui', 'sans-serif'],
         'sans': ['OpenSans-400', 'system-ui', 'sans-serif'],
       },

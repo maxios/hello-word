@@ -1,4 +1,5 @@
-import { Slot, SplashScreen } from "expo-router";
+import * as Linking from "expo-linking";
+import { router, Slot, SplashScreen } from "expo-router";
 import { useEffect } from "react";
 import { StatusBar, useColorScheme } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -10,6 +11,21 @@ SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   const colorScheme = useColorScheme();
+  const initialUrl = Linking.useLinkingURL();
+
+  useEffect(() => {
+    if (initialUrl) {
+      const { queryParams } = Linking.parse(initialUrl);
+
+      console.log("queryParams", queryParams);
+      if (queryParams && typeof queryParams.strng === "string") {
+        router.navigate({
+          pathname: queryParams.strng,
+          params: queryParams,
+        });
+      }
+    }
+  }, [initialUrl]);
 
   useEffect(() => {
     const hideSplash = async () => {

@@ -7,7 +7,6 @@ import {
   MealsIcon,
   MoveIcon,
 } from "@/components/icons";
-import { IconSymbol } from "@/components/ui/IconSymbol";
 import { colors } from "@/constants/Colors";
 import clsx from "clsx";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -17,7 +16,6 @@ const TABS = [
   { name: "move", label: "Move", Icon: MoveIcon },
   { name: "meals", label: "Meals", Icon: MealsIcon },
   { name: "challenges", label: "challenge", Icon: ChallengeIcon },
-  { name: "playground", label: "playground", Icon: IconSymbol },
 ];
 
 export const getLabel = ({ focused, label }: any) => {
@@ -37,6 +35,18 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarActiveTintColor: "black",
+        tabBarInactiveTintColor: "black",
+        tabBarStyle: Platform.select({
+          ios: {
+            position: "absolute",
+            backgroundColor: colors.surface[12],
+            default: 42,
+          },
+          android: {
+            backgroundColor: colors.surface[12],
+          },
+        }),
       }}
     >
       {TABS.map(({ name, label, Icon }) => (

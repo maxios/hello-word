@@ -1,24 +1,24 @@
-import { gql, useApolloClient } from '@apollo/client';
+import { gql, useApolloClient } from "@apollo/client";
 import {
   Image,
   ImageBackground,
   ImageBackgroundProps,
   ImageProps,
-} from 'expo-image';
-import { useMemo } from 'react';
+} from "expo-image";
+import { useMemo } from "react";
 
-const useCachedPlaceholder = (source: ImageProps['source']) => {
+const useCachedPlaceholder = (source: ImageProps["source"]) => {
   const apollo = useApolloClient();
 
   return useMemo(() => {
     let url;
-    if (typeof source === 'string') {
+    if (typeof source === "string") {
       url = source;
     } else if (
       source &&
-      typeof source === 'object' &&
-      'uri' in source &&
-      typeof source?.uri === 'string'
+      typeof source === "object" &&
+      "uri" in source &&
+      typeof source?.uri === "string"
     ) {
       url = source.uri;
     }
@@ -41,7 +41,6 @@ const useCachedPlaceholder = (source: ImageProps['source']) => {
     }
 
     return undefined;
-     
   }, [source, apollo]);
 };
 
@@ -51,16 +50,16 @@ const useCachedPlaceholder = (source: ImageProps['source']) => {
  * automatically retrieve the cached image and the base64 version of the image.
  */
 export const BlurUpImage: React.FC<ImageProps> = (props) => {
-  const {source, placeholder, ...rest} = props;
+  const { source, placeholder, ...rest } = props;
   const base64 = useCachedPlaceholder(source) ?? placeholder;
   return (
     <Image
       {...rest}
-      transition={{effect: 'cross-dissolve', duration: 500}}
+      transition={{ effect: "cross-dissolve", duration: 500 }}
       source={source}
       placeholderContentFit="cover"
       contentFit="cover"
-      placeholder={base64 ? {uri: base64} : undefined}
+      placeholder={base64 ? { uri: base64 } : undefined}
     />
   );
 };
@@ -68,16 +67,16 @@ export const BlurUpImage: React.FC<ImageProps> = (props) => {
 export const BlurUpImageBackground: React.FC<ImageBackgroundProps> = (
   props,
 ) => {
-  const {source, placeholder, ...rest} = props;
-  const base64 = useCachedPlaceholder(source) ?? placeholder;
+  const { source, placeholder, ...rest } = props;
+  // const base64 = useCachedPlaceholder(source) ?? placeholder;
   return (
     <ImageBackground
       {...rest}
-      transition={{effect: 'cross-dissolve', duration: 500}}
+      transition={{ effect: "cross-dissolve", duration: 500 }}
       source={source}
       placeholderContentFit="cover"
       contentFit="cover"
-      placeholder={base64 ? {uri: base64} : undefined}
+      // placeholder={base64 ? { uri: base64 } : undefined}
     />
   );
 };

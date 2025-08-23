@@ -460,3 +460,13 @@ export const bestPractices = {
     "FAB buttons should be used sparingly for primary actions",
   ],
 };
+
+export const meta = {
+  id: "buttons",
+  name: "Buttons",
+  icon: "🔘",
+  description: "Interactive button components with various styles and states",
+  componentCount: components.length,
+  usageGuidelines,
+  bestPractices,
+};
