@@ -1,12 +1,10 @@
-import * as React from 'react';
 import Svg, {
-  SvgProps,
-  Path,
   Defs,
   LinearGradient,
+  Path,
   Stop,
+  SvgProps,
 } from 'react-native-svg';
-import tokens from '../../theme/tokens';
 
 export const CheckCircleIcon = (props: SvgProps) => (
   <Svg width={80} height={80} fill="none" {...props}>
@@ -25,8 +23,8 @@ export const CheckCircleIcon = (props: SvgProps) => (
         y2={40}
         gradientUnits="userSpaceOnUse"
       >
-        <Stop stopColor={tokens.color.brandLight.val} />
-        <Stop offset={1} stopColor={tokens.color.brandMid.val} />
+        <Stop stopColor="red" />
+        <Stop offset={1} stopColor="blue" />
       </LinearGradient>
     </Defs>
   </Svg>

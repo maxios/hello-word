@@ -1,3 +1,4 @@
+import "@/global.css";
 import {
   Slot,
   SplashScreen,
@@ -9,8 +10,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { loadAsync } from 'expo-font';
 // import {RootSiblingParent} from 'react-native-root-siblings';
 import { Asset, useAssets } from 'expo-asset';
-import { Animated, StatusBar, StyleSheet, useColorScheme } from 'react-native';
-import { TamaguiProvider, Theme, View } from 'tamagui';
+import { Animated, StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 // import {ActionSheetProvider} from '@expo/react-native-action-sheet';
 // import {StytchProvider, useStytchUser} from '@stytch/react-native';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -27,13 +27,11 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 // import {AuthModal} from '@/components/AuthModal';
 // import {PaymentModal} from '@/components/PaymentModal';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
-import config from '../tamagui.config';
 // import {hydrateApolloClient, client} from '../lib/apollo';
 // import {stytch} from '../lib/stytch';
 // import {RevenueCatProvider, useRevenueCat} from '../context/revenuecat';
 // import {ErrorBoundary} from '../components/ErrorBoundary';
 import splashImage from '../assets/splash.png';
-import tokens from '../theme/tokens';
 // import {
 //   useUserLazyQuery,
 //   useUserPurchasesQuery,
@@ -78,7 +76,7 @@ const AnimatedSplashScreen: React.FC<{
   image: Asset | undefined;
 }> = ({children, image}) => {
   const animation = useMemo(() => new Animated.Value(1), []);
-  const [isAppReady, setAppReady] = useState(false);
+  const [isAppReady, setAppReady] = useState(true);
   // const [getUser] = useUserLazyQuery();
   // const router = useRouter();
   const [isSplashAnimationComplete, setAnimationComplete] = useState(true);
@@ -156,7 +154,7 @@ const AnimatedSplashScreen: React.FC<{
   // }, []);
 
   return (
-    <View flex={1}>
+    <View className="flex-1">
       {isAppReady && children}
       {!isSplashAnimationComplete && (
         <Animated.View
@@ -164,7 +162,7 @@ const AnimatedSplashScreen: React.FC<{
           style={[
             StyleSheet.absoluteFill,
             {
-              backgroundColor: tokens.color.surface0.val,
+              backgroundColor: 'red',
               opacity: animation,
             },
           ]}
@@ -274,9 +272,7 @@ function App() {
     <GestureHandlerRootView>
       {/* <ActionSheetProvider> */}
         {/* <CombinedProvider> */}
-          <TamaguiProvider config={config}>
             {/* <RootSiblingParent> */}
-              <Theme name={colorScheme}>
                 <SafeAreaProvider>
                   {/* <DeepLinkHandler> */}
                     <StatusBar animated barStyle="light-content" />
@@ -320,9 +316,7 @@ function App() {
                     isVisible={isForceUpdateRequired && !isForceUpdateLoading}
                   /> */}
                 </SafeAreaProvider>
-              </Theme>
             {/* </RootSiblingParent> */}
-          </TamaguiProvider>
         {/* </CombinedProvider> */}
       {/* </ActionSheetProvider> */}
     </GestureHandlerRootView>

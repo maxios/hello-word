@@ -9,9 +9,9 @@ import { PerksCarouselItemProps } from './types';
 export const PerksCarouselItem = ({item}: PerksCarouselItemProps) => {
   const {id, image, title, description} = item;
   return (
-    <YStack key={id} flex={1}>
-      <YStack key={id} w={DEVICE_WIDTH} flex={1}>
-        <YStack position="relative" flex={1}>
+    <YStack key={id} className="flex-1">
+      <YStack key={id} className="vw flex-1">
+        <YStack className="relative flex-1">
           <BlurUpImageBackground source={image} style={styles.image}>
             <Image
               source={fade}

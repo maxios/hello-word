@@ -10,6 +10,8 @@
     },
     "owner": "strng",
     "extra": {
+      "storybookEnabled": true,
+      "enablePlayground": true,
       "eas": {
         "projectId": "6f7d57c0-834f-45d1-a9eb-a717400bc2ba",
         "build": {
@@ -118,6 +120,12 @@
             "targetSdkVersion": 35,
             "buildToolsVersion": "35.0.0"
           }
+        }
+      ],
+      [
+        "expo-dev-client",
+        {
+          "launchMode": "most-recent"
         }
       ],
       "expo-tracking-transparency"

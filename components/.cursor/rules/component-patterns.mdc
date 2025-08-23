@@ -1,0 +1,63 @@
+---
+description: Component-specific Tamagui to NativeWind migration patterns
+globs: ["components/**/*.tsx", "components/**/*.jsx"]
+alwaysApply: true
+---
+
+# Component Migration Patterns
+
+## Reusable Component Guidelines
+
+### Component Wrapper Pattern
+
+```tsx
+// ❌ Old Tamagui Pattern
+const StyledView = styled(View, {
+  borderRadius: 20,
+  variants: { size: { small: { width: 50 } } }
+});
+
+// ✅ New NativeWind Pattern  
+const StyledView = ({ size, className, ...props }) => (
+  <View
+    className={clsx(
+      'rounded-xl',
+      size === 'small' && 'w-[50px]',
+      className
+    )}
+    {...props}
+  />
+);
+```
+
+### Button Components
+
+- Replace Tamagui Button with TouchableOpacity/Pressable + className
+- Use conditional classes for size variants
+- Include Text component with appropriate styling
+
+### Icon Components  
+
+- Keep using react-native-vector-icons or similar
+- Add className support for styling
+- Use Tailwind color classes instead of theme tokens
+
+## Component Props Pattern
+
+Always support these props for consistency:
+
+```tsx
+interface ComponentProps {
+  className?: string;
+  children?: React.ReactNode;
+  // ... other specific props
+}
+```
+
+Note: `vh` and `vw` can be used in alternative to `DEVICE_WIDTH` and `DEVICE_HEIGHT`
+
+## Testing Requirements
+
+- Test components on both iOS and Android
+- Verify dark mode support with `dark:` classes
+- Check responsive behavior if applicable

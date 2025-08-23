@@ -10,8 +10,8 @@ export const PerksCarousel = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <YStack flex={1}>
-      <YStack flex={1}>
+    <YStack className="flex-1">
+      <YStack className="flex-1">
         <Carousel
           loop={false}
           data={perks}
@@ -20,7 +20,7 @@ export const PerksCarousel = () => {
           onSnapToItem={(indexNumber) => setIndex(indexNumber)}
         />
       </YStack>
-      <YStack pb={48} pt={24} px={16}>
+      <YStack className="pb-[48px] pt-[24px] px-[16px]">
         <CarouselPagination index={index} />
       </YStack>
     </YStack>

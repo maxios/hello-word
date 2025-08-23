@@ -1,0 +1,52 @@
+---
+description: Page component Tamagui to NativeWind migration patterns
+globs: ["pages/**/*.tsx", "pages/**/*.jsx"]
+alwaysApply: true
+---
+
+# Page Component Migration Patterns
+
+## Page Structure
+```tsx
+// ✅ NativeWind Page Pattern
+export function IntroPage() {
+  return (
+    <ScrollView className="flex-1 bg-background">
+      <View className="px-4 py-6">
+        <Text className="text-2xl font-bold text-foreground mb-4">
+          Page Title
+        </Text>
+        <View className="space-y-4">
+          {/* Page content */}
+        </View>
+      </View>
+    </ScrollView>
+  );
+}
+```
+
+## Interactive Elements
+- Migrate Tamagui interactive components to NativeWind equivalents
+- Use Pressable/TouchableOpacity with proper className styling
+- Implement proper focus and pressed states
+
+## Typography Hierarchy
+```tsx
+// ✅ Consistent typography classes
+<Text className="text-3xl font-bold text-foreground">Heading 1</Text>
+<Text className="text-xl font-semibold text-foreground">Heading 2</Text>
+<Text className="text-base text-muted-foreground">Body text</Text>
+<Text className="text-sm text-muted-foreground">Caption</Text>
+```
+
+## Carousel and Animation
+- If using react-native-reanimated, ensure compatibility with NativeWind
+- Use transform utilities for animations where possible
+- Maintain smooth performance during transitions
+
+## Migration Priority Order
+1. **Layout structure** - Get the basic page layout working
+2. **Typography** - Ensure text hierarchy is correct  
+3. **Interactive elements** - Buttons, links, touchable areas
+4. **Visual elements** - Images, icons, decorative components
+5. **Animations** - Complex transitions and effects

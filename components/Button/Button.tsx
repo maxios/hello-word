@@ -1,183 +1,85 @@
-import { Link } from 'expo-router';
-import React from 'react';
-import { useFormContext, useFormState } from 'react-hook-form';
-import { ActivityIndicator, Pressable, View as RNView } from 'react-native';
-import { XStack, YStack } from 'tamagui';
-import { Text } from '../Text';
+import { clsx } from 'clsx';
+import { ActivityIndicator, Pressable, Text } from 'react-native';
+import { ButtonProps } from './types';
 
-import tokens from '../../theme/tokens';
-import { ButtonProps, FormButtonProps } from './types';
-import {
-  getBackgroundColor,
-  getBorderRadius,
-  getHeight,
-  getLabelColor,
-  getSublabelColor,
-} from './utils';
+const variantStyles = {
+  primary: 'bg-brand-mid',
+  secondary: 'bg-surface-12',
+  outlined: 'border border-brand-mid',
+  text: 'bg-transparent',
+  navigation: 'bg-surface-12',
+  fab: 'bg-surface-12 rounded-full',
+} as const;
 
-const FormButton = ({
-  width,
-  disabled,
-  ariaLabel,
-  size,
+const textStyles = {
+  primary: 'text-white',
+  secondary: 'text-high-emphasis',
+  outlined: 'text-brand-mid',
+  text: 'text-high-emphasis',
+  navigation: 'text-high-emphasis',
+  fab: 'text-high-emphasis',
+} as const;
+
+const sizeStyles = {
+  small: 'px-4 py-2 text-sm',
+  medium: 'px-6 py-3 text-base',
+  large: 'px-8 py-4 text-lg',
+} as const;
+
+export function Button({
+  variant = 'primary',
+  size = 'medium',
+  children,
   leftIcon,
   rightIcon,
-  variant,
-  label,
-  sublabel,
-  disableButtonUntilValid,
-  onSubmit,
-  isLoading,
-  testID,
-}: FormButtonProps) => {
-  const {handleSubmit, control} = useFormContext();
-  const {isValid} = useFormState({control});
-
-  const finalDisabled = disabled || (disableButtonUntilValid && !isValid);
-
+  isLoading = false,
+  disabled = false,
+  className,
+  ...props
+}: ButtonProps) {
   return (
-    <BaseButton
-      testID={testID}
-      ariaLabel={ariaLabel}
-      size={size}
-      isLoading={isLoading}
-      width={width}
-      leftIcon={leftIcon}
-      rightIcon={rightIcon}
-      variant={variant}
-      onPress={handleSubmit(onSubmit)}
-      disabled={finalDisabled}
-      label={label}
-      sublabel={sublabel}
-    />
-  );
-};
-
-const BaseButton = React.forwardRef<typeof RNView, ButtonProps>(
-  (
-    {
-      size = 'md',
-      width,
-      leftIcon,
-      rightIcon,
-      variant = 'primary',
-      disabled,
-      label,
-      sublabel,
-      onPress,
-      ariaLabel,
-      borderColor,
-      color,
-      isLoading,
-      noWrap,
-      px,
-      testID,
-    },
-    ref,
-  ) => {
-    const backgroundColor = getBackgroundColor(variant, disabled);
-    const labelColor: ButtonProps['color'] = getLabelColor(
-      color,
-      variant,
-      disabled,
-    );
-
-    const getBorderColor = () => {
-      if (disabled) return '$surfaceLight';
-      if (borderColor) return borderColor;
-      if (variant === 'secondary') return '$brandMid';
-      return backgroundColor;
-    };
-
-    return (
-      <Pressable
-        testID={testID}
-        onPress={isLoading ? () => null : onPress}
-        disabled={disabled}
-        aria-label={ariaLabel}
-        style={{width}}
-        ref={ref as React.Ref<RNView>}
+    <Pressable
+      disabled={disabled || isLoading}
+      className={clsx(
+        // Base styles
+        'flex-row items-center justify-center rounded-full',
+        'active:opacity-80',
+        
+        // Variant styles
+        variantStyles[variant],
+        
+        // Size styles
+        sizeStyles[size],
+        
+        // Disabled state
+        (disabled || isLoading) && 'opacity-50',
+        
+        // Custom classes
+        className
+      )}
+      {...props}
+    >
+      {isLoading ? (
+        <ActivityIndicator 
+          color={variant === 'outlined' ? '#33C4EB' : '#FFFFFF'} 
+          className="mr-2"
+        />
+      ) : leftIcon ? (
+        <Text className="mr-2">{leftIcon}</Text>
+      ) : null}
+      
+      <Text 
+        className={clsx(
+          'font-body tracking-ui uppercase',
+          textStyles[variant]
+        )}
       >
-        <YStack
-          height={getHeight(size)}
-          backgroundColor={backgroundColor}
-          alignItems="center"
-          justifyContent="center"
-          width={width}
-          px={px ?? 32}
-          borderRadius={getBorderRadius(variant)}
-          gap={9}
-          borderColor={getBorderColor()}
-          borderWidth={1}
-        >
-          {isLoading ? (
-            <ActivityIndicator
-              color={
-                labelColor ? tokens.color[labelColor]?.val : 'textHighEmphasis'
-              }
-            />
-          ) : (
-            <>
-              <XStack gap={12} ai="center">
-                {!!leftIcon && leftIcon}
-                <Text variant="uiM" color={labelColor} noWrap={noWrap}>
-                  {label}
-                </Text>
-                {!!rightIcon && rightIcon}
-              </XStack>
-              {!!sublabel && (
-                <Text variant="uiS" color={getSublabelColor(variant, disabled)}>
-                  {sublabel}
-                </Text>
-              )}
-            </>
-          )}
-        </YStack>
-      </Pressable>
-    );
-  },
-);
-
-export const Button = ({
-  href,
-  replace,
-  size = 'md',
-  variant = 'primary',
-  onSubmit,
-  ...buttonProps
-}: ButtonProps) => {
-  const width = buttonProps.fullWidth ? '100%' : 'auto';
-
-  if (onSubmit) {
-    return (
-      <FormButton
-        variant={variant}
-        onSubmit={onSubmit}
-        {...buttonProps}
-        width={width}
-      />
-    );
-  }
-
-  if (href) {
-    return (
-      <Link
-        replace={replace}
-        href={href}
-        asChild
-        disabled={buttonProps.disabled}
-      >
-        <BaseButton size={size} variant={variant} {...buttonProps} />
-      </Link>
-    );
-  }
-
-  return (
-    <BaseButton
-      size={size}
-      variant={variant}
-      isLoading={buttonProps.isLoading}
-      {...buttonProps}
-    />
+        {children}
+      </Text>
+      
+      {!isLoading && rightIcon && (
+        <Text className="ml-2">{rightIcon}</Text>
+      )}
+    </Pressable>
   );
-};
+}

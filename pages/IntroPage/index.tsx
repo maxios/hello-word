@@ -1,22 +1,15 @@
 import strngLogo from '@/assets/images/intro/strng_logo.png';
 import { Buttons } from '@/components/Buttons';
-import { Image, Platform } from 'react-native';
+import { Image } from 'react-native';
 import { View, YStack } from 'tamagui';
-import { PerksCarousel } from './PerksCarousel';
 
 const IntroPage = () => {
   return (
-    <YStack height="100%" bc="$background">
-      <YStack w="100%" pos="relative" flex={1}>
-        <View
-          pos="absolute"
-          t={Platform.OS === 'android' ? 25 : 55}
-          m={16}
-          zi={1}
-        >
+    <YStack className="h-full bg-background">
+      <YStack className="relative w-full flex-1">
+        <View className="absolute top-[25px] left-[16px] z-10">
           <Image source={strngLogo} />
         </View>
-        <PerksCarousel />
       </YStack>
       <Buttons
         buttons={[
