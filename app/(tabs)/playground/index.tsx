@@ -1,93 +1,45 @@
-import { useColorScheme } from '@/hooks/useColorScheme';
-import { clsx } from 'clsx';
-import { useRouter } from 'expo-router';
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { CategoryCard } from "@/components/playground/CategoryCard";
+import { useColorScheme } from "@/hooks/useColorScheme";
+import { clsx } from "clsx";
+import { useRouter } from "expo-router";
+import { SafeAreaView, ScrollView, Text, View } from "react-native";
 
 // Component categories overview
-const categories = [
+const categories: PlaygroundCategory[] = [
   {
-    id: 'buttons',
-    name: 'Buttons',
-    icon: '🔘',
-    description: 'Interactive button components with various styles and states',
-    componentCount: 4,
-  },
-  {
-    id: 'typography',
-    name: 'Typography',
-    icon: '📝',
-    description: 'Text components with different styles and hierarchies',
-    componentCount: 4,
-  },
-  {
-    id: 'icons',
-    name: 'Icons',
-    icon: '🎨',
-    description: 'Icon components for various UI elements',
-    componentCount: 4,
+    id: "buttons",
+    name: "Buttons",
+    icon: "🔘",
+    description: "Interactive button components with various styles and states",
+    componentCount: 6,
   },
 ];
-
-const CategoryCard: React.FC<{
-  category: typeof categories[0];
-  onPress: () => void;
-}> = ({ category, onPress }) => {
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      className="mb-4 p-6 bg-card rounded-xl border border-border active:bg-muted"
-    >
-      <View className="flex-row items-start justify-between mb-4">
-        <View className="flex-1">
-          <View className="flex-row items-center mb-2">
-            <Text className="text-2xl mr-3">{category.icon}</Text>
-            <Text className="text-xl font-bold text-foreground">
-              {category.name}
-            </Text>
-          </View>
-          <Text className="text-muted-foreground leading-6 mb-3">
-            {category.description}
-          </Text>
-          <View className="bg-primary/10 px-3 py-1 rounded-full self-start">
-            <Text className="text-primary text-sm font-medium">
-              {category.componentCount} components
-            </Text>
-          </View>
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
-};
 
 export default function PlaygroundOverview() {
   const colorScheme = useColorScheme();
   const router = useRouter();
 
   return (
-    <View className={clsx('flex-1 bg-background', colorScheme === 'dark' && 'dark')}>
+    <View
+      className={clsx("flex-1 bg-background", colorScheme === "dark" && "dark")}
+    >
       <SafeAreaView className="flex-1">
         <ScrollView className="flex-1 p-4">
           {/* Welcome Section */}
           <View className="mb-8">
-            <Text className="text-3xl font-bold text-foreground mb-4">
+            <Text className="mb-4 text-3xl font-bold text-foreground">
               🧪 Component Playground
             </Text>
-            <Text className="text-muted-foreground text-lg leading-6">
-              Explore and test your design system components in an interactive environment. 
-              Use the drawer menu to navigate between different component categories.
+            <Text className="text-lg leading-6 text-muted-foreground">
+              Explore and test your design system components in an interactive
+              environment. Use the drawer menu to navigate between different
+              component categories.
             </Text>
           </View>
 
           {/* Features Section */}
-          <View className="mb-8 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-xl border border-blue-200 dark:border-blue-800">
-            <Text className="text-blue-900 dark:text-blue-100 font-bold text-lg mb-3">
+          <View className="mb-8 rounded-xl border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950/20">
+            <Text className="mb-3 text-lg font-bold text-blue-900 dark:text-blue-100">
               ✨ Features
             </Text>
             <View className="space-y-2">
@@ -108,30 +60,37 @@ export default function PlaygroundOverview() {
 
           {/* Categories Overview */}
           <View className="mb-6">
-            <Text className="text-2xl font-bold text-foreground mb-4">
+            <Text className="mb-4 text-2xl font-bold text-foreground">
               Component Categories
             </Text>
-            <Text className="text-muted-foreground mb-6">
-              Tap on a category below or use the drawer menu to explore components.
+            <Text className="mb-6 text-muted-foreground">
+              Tap on a category below or use the drawer menu to explore
+              components.
             </Text>
-            
+
             {categories.map((category) => (
               <CategoryCard
                 key={category.id}
                 category={category}
-                onPress={() => router.push(`/playground/${category.id}`)}
+                onPress={() =>
+                  router.push({
+                    pathname: `/playground/${category.id}`,
+                    params: category,
+                  })
+                }
               />
             ))}
           </View>
 
           {/* Getting Started */}
-          <View className="mb-8 p-4 bg-muted rounded-xl">
-            <Text className="text-foreground font-bold text-lg mb-3">
+          <View className="bg-muted mb-8 rounded-xl p-4">
+            <Text className="mb-3 text-lg font-bold text-foreground">
               🚀 Getting Started
             </Text>
-            <Text className="text-muted-foreground leading-6">
-              Open the drawer menu (☰) or swipe from the left to navigate between component categories. 
-              Each category contains live examples of components with their code implementations.
+            <Text className="leading-6 text-muted-foreground">
+              Open the drawer menu (☰) or swipe from the left to navigate
+              between component categories. Each category contains live examples
+              of components with their code implementations.
             </Text>
           </View>
         </ScrollView>

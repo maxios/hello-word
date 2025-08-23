@@ -1,51 +1,73 @@
-import { Tabs } from 'expo-router';
-import { Platform } from 'react-native';
+import { Tabs } from "expo-router";
+import { Platform, Text } from "react-native";
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import {
+  ChallengeIcon,
+  HomeIcon,
+  MealsIcon,
+  MoveIcon,
+} from "@/components/icons";
+import { IconSymbol } from "@/components/ui/IconSymbol";
+import { colors } from "@/constants/Colors";
+import clsx from "clsx";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+const TABS = [
+  { name: "home", label: "Home", Icon: HomeIcon },
+  { name: "move", label: "Move", Icon: MoveIcon },
+  { name: "meals", label: "Meals", Icon: MealsIcon },
+  { name: "challenges", label: "challenge", Icon: ChallengeIcon },
+  { name: "playground", label: "playground", Icon: IconSymbol },
+];
+
+export const getLabel = ({ focused, label }: any) => {
+  const color = focused ? "text-high-emphasis" : "text-medium-emphasis";
+  return <Text className={clsx(color, "font-body-medium")}>{label}</Text>;
+};
+
+export const getIcon = ({ focused, Icon }: any) => {
+  const color = focused ? "high-emphasis" : "low-emphasis";
+  return <Icon color={colors[color]} />;
+};
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="playground"
-        options={{
-          title: 'Playground',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+      }}
+    >
+      {TABS.map(({ name, label, Icon }) => (
+        <Tabs.Screen
+          key={name}
+          name={name}
+          options={{
+            href: `/${name}`,
+            title: label,
+            tabBarItemStyle: {
+              paddingTop: Platform.OS === "android" ? 14 : 15,
+              paddingBottom:
+                Platform.OS === "android" ? Math.max(16, insets.bottom + 8) : 5,
+            },
+            tabBarIcon: ({ focused }) => getIcon({ focused, Icon }),
+            tabBarLabel: ({ focused }) => getLabel({ focused, label }),
+            tabBarActiveTintColor: colors["high-emphasis"],
+            tabBarInactiveTintColor: colors["medium-emphasis"],
+            tabBarStyle: {
+              display: name === "challenges" ? "none" : "flex",
+              backgroundColor: colors.surface[12],
+              borderTopWidth: 0,
+              height:
+                Platform.OS === "android"
+                  ? Math.max(76, 76 + insets.bottom)
+                  : 100,
+              paddingBottom: Platform.OS === "android" ? insets.bottom : 0,
+            },
+          }}
+        />
+      ))}
     </Tabs>
   );
 }

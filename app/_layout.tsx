@@ -1,9 +1,9 @@
-import "@/global.css";
-import { Slot, SplashScreen } from 'expo-router';
-import { useEffect } from 'react';
-import { StatusBar, useColorScheme } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Slot, SplashScreen } from "expo-router";
+import { useEffect } from "react";
+import { StatusBar, useColorScheme } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import "../global.css";
 
 // Instruct SplashScreen not to hide yet, we want to do this manually
 SplashScreen.preventAutoHideAsync();
@@ -22,8 +22,10 @@ export default function Layout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
-          <StatusBar barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'} />
-          <Slot />
+        <StatusBar
+          barStyle={colorScheme === "light" ? "light-content" : "dark-content"}
+        />
+        <Slot />
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

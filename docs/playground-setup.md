@@ -12,7 +12,7 @@ This custom component playground provides a React Native/Expo alternative to Sto
 ✅ **Responsive Design** - Adapts to tablet and mobile layouts  
 ✅ **Live Code Preview** - View component code alongside rendered examples  
 ✅ **Component Variations** - Showcase different props and states  
-✅ **Fast Refresh Support** - Real-time updates during development  
+✅ **Fast Refresh Support** - Real-time updates during development
 
 ## File Structure
 
@@ -46,6 +46,7 @@ The playground is controlled via `app.json`:
 ### 2. Conditional Access
 
 The playground automatically appears when:
+
 - `__DEV__` is true (development mode)
 - `enablePlayground` is explicitly set to `true` in app config
 
@@ -54,8 +55,9 @@ The playground automatically appears when:
 ### Accessing the Playground
 
 #### Option 1: Floating Button
+
 ```tsx
-import { PlaygroundButton } from '@/components/PlaygroundButton';
+import { PlaygroundButton } from "@/components/PlaygroundButton";
 
 export default function Screen() {
   return (
@@ -68,8 +70,9 @@ export default function Screen() {
 ```
 
 #### Option 2: Inline Button
+
 ```tsx
-import { PlaygroundButton } from '@/components/PlaygroundButton';
+import { PlaygroundButton } from "@/components/PlaygroundButton";
 
 export default function SettingsScreen() {
   return (
@@ -82,11 +85,12 @@ export default function SettingsScreen() {
 ```
 
 #### Option 3: Direct Navigation
+
 ```tsx
-import { useRouter } from 'expo-router';
+import { useRouter } from "expo-router";
 
 const router = useRouter();
-router.push('/playground');
+router.push("/playground");
 ```
 
 ### Adding Components to Playground
@@ -134,12 +138,14 @@ import { YourComponent } from '@/components/YourComponent';
 ## Development Workflow
 
 ### 1. Component Development
+
 1. Create/modify component in `/components`
 2. Add to playground registry
 3. Use Expo's fast refresh to see changes instantly
 4. Test on multiple devices via Expo Go
 
 ### 2. Testing on Devices
+
 ```bash
 # Start development server
 expo start
@@ -149,39 +155,44 @@ expo start
 ```
 
 ### 3. Team Collaboration
+
 - Share Expo publish URL with playground enabled
 - Team members can test components on their devices
 - No additional setup required for reviewers
 
 ## Comparison with Storybook
 
-| Feature | Component Playground | Storybook |
-|---------|---------------------|-----------|
-| Expo Integration | ✅ Native | ⚠️ Complex setup |
-| Device Testing | ✅ Direct via Expo Go | ❌ Simulator only |
-| Dependencies | ✅ Zero additional | ❌ Heavy toolchain |
-| Managed Workflow | ✅ Full support | ⚠️ Limited |
-| Setup Time | ✅ < 10 minutes | ❌ Hours |
-| Bundle Size | ✅ No impact on production | ❌ Separate bundle |
+| Feature          | Component Playground       | Storybook          |
+| ---------------- | -------------------------- | ------------------ |
+| Expo Integration | ✅ Native                  | ⚠️ Complex setup   |
+| Device Testing   | ✅ Direct via Expo Go      | ❌ Simulator only  |
+| Dependencies     | ✅ Zero additional         | ❌ Heavy toolchain |
+| Managed Workflow | ✅ Full support            | ⚠️ Limited         |
+| Setup Time       | ✅ < 10 minutes            | ❌ Hours           |
+| Bundle Size      | ✅ No impact on production | ❌ Separate bundle |
 
 ## Best Practices
 
 ### 1. Component Organization
+
 - Group related components in logical categories
 - Use clear, descriptive names and descriptions
 - Include multiple variations showing different states
 
 ### 2. Code Examples
+
 - Keep code snippets concise and readable
 - Show practical usage examples
 - Include important props and styling
 
 ### 3. Performance
+
 - Components are rendered live, so optimize for performance
 - Use React.memo for expensive components
 - Consider lazy loading for large component sets
 
 ### 4. Testing Strategy
+
 - Use playground for visual testing and QA
 - Test on both iOS and Android devices
 - Verify dark mode and responsive behavior
@@ -194,7 +205,7 @@ The playground is automatically disabled in production unless explicitly enabled
 {
   "expo": {
     "extra": {
-      "enablePlayground": false  // or omit for auto-disable
+      "enablePlayground": false // or omit for auto-disable
     }
   }
 }
@@ -217,43 +228,49 @@ The playground is automatically disabled in production unless explicitly enabled
    - Check route naming and nesting
 
 ### Debug Mode
+
 Add logging to verify configuration:
 
 ```tsx
-console.log('DEV mode:', __DEV__);
-console.log('Playground enabled:', Constants.expoConfig?.extra?.enablePlayground);
+console.log("DEV mode:", __DEV__);
+console.log(
+  "Playground enabled:",
+  Constants.expoConfig?.extra?.enablePlayground,
+);
 ```
 
 ## Advanced Features
 
 ### Custom Component Categories
+
 Create specialized categories for your app's needs:
 
 ```tsx
 const customCategories = [
   {
-    id: 'forms',
-    name: 'Form Components',
-    icon: '📝',
-    description: 'Input fields, validation, and form controls',
+    id: "forms",
+    name: "Form Components",
+    icon: "📝",
+    description: "Input fields, validation, and form controls",
   },
   {
-    id: 'data-display',
-    name: 'Data Display',
-    icon: '📊',
-    description: 'Charts, tables, and data visualization',
+    id: "data-display",
+    name: "Data Display",
+    icon: "📊",
+    description: "Charts, tables, and data visualization",
   },
 ];
 ```
 
 ### Theme Testing
+
 Test components across different themes:
 
 ```tsx
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
   return (
-    <View className={theme === 'dark' ? 'dark' : ''}>
+    <View className={theme === "dark" ? "dark" : ""}>
       <YourComponent />
     </View>
   );
@@ -261,6 +278,7 @@ const ThemeToggle = () => {
 ```
 
 ### Integration with React Native Cosmos
+
 You can run both systems side by side:
 
 ```bash

@@ -21,7 +21,7 @@
     ],
     "types": [
       "node",
-      "jest"
+      "jest",
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -41,6 +41,7 @@
   ],
   "include": [
     "**/*",
+    "./tailwind.config.ts",
     "./index.d.ts",
     "nativewind-env.d.ts"
   ],

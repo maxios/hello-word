@@ -13,6 +13,9 @@ module.exports = defineConfig([
       "import/resolver": {
         "typescript": {}
       }
-    }
+    },
+    plugins: [
+      'tailwindcss'
+    ]
   }
 ]);

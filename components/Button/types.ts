@@ -24,9 +24,9 @@ export interface ButtonProps extends Omit<PressableProps, 'children'> {
   size?: ButtonSize;
   
   /**
-   * The text content of the button (will be automatically uppercased)
+   * Add content (it will override all button content)
    */
-  children: string;
+  children?: React.ReactNode;
   
   /**
    * Optional icon to show before the text
@@ -43,6 +43,11 @@ export interface ButtonProps extends Omit<PressableProps, 'children'> {
    * @default false
    */
   isLoading?: boolean;
+
+  /**
+   * The text content of the button (will be automatically uppercased)
+   */
+  label?: string;
   
   /**
    * Whether the button is disabled
