@@ -8,7 +8,7 @@ export type ButtonVariant =
   | 'navigation' // Back/Next buttons
   | 'fab';       // Floating Action Button
 
-export type ButtonSize = 'small' | 'medium' | 'large';
+export type ButtonSize = 'small' | 'medium' | 'large' | 'default';
 
 export interface ButtonProps extends Omit<PressableProps, 'children'> {
   /**

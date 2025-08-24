@@ -1,40 +1,46 @@
-import strngLogo from '@/assets/images/intro/strng_logo.png';
-import { Buttons } from '@/components/Buttons';
-import { Image } from 'react-native';
-import { View, YStack } from 'tamagui';
+import strngLogo from "@/assets/images/intro/strng_logo.png";
+import { Button } from "@/components/Button";
+import { router } from "expo-router";
+import { Image, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { PerksCarousel } from "./PerksCarousel";
 
 const IntroPage = () => {
+  const insets = useSafeAreaInsets();
+
+  const handleNavigation = (href: string) => {
+    router.push(href);
+  };
+
   return (
-    <YStack className="h-full bg-background">
-      <YStack className="relative w-full flex-1">
-        <View className="absolute top-[25px] left-[16px] z-10">
+    <View className="h-full w-full flex-1 bg-background">
+      <View className="relative h-full w-full flex-1">
+        <View className="absolute left-[16px] top-[25px] z-10">
+          <View style={{ paddingTop: insets.top - 32 }} />
           <Image source={strngLogo} />
         </View>
-      </YStack>
-      <Buttons
-        buttons={[
-          {
-            testID: 'try-workout',
-            label: 'Start Your STRNG Workout',
-            href: '/home',
-            variant: 'secondary',
-          },
-          {
-            testID: 'get-started',
-            label: 'Get started',
-            href: '/auth/signup',
-            variant: 'secondary',
-          },
-          {
-            testID: 'log-in',
-            label: 'Log in',
-            size: 'sm',
-            variant: 'text',
-            href: '/auth/new-app-perks',
-          },
-        ]}
-      />
-    </YStack>
+        <PerksCarousel />
+      </View>
+      <View className="flex-col justify-center gap-2 px-4">
+        <Button
+          variant="outlined"
+          label="Start Your STRNG Workout"
+          onPress={() => handleNavigation("/home")}
+        />
+        <Button
+          variant="outlined"
+          label="Get started"
+          onPress={() => handleNavigation("/auth/signup")}
+        />
+        <Button
+          variant="text"
+          label="Log in"
+          onPress={() => handleNavigation("/auth/new-app-perks")}
+        />
+
+        <View style={{ paddingBottom: insets.bottom }} />
+      </View>
+    </View>
   );
 };
 

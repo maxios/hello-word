@@ -40,7 +40,7 @@ export const PromoCard = ({
               <ChevronVertical />
             </View>
             <View
-              className={clsx("flex-colf h-full flex-1 py-4", cardTagStyles)}
+              className={clsx("h-full flex-1 flex-col py-4", cardTagStyles)}
             >
               {/* ------ Card Tag ------ */}
               {cardTagText ? (

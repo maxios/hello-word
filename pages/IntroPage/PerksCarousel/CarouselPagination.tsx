@@ -1,14 +1,13 @@
-import {Circle, XStack} from 'tamagui';
-import {perks} from './perks';
+import { View } from "react-native";
+import { perks } from "./perks";
 
-export const CarouselPagination = ({index}: {index: number}) => (
-  <XStack gap={8}>
+export const CarouselPagination = ({ index }: { index: number }) => (
+  <View className="flex-row gap-2">
     {perks.map((_, i) => (
-      <Circle
+      <View
         key={i as number}
-        bg={index === i ? '$textMediumEmphasis' : '$surface20'}
-        size={8}
+        className={`h-2 w-2 rounded-full ${index === i ? "bg-medium-emphasis" : "bg-surface-4"}`}
       />
     ))}
-  </XStack>
+  </View>
 );
