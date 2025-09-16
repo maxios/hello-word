@@ -14,6 +14,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run cosmos` - Launch React Cosmos for component development/testing
 - `npm run lint` - Run ESLint for code linting
 
+### GraphQL Code Generation
+
+- `npm run codegen` - Generate TypeScript types from GraphQL schema
+- `npm run codegen:watch` - Watch mode for continuous GraphQL code generation
+- `npm run codegen:introspection` - Generate schema introspection file
+
 ### Building & Deployment
 
 - `eas build --profile production --platform all --auto-submit` - Build and submit to both stores
@@ -29,7 +35,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Framework**: Expo 53 with React Native 0.79
 - **Navigation**: Expo Router with file-based routing
 - **Styling**: NativeWind (Tailwind CSS for React Native) + custom design tokens
-- **State Management**: Apollo Client with GraphQL
+- **GraphQL**: Yoga GraphQL with graphql-request client
+- **Package Manager**: npm (with Bun lock file for faster installs)
+- **Code Generation**: GraphQL Code Generator for TypeScript types
 - **UI Library**: Custom component system with playground/showcase
 - **Development Tools**: React Cosmos for component development
 
@@ -38,14 +46,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `app/` - File-based routing with Expo Router
   - `(tabs)/` - Tab-based navigation with bottom tabs (home, meals, challenges, move, playground)
   - `auth/` - Authentication flows (login, signup, password reset)
-  - `_layout.tsx` - Root layout with splash screen, font loading, Apollo hydration
+  - `_layout.tsx` - Root layout with splash screen, font loading
 - `components/` - Reusable UI components
   - `playground/` - Component showcase system for development
   - `fields/` - Form field components with playground demos
   - `Button/` - Button system with extensive variants and playground demos
   - `icons/` - Custom SVG icon components
   - `ui/` - Platform-specific UI components
-- `lib/` - Core utilities (Apollo client, error handling, logging)
+- `lib/` - Core utilities (GraphQL client, error handling, logging)
 - `constants/` - Design tokens, colors, and configuration
 - `const/` - Additional constants and font configurations
 
@@ -59,11 +67,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Key Features
 
-- Authenticated user flows with Apollo GraphQL integration
+- Authenticated user flows with Yoga GraphQL integration
 - Component playground accessible via floating eye button in bottom-right corner
 - Animated splash screen with asset preloading
 - File-based routing with protected routes structure
 - Custom toast system and gesture handling setup
+
+### GraphQL Integration
+
+- **Client**: Uses `graphql-request` for lightweight GraphQL operations
+- **Endpoint**: `https://strng-payloadcms.vercel.app/api/graphql`
+- **Code Generation**: Automatic TypeScript type generation from GraphQL schema
+- **Usage**: Import `request` from `lib/graphql.ts` to make GraphQL queries
+- **Schema**: GraphQL schema and introspection files generated in `src/gql/`
+
+Example GraphQL usage:
+```typescript
+import { request } from '@/lib/graphql';
+import { gql } from 'graphql-request';
+
+const query = gql`
+  query GetData {
+    // your query fields
+  }
+`;
+
+const data = await request(query, variables);
+```
 
 ### Development Workflow
 
