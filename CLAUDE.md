@@ -121,13 +121,11 @@ The codebase implements a UI-as-API pattern with clear separation of concerns:
 feature-name/
 ├── components/
 │   ├── FeatureName.tsx (pure UI)
-│   ├── FeatureName.test.tsx
 │   ├── FeatureName.stories.tsx
 │   └── subcomponents/
 ├── hooks/
 │   ├── useFeatureActions.ts (business logic)
 │   ├── useFeatureData.ts (data queries)
-│   └── *.test.ts
 ├── schemas/
 │   └── featureName.types.ts (UI contracts)
 ├── mappers/
@@ -166,10 +164,3 @@ src/
     ├── providers/
     └── config/
 ```
-
-**Testing Strategy**:
-
-- Test UI components with mocked props to verify rendering
-- Test business logic in action hooks independently
-- Test data transformations with mapper functions
-- Integration tests for complete feature workflows

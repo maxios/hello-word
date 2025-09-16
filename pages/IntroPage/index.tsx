@@ -13,8 +13,8 @@ const IntroPage = () => {
   };
 
   return (
-    <View className="h-full w-full flex-1 bg-background">
-      <View className="relative h-full w-full flex-1">
+    <View className="size-full flex-1 bg-background">
+      <View className="relative size-full flex-1">
         <View className="absolute left-[16px] top-[25px] z-10">
           <View style={{ paddingTop: insets.top - 32 }} />
           <Image source={strngLogo} />

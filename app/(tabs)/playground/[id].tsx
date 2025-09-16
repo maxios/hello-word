@@ -41,7 +41,7 @@ export default function Screen() {
             accessibilityLabel="Go back"
             accessibilityRole="button"
           >
-            <ChevronLeftIcon className="h-5 w-5 text-foreground" />
+            <ChevronLeftIcon className="size-5 text-foreground" />
           </TouchableOpacity>
           <View className="flex-1">
             <Text className="text-2xl font-bold text-foreground">{name}</Text>
@@ -56,9 +56,9 @@ export default function Screen() {
             className="bg-card ml-4 flex-row items-center rounded-md border border-border px-3 py-2"
           >
             {showCode ? (
-              <EyeSlashIcon className="mr-2 h-4 w-4 text-foreground" />
+              <EyeSlashIcon className="mr-2 size-4 text-foreground" />
             ) : (
-              <EyeIcon className="mr-2 h-4 w-4 text-foreground" />
+              <EyeIcon className="mr-2 size-4 text-foreground" />
             )}
             <Text className="text-sm font-medium text-foreground">
               {showCode ? "Hide Code" : "Show Code"}

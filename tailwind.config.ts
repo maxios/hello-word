@@ -1,7 +1,7 @@
 // @ts-nocheck
+import { colors } from '@/constants/Colors';
 import nativewind from 'nativewind/preset';
 import type { Config } from 'tailwindcss';
-import { colors } from './constants/Colors';
 
 export default {
   // NOTE: Update this to include the paths to all files that contain Nativewind classes.

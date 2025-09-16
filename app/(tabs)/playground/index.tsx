@@ -9,10 +9,10 @@ import { SafeAreaView, ScrollView, Text, View } from "react-native";
 const categories: PlaygroundCategory[] = Object.entries(playground).map(
   ([key, value]) => ({
     id: key,
-    name: value.meta.name,
-    icon: value.meta.icon,
-    description: value.meta.description,
-    componentCount: value.meta.componentCount,
+    name: value.meta?.name ?? key,
+    icon: value.meta?.icon ?? key,
+    description: value.meta?.description ?? key,
+    componentCount: value.meta?.componentCount ?? 0,
   }),
 );
 

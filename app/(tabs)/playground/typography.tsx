@@ -95,8 +95,8 @@ const CodeBlock: React.FC<{ code: string; visible: boolean }> = ({ code, visible
   if (!visible) return null;
 
   return (
-    <View className="mt-3 p-3 bg-muted rounded-md">
-      <Text className="text-sm font-mono text-muted-foreground">{code}</Text>
+    <View className="bg-muted mt-3 rounded-md p-3">
+      <Text className="font-mono text-sm text-muted-foreground">{code}</Text>
     </View>
   );
 };
@@ -106,9 +106,9 @@ const ComponentShowcase: React.FC<{
   showCode: boolean;
 }> = ({ component, showCode }) => {
   return (
-    <View className="mb-6 p-4 bg-card rounded-lg border border-border">
+    <View className="bg-card mb-6 rounded-lg border border-border p-4">
       <View className="mb-4">
-        <Text className="text-lg font-semibold text-foreground mb-1">
+        <Text className="mb-1 text-lg font-semibold text-foreground">
           {component.name}
         </Text>
         <Text className="text-sm text-muted-foreground">
@@ -117,7 +117,7 @@ const ComponentShowcase: React.FC<{
       </View>
 
       {/* Main Component */}
-      <View className="bg-background rounded-md p-4 mb-3">
+      <View className="mb-3 rounded-md bg-background p-4">
         <component.component />
       </View>
       <CodeBlock code={component.code} visible={showCode} />
@@ -125,13 +125,13 @@ const ComponentShowcase: React.FC<{
       {/* Variations */}
       {component.variations && component.variations.length > 0 && (
         <View className="mt-4">
-          <Text className="text-base font-medium text-foreground mb-3">Variations</Text>
+          <Text className="mb-3 text-base font-medium text-foreground">Variations</Text>
           {component.variations.map((variation, index) => (
             <View key={index} className="mb-3">
-              <Text className="text-sm font-medium text-muted-foreground mb-2">
+              <Text className="mb-2 text-sm font-medium text-muted-foreground">
                 {variation.name}
               </Text>
-              <View className="bg-background rounded-md p-3 mb-2">
+              <View className="mb-2 rounded-md bg-background p-3">
                 <variation.component />
               </View>
               <CodeBlock code={variation.code} visible={showCode} />
@@ -151,7 +151,7 @@ export default function TypographyScreen() {
     <View className={clsx('flex-1 bg-background', colorScheme === 'dark' && 'dark')}>
       <SafeAreaView className="flex-1">
         {/* Header Controls */}
-        <View className="flex-row items-center justify-between p-4 border-b border-border">
+        <View className="flex-row items-center justify-between border-b border-border p-4">
           <View className="flex-1">
             <Text className="text-2xl font-bold text-foreground">📝 Typography</Text>
             <Text className="text-muted-foreground">Text components and styles</Text>
@@ -159,12 +159,12 @@ export default function TypographyScreen() {
           
           <TouchableOpacity
             onPress={() => setShowCode(!showCode)}
-            className="flex-row items-center ml-4 px-3 py-2 bg-card rounded-md border border-border"
+            className="bg-card ml-4 flex-row items-center rounded-md border border-border px-3 py-2"
           >
             {showCode ? (
-              <EyeSlashIcon className="w-4 h-4 text-foreground mr-2" />
+              <EyeSlashIcon className="mr-2 size-4 text-foreground" />
             ) : (
-              <EyeIcon className="w-4 h-4 text-foreground mr-2" />
+              <EyeIcon className="mr-2 size-4 text-foreground" />
             )}
             <Text className="text-sm font-medium text-foreground">
               {showCode ? 'Hide Code' : 'Show Code'}
@@ -174,29 +174,29 @@ export default function TypographyScreen() {
 
         <ScrollView className="flex-1 p-4">
           {/* Typography Scale */}
-          <View className="mb-6 p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-            <Text className="text-purple-900 dark:text-purple-100 font-semibold mb-2">
+          <View className="mb-6 rounded-lg border border-purple-200 bg-purple-50 p-4 dark:border-purple-800 dark:bg-purple-950/20">
+            <Text className="mb-2 font-semibold text-purple-900 dark:text-purple-100">
               📐 Typography Scale
             </Text>
-            <Text className="text-purple-800 dark:text-purple-200 text-sm leading-5 mb-3">
+            <Text className="mb-3 text-sm leading-5 text-purple-800 dark:text-purple-200">
               Our typography system uses a consistent scale to maintain visual hierarchy and readability.
             </Text>
             <View className="space-y-2">
               <View className="flex-row items-center">
-                <Text className="text-heading-xl flex-1">H1</Text>
-                <Text className="text-purple-700 dark:text-purple-300 text-xs">32px / Bold</Text>
+                <Text className="flex-1 text-heading-xl">H1</Text>
+                <Text className="text-xs text-purple-700 dark:text-purple-300">32px / Bold</Text>
               </View>
               <View className="flex-row items-center">
-                <Text className="text-heading-lg flex-1">H2</Text>
-                <Text className="text-purple-700 dark:text-purple-300 text-xs">24px / SemiBold</Text>
+                <Text className="flex-1 text-heading-lg">H2</Text>
+                <Text className="text-xs text-purple-700 dark:text-purple-300">24px / SemiBold</Text>
               </View>
               <View className="flex-row items-center">
-                <Text className="text-body-large flex-1">Body</Text>
-                <Text className="text-purple-700 dark:text-purple-300 text-xs">16px / Regular</Text>
+                <Text className="flex-1 text-body-large">Body</Text>
+                <Text className="text-xs text-purple-700 dark:text-purple-300">16px / Regular</Text>
               </View>
               <View className="flex-row items-center">
-                <Text className="text-body-small flex-1">Caption</Text>
-                <Text className="text-purple-700 dark:text-purple-300 text-xs">14px / Regular</Text>
+                <Text className="flex-1 text-body-small">Caption</Text>
+                <Text className="text-xs text-purple-700 dark:text-purple-300">14px / Regular</Text>
               </View>
             </View>
           </View>
@@ -211,24 +211,24 @@ export default function TypographyScreen() {
           ))}
 
           {/* Best Practices */}
-          <View className="mb-6 p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-            <Text className="text-green-900 dark:text-green-100 font-semibold mb-2">
+          <View className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-800 dark:bg-green-950/20">
+            <Text className="mb-2 font-semibold text-green-900 dark:text-green-100">
               ✅ Typography Best Practices
             </Text>
             <View className="space-y-1">
-              <Text className="text-green-800 dark:text-green-200 text-sm">
+              <Text className="text-sm text-green-800 dark:text-green-200">
                 • Maintain consistent hierarchy with heading levels
               </Text>
-              <Text className="text-green-800 dark:text-green-200 text-sm">
+              <Text className="text-sm text-green-800 dark:text-green-200">
                 • Use body text for readable paragraphs and content
               </Text>
-              <Text className="text-green-800 dark:text-green-200 text-sm">
+              <Text className="text-sm text-green-800 dark:text-green-200">
                 • Apply muted colors for secondary information
               </Text>
-              <Text className="text-green-800 dark:text-green-200 text-sm">
+              <Text className="text-sm text-green-800 dark:text-green-200">
                 • Ensure sufficient contrast for accessibility
               </Text>
-              <Text className="text-green-800 dark:text-green-200 text-sm">
+              <Text className="text-sm text-green-800 dark:text-green-200">
                 • Test readability across different screen sizes
               </Text>
             </View>

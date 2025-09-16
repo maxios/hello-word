@@ -26,7 +26,6 @@ import { RootSiblingParent } from "react-native-root-siblings";
 // import {AuthModal} from '@/components/AuthModal';
 // import {PaymentModal} from '@/components/PaymentModal';
 // import config from '../tamagui.config';
-import { hydrateApolloClient } from "../lib/apollo";
 // import {stytch} from '../lib/stytch';
 // import {RevenueCatProvider, useRevenueCat} from '../context/revenuecat';
 // import {ErrorBoundary} from '../components/ErrorBoundary';
@@ -113,15 +112,14 @@ const AnimatedSplashScreen: React.FC<{
       SplashScreen.hideAsync();
 
       await Promise.all([
-        hydrateApolloClient(),
         loadAsync({
-          // eslint-disable-next-line global-require
+           
           "OpenSans-400": require("../assets/fonts/Open_Sans/OpenSans-Regular.ttf"),
-          // eslint-disable-next-line global-require
+           
           "OpenSans-600": require("../assets/fonts/Open_Sans/OpenSans-SemiBold.ttf"),
-          // eslint-disable-next-line global-require
+           
           "OpenSans-700": require("../assets/fonts/Open_Sans/OpenSans-Bold.ttf"),
-          // eslint-disable-next-line global-require
+           
           "Poppins-700": require("../assets/fonts/Poppins/Poppins-Bold.ttf"),
         }),
       ]);
@@ -130,7 +128,7 @@ const AnimatedSplashScreen: React.FC<{
     } finally {
       setAppReady(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   return (

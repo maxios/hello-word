@@ -7,7 +7,6 @@ export interface Perk {
 
 export interface PerksCarouselItemProps {
   item: {
-    id: number;
     image: any;
     title: string;
     description: string;

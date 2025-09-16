@@ -7,7 +7,7 @@ import { PerksCarouselItemProps } from "./types";
 export const PerksCarouselItem = ({ item }: PerksCarouselItemProps) => {
   const { id, image, title, description } = item;
   return (
-    <View key={id} className="vw flex-1">
+    <View key={id} className="size-full flex-1">
       <View className="relative flex-1">
         <BlurUpImageBackground source={image} style={styles.image}>
           <Image
