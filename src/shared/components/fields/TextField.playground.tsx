@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon, XIcon } from "@/components/icons";
-import { useForm } from "react-hook-form";
+import { Control } from "react-hook-form";
 import { TextField } from "./TextField";
 
 export const components: PlaygroundComponent[] = [
@@ -9,13 +9,9 @@ export const components: PlaygroundComponent[] = [
     name: "Basic TextField",
     description: "Standard text input with label and placeholder",
     component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
       return (
         <TextField
-          control={control}
+          control={false as unknown as Control<any>}
           name="basic"
           label="Full Name"
           placeholder="Enter your full name"
@@ -32,13 +28,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Required Field",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="required"
               label="Email Address"
               placeholder="Enter your email"
@@ -57,13 +49,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "With Error",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="withError"
               label="Username"
               placeholder="Enter username"
@@ -82,13 +70,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Disabled",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="disabled"
               label="Read Only Field"
               placeholder="This field is disabled"
@@ -113,13 +97,9 @@ export const components: PlaygroundComponent[] = [
     name: "TextField with Icons",
     description: "Text input with left and right icons",
     component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
       return (
         <TextField
-          control={control}
+          control={false as unknown as Control<any>}
           name="withIcons"
           label="Search"
           placeholder="Search for something..."
@@ -142,13 +122,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Left Icon Only",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="leftIcon"
               label="Username"
               placeholder="Enter your username"
@@ -169,13 +145,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Right Icon Only",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="rightIcon"
               label="Clearable Field"
               placeholder="Type and clear"
@@ -202,13 +174,9 @@ export const components: PlaygroundComponent[] = [
     name: "TextField Variants",
     description: "Different keyboard types and input configurations",
     component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
       return (
         <TextField
-          control={control}
+          control={false as unknown as Control<any>}
           name="numeric"
           label="Phone Number"
           placeholder="Enter phone number"
@@ -229,13 +197,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Email Keyboard",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="email"
               label="Email"
               placeholder="Enter email address"
@@ -258,13 +222,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Numeric Keyboard",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="number"
               label="Age"
               placeholder="Enter your age"
@@ -285,13 +245,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Multi-line Text",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="multiline"
               label="Bio"
               placeholder="Tell us about yourself..."
@@ -320,13 +276,9 @@ export const components: PlaygroundComponent[] = [
     name: "TextField with Helper Text",
     description: "Text input with additional helper information",
     component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
       return (
         <TextField
-          control={control}
+          control={false as unknown as Control<any>}
           name="helper"
           label="Password"
           placeholder="Enter your password"
@@ -345,13 +297,9 @@ export const components: PlaygroundComponent[] = [
       {
         name: "With Error and Helper",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
             <TextField
-              control={control}
+              control={false as unknown as Control<any>}
               name="errorHelper"
               label="Confirm Password"
               placeholder="Confirm your password"

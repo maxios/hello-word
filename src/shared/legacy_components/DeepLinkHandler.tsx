@@ -44,7 +44,7 @@ const DeepLinkHandler = ({children}: {children: React.ReactNode}) => {
     };
   }, [loggedInUser, router, url]);
 
-  // eslint-disable-next-line react/jsx-no-useless-fragment
+   
   return <>{children}</>;
 };
 

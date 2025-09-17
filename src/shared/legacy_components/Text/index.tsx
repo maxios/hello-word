@@ -28,7 +28,7 @@ const Wrapper = ({
     >
       {finalChildren.split(' ').map((word: string, idx: number) => (
         <View
-          // eslint-disable-next-line react/no-array-index-key
+           
           key={`${word}-${idx}`}
           style={{
             height: hasBackgroundColor ? height + paddingX * 2 : height,

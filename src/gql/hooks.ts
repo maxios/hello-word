@@ -907,34 +907,34 @@ export enum Achievement__Status_MutationInput {
 }
 
 export type Achievement__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Achievement__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Achievement__Status_Input>[]>;
   equals?: InputMaybe<Achievement__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Achievement__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Achievement__Status_Input>[]>;
   not_equals?: InputMaybe<Achievement__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Achievement__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Achievement__Status_Input>[]>;
 };
 
 export type Achievement_Achievement_Code_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Achievement_Category_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Achievement_Category_Order_Operator = {
@@ -967,33 +967,33 @@ export type Achievement_Description_Operator = {
 };
 
 export type Achievement_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Achievement_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Achievement_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Achievement_Order_Operator = {
@@ -1007,12 +1007,12 @@ export type Achievement_Order_Operator = {
 };
 
 export type Achievement_Progress_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Achievement_Total_Achievements_Operator = {
@@ -1037,8 +1037,8 @@ export type Achievement_UpdatedAt_Operator = {
 };
 
 export type Achievement_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Achievement_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Achievement_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Achievement_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Achievement_Where_Or>[]>;
   _status?: InputMaybe<Achievement__Status_Operator>;
   achievement_code?: InputMaybe<Achievement_Achievement_Code_Operator>;
   category?: InputMaybe<Achievement_Category_Operator>;
@@ -1055,8 +1055,8 @@ export type Achievement_Where = {
 };
 
 export type Achievement_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Achievement_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Achievement_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Achievement_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Achievement_Where_Or>[]>;
   _status?: InputMaybe<Achievement__Status_Operator>;
   achievement_code?: InputMaybe<Achievement_Achievement_Code_Operator>;
   category?: InputMaybe<Achievement_Category_Operator>;
@@ -1073,8 +1073,8 @@ export type Achievement_Where_And = {
 };
 
 export type Achievement_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Achievement_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Achievement_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Achievement_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Achievement_Where_Or>[]>;
   _status?: InputMaybe<Achievement__Status_Operator>;
   achievement_code?: InputMaybe<Achievement_Achievement_Code_Operator>;
   category?: InputMaybe<Achievement_Category_Operator>;
@@ -1092,7 +1092,7 @@ export type Achievement_Where_Or = {
 
 export type Achievements = {
   __typename?: 'Achievements';
-  docs: Array<Achievement>;
+  docs: Achievement[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -1111,13 +1111,13 @@ export type Challenge = {
   active?: Maybe<Scalars['Boolean']['output']>;
   challenge_campaign?: Maybe<Scalars['String']['output']>;
   challenge_date?: Maybe<Scalars['DateTime']['output']>;
-  challenge_days?: Maybe<Array<Challenge_Challenge_Days>>;
+  challenge_days?: Maybe<Challenge_Challenge_Days[]>;
   challenge_ends_at?: Maybe<Scalars['DateTime']['output']>;
-  challenge_explanation_steps?: Maybe<Array<Challenge_Challenge_Explanation_Steps>>;
+  challenge_explanation_steps?: Maybe<Challenge_Challenge_Explanation_Steps[]>;
   challenge_name?: Maybe<Scalars['String']['output']>;
-  challenge_schedule_id?: Maybe<Array<Challenge_Challenge_Schedule_Id>>;
+  challenge_schedule_id?: Maybe<Challenge_Challenge_Schedule_Id[]>;
   challenge_splash_image?: Maybe<Media>;
-  challenge_view_block?: Maybe<Array<Challenge_Challenge_View_Block>>;
+  challenge_view_block?: Maybe<Challenge_Challenge_View_Block[]>;
   challenge_watermark_image?: Maybe<Media>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   enrolled?: Maybe<Scalars['String']['output']>;
@@ -2181,13 +2181,13 @@ export type ChallengeVersion_Version = {
   active?: Maybe<Scalars['Boolean']['output']>;
   challenge_campaign?: Maybe<Scalars['String']['output']>;
   challenge_date?: Maybe<Scalars['DateTime']['output']>;
-  challenge_days?: Maybe<Array<ChallengeVersion_Version_Challenge_Days>>;
+  challenge_days?: Maybe<ChallengeVersion_Version_Challenge_Days[]>;
   challenge_ends_at?: Maybe<Scalars['DateTime']['output']>;
-  challenge_explanation_steps?: Maybe<Array<ChallengeVersion_Version_Challenge_Explanation_Steps>>;
+  challenge_explanation_steps?: Maybe<ChallengeVersion_Version_Challenge_Explanation_Steps[]>;
   challenge_name?: Maybe<Scalars['String']['output']>;
-  challenge_schedule_id?: Maybe<Array<ChallengeVersion_Version_Challenge_Schedule_Id>>;
+  challenge_schedule_id?: Maybe<ChallengeVersion_Version_Challenge_Schedule_Id[]>;
   challenge_splash_image?: Maybe<Media>;
-  challenge_view_block?: Maybe<Array<ChallengeVersion_Version_Challenge_View_Block>>;
+  challenge_view_block?: Maybe<ChallengeVersion_Version_Challenge_View_Block[]>;
   challenge_watermark_image?: Maybe<Media>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   enrolled?: Maybe<Scalars['String']['output']>;
@@ -2246,12 +2246,12 @@ export enum Challenge__Status_MutationInput {
 }
 
 export type Challenge__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Challenge__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Challenge__Status_Input>[]>;
   equals?: InputMaybe<Challenge__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Challenge__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Challenge__Status_Input>[]>;
   not_equals?: InputMaybe<Challenge__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Challenge__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Challenge__Status_Input>[]>;
 };
 
 export type Challenge_Active_Operator = {
@@ -2261,13 +2261,13 @@ export type Challenge_Active_Operator = {
 };
 
 export type Challenge_Challenge_Campaign_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Challenge_Challenge_Date_Operator = {
@@ -2293,32 +2293,32 @@ export type Challenge_Challenge_Ends_At_Operator = {
 };
 
 export type Challenge_Challenge_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Challenge_Challenge_Splash_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Challenge_Challenge_Watermark_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Challenge_CreatedAt_Operator = {
@@ -2333,14 +2333,14 @@ export type Challenge_CreatedAt_Operator = {
 };
 
 export type Challenge_Enrolled_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Challenge_Enrollment_Active_Operator = {
@@ -2350,14 +2350,14 @@ export type Challenge_Enrollment_Active_Operator = {
 };
 
 export type Challenge_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Challenge_UpdatedAt_Operator = {
@@ -2372,8 +2372,8 @@ export type Challenge_UpdatedAt_Operator = {
 };
 
 export type Challenge_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Challenge_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Challenge_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Challenge_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Challenge_Where_Or>[]>;
   _status?: InputMaybe<Challenge__Status_Operator>;
   active?: InputMaybe<Challenge_Active_Operator>;
   challenge_campaign?: InputMaybe<Challenge_Challenge_Campaign_Operator>;
@@ -2390,8 +2390,8 @@ export type Challenge_Where = {
 };
 
 export type Challenge_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Challenge_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Challenge_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Challenge_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Challenge_Where_Or>[]>;
   _status?: InputMaybe<Challenge__Status_Operator>;
   active?: InputMaybe<Challenge_Active_Operator>;
   challenge_campaign?: InputMaybe<Challenge_Challenge_Campaign_Operator>;
@@ -2408,8 +2408,8 @@ export type Challenge_Where_And = {
 };
 
 export type Challenge_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Challenge_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Challenge_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Challenge_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Challenge_Where_Or>[]>;
   _status?: InputMaybe<Challenge__Status_Operator>;
   active?: InputMaybe<Challenge_Active_Operator>;
   challenge_campaign?: InputMaybe<Challenge_Challenge_Campaign_Operator>;
@@ -2427,7 +2427,7 @@ export type Challenge_Where_Or = {
 
 export type Challenges = {
   __typename?: 'Challenges';
-  docs: Array<Challenge>;
+  docs: Challenge[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -2798,12 +2798,12 @@ export enum DietType__Status_MutationInput {
 }
 
 export type DietType__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<DietType__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<DietType__Status_Input>[]>;
   equals?: InputMaybe<DietType__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<DietType__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<DietType__Status_Input>[]>;
   not_equals?: InputMaybe<DietType__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<DietType__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<DietType__Status_Input>[]>;
 };
 
 export type DietType_CreatedAt_Operator = {
@@ -2818,24 +2818,24 @@ export type DietType_CreatedAt_Operator = {
 };
 
 export type DietType_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type DietType_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type DietType_UpdatedAt_Operator = {
@@ -2850,8 +2850,8 @@ export type DietType_UpdatedAt_Operator = {
 };
 
 export type DietType_Where = {
-  AND?: InputMaybe<Array<InputMaybe<DietType_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<DietType_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<DietType_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<DietType_Where_Or>[]>;
   _status?: InputMaybe<DietType__Status_Operator>;
   createdAt?: InputMaybe<DietType_CreatedAt_Operator>;
   id?: InputMaybe<DietType_Id_Operator>;
@@ -2860,8 +2860,8 @@ export type DietType_Where = {
 };
 
 export type DietType_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<DietType_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<DietType_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<DietType_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<DietType_Where_Or>[]>;
   _status?: InputMaybe<DietType__Status_Operator>;
   createdAt?: InputMaybe<DietType_CreatedAt_Operator>;
   id?: InputMaybe<DietType_Id_Operator>;
@@ -2870,8 +2870,8 @@ export type DietType_Where_And = {
 };
 
 export type DietType_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<DietType_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<DietType_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<DietType_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<DietType_Where_Or>[]>;
   _status?: InputMaybe<DietType__Status_Operator>;
   createdAt?: InputMaybe<DietType_CreatedAt_Operator>;
   id?: InputMaybe<DietType_Id_Operator>;
@@ -2881,7 +2881,7 @@ export type DietType_Where_Or = {
 
 export type DietTypes = {
   __typename?: 'DietTypes';
-  docs: Array<DietType>;
+  docs: DietType[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -2897,7 +2897,7 @@ export type DietTypes = {
 export type Exercise = {
   __typename?: 'Exercise';
   _status?: Maybe<Exercise__Status>;
-  alternative_exercises?: Maybe<Array<Exercise>>;
+  alternative_exercises?: Maybe<Exercise[]>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   exercise_type?: Maybe<Exercise_Exercise_Type>;
@@ -3718,7 +3718,7 @@ export type ExerciseGroupBlock = {
   blockName?: Maybe<Scalars['String']['output']>;
   blockType?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
-  exercises?: Maybe<Array<ExerciseGroupBlock_Exercises>>;
+  exercises?: Maybe<ExerciseGroupBlock_Exercises[]>;
   id?: Maybe<Scalars['String']['output']>;
   name?: Maybe<Scalars['String']['output']>;
 };
@@ -3789,7 +3789,7 @@ export type ExerciseVersionParentArgs = {
 export type ExerciseVersion_Version = {
   __typename?: 'ExerciseVersion_Version';
   _status?: Maybe<ExerciseVersion_Version__Status>;
-  alternative_exercises?: Maybe<Array<Exercise>>;
+  alternative_exercises?: Maybe<Exercise[]>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   exercise_type?: Maybe<ExerciseVersion_Version_Exercise_Type>;
@@ -3844,21 +3844,21 @@ export enum Exercise__Status_MutationInput {
 }
 
 export type Exercise__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Exercise__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Exercise__Status_Input>[]>;
   equals?: InputMaybe<Exercise__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Exercise__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Exercise__Status_Input>[]>;
   not_equals?: InputMaybe<Exercise__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Exercise__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Exercise__Status_Input>[]>;
 };
 
 export type Exercise_Alternative_Exercises_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Exercise_CreatedAt_Operator = {
@@ -3896,32 +3896,32 @@ export enum Exercise_Exercise_Type_MutationInput {
 }
 
 export type Exercise_Exercise_Type_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Exercise_Exercise_Type_Input>>>;
+  all?: InputMaybe<InputMaybe<Exercise_Exercise_Type_Input>[]>;
   equals?: InputMaybe<Exercise_Exercise_Type_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Exercise_Exercise_Type_Input>>>;
+  in?: InputMaybe<InputMaybe<Exercise_Exercise_Type_Input>[]>;
   not_equals?: InputMaybe<Exercise_Exercise_Type_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Exercise_Exercise_Type_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Exercise_Exercise_Type_Input>[]>;
 };
 
 export type Exercise_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Exercise_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Exercise_Instructions_Operator = {
@@ -3933,35 +3933,35 @@ export type Exercise_Instructions_Operator = {
 };
 
 export type Exercise_Muscle_Groups_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Exercise_Thumbnail_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Exercise_Title_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Exercise_UpdatedAt_Operator = {
@@ -3976,28 +3976,28 @@ export type Exercise_UpdatedAt_Operator = {
 };
 
 export type Exercise_Video_Demonstration_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Exercise_Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Exercise_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Exercise_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Exercise_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Exercise_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Exercise_Where_Or>[]>;
   _status?: InputMaybe<Exercise__Status_Operator>;
   alternative_exercises?: InputMaybe<Exercise_Alternative_Exercises_Operator>;
   createdAt?: InputMaybe<Exercise_CreatedAt_Operator>;
@@ -4015,8 +4015,8 @@ export type Exercise_Where = {
 };
 
 export type Exercise_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Exercise_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Exercise_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Exercise_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Exercise_Where_Or>[]>;
   _status?: InputMaybe<Exercise__Status_Operator>;
   alternative_exercises?: InputMaybe<Exercise_Alternative_Exercises_Operator>;
   createdAt?: InputMaybe<Exercise_CreatedAt_Operator>;
@@ -4034,8 +4034,8 @@ export type Exercise_Where_And = {
 };
 
 export type Exercise_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Exercise_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Exercise_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Exercise_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Exercise_Where_Or>[]>;
   _status?: InputMaybe<Exercise__Status_Operator>;
   alternative_exercises?: InputMaybe<Exercise_Alternative_Exercises_Operator>;
   createdAt?: InputMaybe<Exercise_CreatedAt_Operator>;
@@ -4054,7 +4054,7 @@ export type Exercise_Where_Or = {
 
 export type Exercises = {
   __typename?: 'Exercises';
-  docs: Array<Exercise>;
+  docs: Exercise[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -4074,7 +4074,7 @@ export type Guide = {
   description?: Maybe<Scalars['JSON']['output']>;
   display_image?: Maybe<Media>;
   goal?: Maybe<Scalars['String']['output']>;
-  guide_weeks?: Maybe<Array<Guide_Guide_Weeks>>;
+  guide_weeks?: Maybe<Guide_Guide_Weeks[]>;
   id: Scalars['String']['output'];
   name?: Maybe<Scalars['String']['output']>;
   revenuecat_offering_identifier?: Maybe<Scalars['String']['output']>;
@@ -4949,7 +4949,7 @@ export type GuideVersion_Version = {
   description?: Maybe<Scalars['JSON']['output']>;
   display_image?: Maybe<Media>;
   goal?: Maybe<Scalars['String']['output']>;
-  guide_weeks?: Maybe<Array<GuideVersion_Version_Guide_Weeks>>;
+  guide_weeks?: Maybe<GuideVersion_Version_Guide_Weeks[]>;
   name?: Maybe<Scalars['String']['output']>;
   revenuecat_offering_identifier?: Maybe<Scalars['String']['output']>;
   trainer?: Maybe<Trainer>;
@@ -4986,7 +4986,7 @@ export type GuideWeekBlock = {
   blockName?: Maybe<Scalars['String']['output']>;
   blockType?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['String']['output']>;
-  workouts?: Maybe<Array<Workout>>;
+  workouts?: Maybe<Workout[]>;
 };
 
 
@@ -5012,12 +5012,12 @@ export enum Guide__Status_MutationInput {
 }
 
 export type Guide__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Guide__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Guide__Status_Input>[]>;
   equals?: InputMaybe<Guide__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Guide__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Guide__Status_Input>[]>;
   not_equals?: InputMaybe<Guide__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Guide__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Guide__Status_Input>[]>;
 };
 
 export type Guide_CreatedAt_Operator = {
@@ -5040,64 +5040,64 @@ export type Guide_Description_Operator = {
 };
 
 export type Guide_Display_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Guide_Goal_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Guide_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Guide_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Guide_Revenuecat_Offering_Identifier_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Guide_Trainer_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export enum Guide_Type {
@@ -5116,12 +5116,12 @@ export enum Guide_Type_MutationInput {
 }
 
 export type Guide_Type_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Guide_Type_Input>>>;
+  all?: InputMaybe<InputMaybe<Guide_Type_Input>[]>;
   equals?: InputMaybe<Guide_Type_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Guide_Type_Input>>>;
+  in?: InputMaybe<InputMaybe<Guide_Type_Input>[]>;
   not_equals?: InputMaybe<Guide_Type_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Guide_Type_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Guide_Type_Input>[]>;
 };
 
 export type Guide_UpdatedAt_Operator = {
@@ -5142,8 +5142,8 @@ export type Guide_User_Can_Access_Operator = {
 };
 
 export type Guide_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Guide_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Guide_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Guide_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Guide_Where_Or>[]>;
   _status?: InputMaybe<Guide__Status_Operator>;
   createdAt?: InputMaybe<Guide_CreatedAt_Operator>;
   description?: InputMaybe<Guide_Description_Operator>;
@@ -5160,8 +5160,8 @@ export type Guide_Where = {
 };
 
 export type Guide_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Guide_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Guide_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Guide_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Guide_Where_Or>[]>;
   _status?: InputMaybe<Guide__Status_Operator>;
   createdAt?: InputMaybe<Guide_CreatedAt_Operator>;
   description?: InputMaybe<Guide_Description_Operator>;
@@ -5178,8 +5178,8 @@ export type Guide_Where_And = {
 };
 
 export type Guide_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Guide_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Guide_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Guide_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Guide_Where_Or>[]>;
   _status?: InputMaybe<Guide__Status_Operator>;
   createdAt?: InputMaybe<Guide_CreatedAt_Operator>;
   description?: InputMaybe<Guide_Description_Operator>;
@@ -5207,7 +5207,7 @@ export type Guide_Workouts_Per_Week_Operator = {
 
 export type Guides = {
   __typename?: 'Guides';
-  docs: Array<Guide>;
+  docs: Guide[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -5224,7 +5224,7 @@ export type Homepage = {
   __typename?: 'Homepage';
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   featured_workout: Workout;
-  recipe_suggestions?: Maybe<Array<Meal>>;
+  recipe_suggestions?: Maybe<Meal[]>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -5940,12 +5940,12 @@ export enum Icon__Status_MutationInput {
 }
 
 export type Icon__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Icon__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Icon__Status_Input>[]>;
   equals?: InputMaybe<Icon__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Icon__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Icon__Status_Input>[]>;
   not_equals?: InputMaybe<Icon__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Icon__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Icon__Status_Input>[]>;
 };
 
 export type Icon_CreatedAt_Operator = {
@@ -5960,33 +5960,33 @@ export type Icon_CreatedAt_Operator = {
 };
 
 export type Icon_Icon_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Icon_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Icon_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Icon_UpdatedAt_Operator = {
@@ -6001,8 +6001,8 @@ export type Icon_UpdatedAt_Operator = {
 };
 
 export type Icon_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Icon_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Icon_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Icon_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Icon_Where_Or>[]>;
   _status?: InputMaybe<Icon__Status_Operator>;
   createdAt?: InputMaybe<Icon_CreatedAt_Operator>;
   icon?: InputMaybe<Icon_Icon_Operator>;
@@ -6012,8 +6012,8 @@ export type Icon_Where = {
 };
 
 export type Icon_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Icon_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Icon_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Icon_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Icon_Where_Or>[]>;
   _status?: InputMaybe<Icon__Status_Operator>;
   createdAt?: InputMaybe<Icon_CreatedAt_Operator>;
   icon?: InputMaybe<Icon_Icon_Operator>;
@@ -6023,8 +6023,8 @@ export type Icon_Where_And = {
 };
 
 export type Icon_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Icon_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Icon_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Icon_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Icon_Where_Or>[]>;
   _status?: InputMaybe<Icon__Status_Operator>;
   createdAt?: InputMaybe<Icon_CreatedAt_Operator>;
   icon?: InputMaybe<Icon_Icon_Operator>;
@@ -6035,7 +6035,7 @@ export type Icon_Where_Or = {
 
 export type Icons = {
   __typename?: 'Icons';
-  docs: Array<Icon>;
+  docs: Icon[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -6076,18 +6076,18 @@ export type Meal = {
   _status?: Maybe<Meal__Status>;
   calories?: Maybe<Scalars['Float']['output']>;
   carbs?: Maybe<Scalars['Float']['output']>;
-  categories?: Maybe<Array<MealCategory>>;
+  categories?: Maybe<MealCategory[]>;
   cook_time?: Maybe<Scalars['Float']['output']>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
-  diet_types?: Maybe<Array<DietType>>;
+  diet_types?: Maybe<DietType[]>;
   fat?: Maybe<Scalars['Float']['output']>;
   gluten_free?: Maybe<Scalars['Boolean']['output']>;
   id: Scalars['String']['output'];
   image?: Maybe<Media>;
-  ingredients?: Maybe<Array<Meal_Ingredients>>;
+  ingredients?: Maybe<Meal_Ingredients[]>;
   is_quick_meal?: Maybe<Scalars['Boolean']['output']>;
   lactose_free?: Maybe<Scalars['Boolean']['output']>;
-  method?: Maybe<Array<Meal_Method>>;
+  method?: Maybe<Meal_Method[]>;
   name?: Maybe<Scalars['String']['output']>;
   nut_free?: Maybe<Scalars['Boolean']['output']>;
   prep_time?: Maybe<Scalars['Float']['output']>;
@@ -6107,7 +6107,7 @@ export type MealDiet_TypesArgs = {
 
 export type MealCategories = {
   __typename?: 'MealCategories';
-  docs: Array<MealCategory>;
+  docs: MealCategory[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -6548,12 +6548,12 @@ export enum MealCategory__Status_MutationInput {
 }
 
 export type MealCategory__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<MealCategory__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<MealCategory__Status_Input>[]>;
   equals?: InputMaybe<MealCategory__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<MealCategory__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<MealCategory__Status_Input>[]>;
   not_equals?: InputMaybe<MealCategory__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<MealCategory__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<MealCategory__Status_Input>[]>;
 };
 
 export type MealCategory_CreatedAt_Operator = {
@@ -6568,33 +6568,33 @@ export type MealCategory_CreatedAt_Operator = {
 };
 
 export type MealCategory_Icon_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type MealCategory_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type MealCategory_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type MealCategory_UpdatedAt_Operator = {
@@ -6609,8 +6609,8 @@ export type MealCategory_UpdatedAt_Operator = {
 };
 
 export type MealCategory_Where = {
-  AND?: InputMaybe<Array<InputMaybe<MealCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<MealCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<MealCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<MealCategory_Where_Or>[]>;
   _status?: InputMaybe<MealCategory__Status_Operator>;
   createdAt?: InputMaybe<MealCategory_CreatedAt_Operator>;
   icon?: InputMaybe<MealCategory_Icon_Operator>;
@@ -6620,8 +6620,8 @@ export type MealCategory_Where = {
 };
 
 export type MealCategory_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<MealCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<MealCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<MealCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<MealCategory_Where_Or>[]>;
   _status?: InputMaybe<MealCategory__Status_Operator>;
   createdAt?: InputMaybe<MealCategory_CreatedAt_Operator>;
   icon?: InputMaybe<MealCategory_Icon_Operator>;
@@ -6631,8 +6631,8 @@ export type MealCategory_Where_And = {
 };
 
 export type MealCategory_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<MealCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<MealCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<MealCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<MealCategory_Where_Or>[]>;
   _status?: InputMaybe<MealCategory__Status_Operator>;
   createdAt?: InputMaybe<MealCategory_CreatedAt_Operator>;
   icon?: InputMaybe<MealCategory_Icon_Operator>;
@@ -7844,17 +7844,17 @@ export type MealVersion_Version = {
   _status?: Maybe<MealVersion_Version__Status>;
   calories?: Maybe<Scalars['Float']['output']>;
   carbs?: Maybe<Scalars['Float']['output']>;
-  categories?: Maybe<Array<MealCategory>>;
+  categories?: Maybe<MealCategory[]>;
   cook_time?: Maybe<Scalars['Float']['output']>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
-  diet_types?: Maybe<Array<DietType>>;
+  diet_types?: Maybe<DietType[]>;
   fat?: Maybe<Scalars['Float']['output']>;
   gluten_free?: Maybe<Scalars['Boolean']['output']>;
   image?: Maybe<Media>;
-  ingredients?: Maybe<Array<MealVersion_Version_Ingredients>>;
+  ingredients?: Maybe<MealVersion_Version_Ingredients[]>;
   is_quick_meal?: Maybe<Scalars['Boolean']['output']>;
   lactose_free?: Maybe<Scalars['Boolean']['output']>;
-  method?: Maybe<Array<MealVersion_Version_Method>>;
+  method?: Maybe<MealVersion_Version_Method[]>;
   name?: Maybe<Scalars['String']['output']>;
   nut_free?: Maybe<Scalars['Boolean']['output']>;
   prep_time?: Maybe<Scalars['Float']['output']>;
@@ -7901,12 +7901,12 @@ export enum Meal__Status_MutationInput {
 }
 
 export type Meal__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Meal__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Meal__Status_Input>[]>;
   equals?: InputMaybe<Meal__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Meal__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Meal__Status_Input>[]>;
   not_equals?: InputMaybe<Meal__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Meal__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Meal__Status_Input>[]>;
 };
 
 export type Meal_Calories_Operator = {
@@ -7930,12 +7930,12 @@ export type Meal_Carbs_Operator = {
 };
 
 export type Meal_Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Meal_Cook_Time_Operator = {
@@ -7960,12 +7960,12 @@ export type Meal_CreatedAt_Operator = {
 };
 
 export type Meal_Diet_Types_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Meal_Fat_Operator = {
@@ -7985,23 +7985,23 @@ export type Meal_Gluten_Free_Operator = {
 };
 
 export type Meal_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Meal_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Meal_Is_Quick_Meal_Operator = {
@@ -8017,14 +8017,14 @@ export type Meal_Lactose_Free_Operator = {
 };
 
 export type Meal_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Meal_Nut_Free_Operator = {
@@ -8065,8 +8065,8 @@ export type Meal_UpdatedAt_Operator = {
 };
 
 export type Meal_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Meal_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Meal_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Meal_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Meal_Where_Or>[]>;
   _status?: InputMaybe<Meal__Status_Operator>;
   calories?: InputMaybe<Meal_Calories_Operator>;
   carbs?: InputMaybe<Meal_Carbs_Operator>;
@@ -8088,8 +8088,8 @@ export type Meal_Where = {
 };
 
 export type Meal_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Meal_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Meal_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Meal_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Meal_Where_Or>[]>;
   _status?: InputMaybe<Meal__Status_Operator>;
   calories?: InputMaybe<Meal_Calories_Operator>;
   carbs?: InputMaybe<Meal_Carbs_Operator>;
@@ -8111,8 +8111,8 @@ export type Meal_Where_And = {
 };
 
 export type Meal_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Meal_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Meal_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Meal_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Meal_Where_Or>[]>;
   _status?: InputMaybe<Meal__Status_Operator>;
   calories?: InputMaybe<Meal_Calories_Operator>;
   carbs?: InputMaybe<Meal_Carbs_Operator>;
@@ -8135,7 +8135,7 @@ export type Meal_Where_Or = {
 
 export type Meals = {
   __typename?: 'Meals';
-  docs: Array<Meal>;
+  docs: Meal[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -10331,14 +10331,14 @@ export type Media_Sizes_Thumbnail = {
 };
 
 export type Media_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_CreatedAt_Operator = {
@@ -10353,14 +10353,14 @@ export type Media_CreatedAt_Operator = {
 };
 
 export type Media_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Filesize_Operator = {
@@ -10404,47 +10404,47 @@ export type Media_Height_Operator = {
 };
 
 export type Media_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Prefix_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Card__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Card__Filesize_Operator = {
@@ -10468,25 +10468,25 @@ export type Media_Sizes__Card__Height_Operator = {
 };
 
 export type Media_Sizes__Card__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Card__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Card__Width_Operator = {
@@ -10500,14 +10500,14 @@ export type Media_Sizes__Card__Width_Operator = {
 };
 
 export type Media_Sizes__Tablet__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Tablet__Filesize_Operator = {
@@ -10531,25 +10531,25 @@ export type Media_Sizes__Tablet__Height_Operator = {
 };
 
 export type Media_Sizes__Tablet__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Tablet__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Tablet__Width_Operator = {
@@ -10563,14 +10563,14 @@ export type Media_Sizes__Tablet__Width_Operator = {
 };
 
 export type Media_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Thumbnail__Filesize_Operator = {
@@ -10594,25 +10594,25 @@ export type Media_Sizes__Thumbnail__Height_Operator = {
 };
 
 export type Media_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Sizes__Thumbnail__Width_Operator = {
@@ -10626,14 +10626,14 @@ export type Media_Sizes__Thumbnail__Width_Operator = {
 };
 
 export type Media_ThumbnailUrl_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_UpdatedAt_Operator = {
@@ -10648,19 +10648,19 @@ export type Media_UpdatedAt_Operator = {
 };
 
 export type Media_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Media_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Media_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Media_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Media_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Media_Where_Or>[]>;
   alt?: InputMaybe<Media_Alt_Operator>;
   createdAt?: InputMaybe<Media_CreatedAt_Operator>;
   filename?: InputMaybe<Media_Filename_Operator>;
@@ -10696,8 +10696,8 @@ export type Media_Where = {
 };
 
 export type Media_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Media_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Media_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Media_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Media_Where_Or>[]>;
   alt?: InputMaybe<Media_Alt_Operator>;
   createdAt?: InputMaybe<Media_CreatedAt_Operator>;
   filename?: InputMaybe<Media_Filename_Operator>;
@@ -10733,8 +10733,8 @@ export type Media_Where_And = {
 };
 
 export type Media_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Media_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Media_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Media_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Media_Where_Or>[]>;
   alt?: InputMaybe<Media_Alt_Operator>;
   createdAt?: InputMaybe<Media_CreatedAt_Operator>;
   filename?: InputMaybe<Media_Filename_Operator>;
@@ -11137,12 +11137,12 @@ export enum MuscleGroup__Status_MutationInput {
 }
 
 export type MuscleGroup__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<MuscleGroup__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<MuscleGroup__Status_Input>[]>;
   equals?: InputMaybe<MuscleGroup__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<MuscleGroup__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<MuscleGroup__Status_Input>[]>;
   not_equals?: InputMaybe<MuscleGroup__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<MuscleGroup__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<MuscleGroup__Status_Input>[]>;
 };
 
 export type MuscleGroup_CreatedAt_Operator = {
@@ -11157,24 +11157,24 @@ export type MuscleGroup_CreatedAt_Operator = {
 };
 
 export type MuscleGroup_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type MuscleGroup_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type MuscleGroup_UpdatedAt_Operator = {
@@ -11189,8 +11189,8 @@ export type MuscleGroup_UpdatedAt_Operator = {
 };
 
 export type MuscleGroup_Where = {
-  AND?: InputMaybe<Array<InputMaybe<MuscleGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<MuscleGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<MuscleGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<MuscleGroup_Where_Or>[]>;
   _status?: InputMaybe<MuscleGroup__Status_Operator>;
   createdAt?: InputMaybe<MuscleGroup_CreatedAt_Operator>;
   id?: InputMaybe<MuscleGroup_Id_Operator>;
@@ -11199,8 +11199,8 @@ export type MuscleGroup_Where = {
 };
 
 export type MuscleGroup_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<MuscleGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<MuscleGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<MuscleGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<MuscleGroup_Where_Or>[]>;
   _status?: InputMaybe<MuscleGroup__Status_Operator>;
   createdAt?: InputMaybe<MuscleGroup_CreatedAt_Operator>;
   id?: InputMaybe<MuscleGroup_Id_Operator>;
@@ -11209,8 +11209,8 @@ export type MuscleGroup_Where_And = {
 };
 
 export type MuscleGroup_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<MuscleGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<MuscleGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<MuscleGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<MuscleGroup_Where_Or>[]>;
   _status?: InputMaybe<MuscleGroup__Status_Operator>;
   createdAt?: InputMaybe<MuscleGroup_CreatedAt_Operator>;
   id?: InputMaybe<MuscleGroup_Id_Operator>;
@@ -11220,7 +11220,7 @@ export type MuscleGroup_Where_Or = {
 
 export type MuscleGroups = {
   __typename?: 'MuscleGroups';
-  docs: Array<MuscleGroup>;
+  docs: MuscleGroup[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -12354,25 +12354,25 @@ export enum PayloadLockedDocument_Document_Relation_RelationTo {
 }
 
 export type PayloadLockedDocument_GlobalSlug_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type PayloadLockedDocument_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type PayloadLockedDocument_UpdatedAt_Operator = {
@@ -12396,8 +12396,8 @@ export enum PayloadLockedDocument_User_Relation_RelationTo {
 }
 
 export type PayloadLockedDocument_Where = {
-  AND?: InputMaybe<Array<InputMaybe<PayloadLockedDocument_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<PayloadLockedDocument_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<PayloadLockedDocument_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<PayloadLockedDocument_Where_Or>[]>;
   createdAt?: InputMaybe<PayloadLockedDocument_CreatedAt_Operator>;
   document?: InputMaybe<PayloadLockedDocument_Document_Relation>;
   globalSlug?: InputMaybe<PayloadLockedDocument_GlobalSlug_Operator>;
@@ -12407,8 +12407,8 @@ export type PayloadLockedDocument_Where = {
 };
 
 export type PayloadLockedDocument_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<PayloadLockedDocument_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<PayloadLockedDocument_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<PayloadLockedDocument_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<PayloadLockedDocument_Where_Or>[]>;
   createdAt?: InputMaybe<PayloadLockedDocument_CreatedAt_Operator>;
   document?: InputMaybe<PayloadLockedDocument_Document_Relation>;
   globalSlug?: InputMaybe<PayloadLockedDocument_GlobalSlug_Operator>;
@@ -12418,8 +12418,8 @@ export type PayloadLockedDocument_Where_And = {
 };
 
 export type PayloadLockedDocument_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<PayloadLockedDocument_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<PayloadLockedDocument_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<PayloadLockedDocument_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<PayloadLockedDocument_Where_Or>[]>;
   createdAt?: InputMaybe<PayloadLockedDocument_CreatedAt_Operator>;
   document?: InputMaybe<PayloadLockedDocument_Document_Relation>;
   globalSlug?: InputMaybe<PayloadLockedDocument_GlobalSlug_Operator>;
@@ -12430,7 +12430,7 @@ export type PayloadLockedDocument_Where_Or = {
 
 export type PayloadLockedDocuments = {
   __typename?: 'PayloadLockedDocuments';
-  docs: Array<PayloadLockedDocument>;
+  docs: PayloadLockedDocument[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -12846,25 +12846,25 @@ export type PayloadPreference_CreatedAt_Operator = {
 };
 
 export type PayloadPreference_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type PayloadPreference_Key_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type PayloadPreference_UpdatedAt_Operator = {
@@ -12898,8 +12898,8 @@ export type PayloadPreference_Value_Operator = {
 };
 
 export type PayloadPreference_Where = {
-  AND?: InputMaybe<Array<InputMaybe<PayloadPreference_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<PayloadPreference_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<PayloadPreference_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<PayloadPreference_Where_Or>[]>;
   createdAt?: InputMaybe<PayloadPreference_CreatedAt_Operator>;
   id?: InputMaybe<PayloadPreference_Id_Operator>;
   key?: InputMaybe<PayloadPreference_Key_Operator>;
@@ -12909,8 +12909,8 @@ export type PayloadPreference_Where = {
 };
 
 export type PayloadPreference_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<PayloadPreference_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<PayloadPreference_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<PayloadPreference_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<PayloadPreference_Where_Or>[]>;
   createdAt?: InputMaybe<PayloadPreference_CreatedAt_Operator>;
   id?: InputMaybe<PayloadPreference_Id_Operator>;
   key?: InputMaybe<PayloadPreference_Key_Operator>;
@@ -12920,8 +12920,8 @@ export type PayloadPreference_Where_And = {
 };
 
 export type PayloadPreference_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<PayloadPreference_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<PayloadPreference_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<PayloadPreference_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<PayloadPreference_Where_Or>[]>;
   createdAt?: InputMaybe<PayloadPreference_CreatedAt_Operator>;
   id?: InputMaybe<PayloadPreference_Id_Operator>;
   key?: InputMaybe<PayloadPreference_Key_Operator>;
@@ -12932,7 +12932,7 @@ export type PayloadPreference_Where_Or = {
 
 export type PayloadPreferences = {
   __typename?: 'PayloadPreferences';
-  docs: Array<PayloadPreference>;
+  docs: PayloadPreference[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -13299,9 +13299,9 @@ export type Plan = {
   days?: Maybe<Scalars['Float']['output']>;
   id: Scalars['String']['output'];
   name?: Maybe<Scalars['String']['output']>;
-  plan_weeks?: Maybe<Array<Plan_Plan_Weeks>>;
+  plan_weeks?: Maybe<Plan_Plan_Weeks[]>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
-  workout_groups?: Maybe<Array<WorkoutGroup>>;
+  workout_groups?: Maybe<WorkoutGroup[]>;
 };
 
 
@@ -13875,9 +13875,9 @@ export type PlanVersion_Version = {
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   days?: Maybe<Scalars['Float']['output']>;
   name?: Maybe<Scalars['String']['output']>;
-  plan_weeks?: Maybe<Array<PlanVersion_Version_Plan_Weeks>>;
+  plan_weeks?: Maybe<PlanVersion_Version_Plan_Weeks[]>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
-  workout_groups?: Maybe<Array<WorkoutGroup>>;
+  workout_groups?: Maybe<WorkoutGroup[]>;
 };
 
 
@@ -13904,7 +13904,7 @@ export type PlanWeekBlock = {
   blockName?: Maybe<Scalars['String']['output']>;
   blockType?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['String']['output']>;
-  workout_groups?: Maybe<Array<WorkoutGroup>>;
+  workout_groups?: Maybe<WorkoutGroup[]>;
 };
 
 
@@ -13930,12 +13930,12 @@ export enum Plan__Status_MutationInput {
 }
 
 export type Plan__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Plan__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Plan__Status_Input>[]>;
   equals?: InputMaybe<Plan__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Plan__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Plan__Status_Input>[]>;
   not_equals?: InputMaybe<Plan__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Plan__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Plan__Status_Input>[]>;
 };
 
 export enum Plan_Activity_Level {
@@ -13960,12 +13960,12 @@ export enum Plan_Activity_Level_MutationInput {
 }
 
 export type Plan_Activity_Level_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Plan_Activity_Level_Input>>>;
+  all?: InputMaybe<InputMaybe<Plan_Activity_Level_Input>[]>;
   equals?: InputMaybe<Plan_Activity_Level_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Plan_Activity_Level_Input>>>;
+  in?: InputMaybe<InputMaybe<Plan_Activity_Level_Input>[]>;
   not_equals?: InputMaybe<Plan_Activity_Level_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Plan_Activity_Level_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Plan_Activity_Level_Input>[]>;
 };
 
 export type Plan_CreatedAt_Operator = {
@@ -13989,24 +13989,24 @@ export type Plan_Days_Operator = {
 };
 
 export type Plan_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Plan_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Plan_UpdatedAt_Operator = {
@@ -14021,8 +14021,8 @@ export type Plan_UpdatedAt_Operator = {
 };
 
 export type Plan_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Plan_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Plan_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Plan_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Plan_Where_Or>[]>;
   _status?: InputMaybe<Plan__Status_Operator>;
   activity_level?: InputMaybe<Plan_Activity_Level_Operator>;
   createdAt?: InputMaybe<Plan_CreatedAt_Operator>;
@@ -14034,8 +14034,8 @@ export type Plan_Where = {
 };
 
 export type Plan_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Plan_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Plan_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Plan_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Plan_Where_Or>[]>;
   _status?: InputMaybe<Plan__Status_Operator>;
   activity_level?: InputMaybe<Plan_Activity_Level_Operator>;
   createdAt?: InputMaybe<Plan_CreatedAt_Operator>;
@@ -14047,8 +14047,8 @@ export type Plan_Where_And = {
 };
 
 export type Plan_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Plan_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Plan_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Plan_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Plan_Where_Or>[]>;
   _status?: InputMaybe<Plan__Status_Operator>;
   activity_level?: InputMaybe<Plan_Activity_Level_Operator>;
   createdAt?: InputMaybe<Plan_CreatedAt_Operator>;
@@ -14060,17 +14060,17 @@ export type Plan_Where_Or = {
 };
 
 export type Plan_Workout_Groups_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Plans = {
   __typename?: 'Plans';
-  docs: Array<Plan>;
+  docs: Plan[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -14751,34 +14751,34 @@ export enum Product__Status_MutationInput {
 }
 
 export type Product__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Product__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Product__Status_Input>[]>;
   equals?: InputMaybe<Product__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Product__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Product__Status_Input>[]>;
   not_equals?: InputMaybe<Product__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Product__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Product__Status_Input>[]>;
 };
 
 export type Product_Affiliate_Link_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Product_Category_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Product_CreatedAt_Operator = {
@@ -14801,33 +14801,33 @@ export type Product_Description_Operator = {
 };
 
 export type Product_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Product_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Product_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Product_Price_Operator = {
@@ -14852,8 +14852,8 @@ export type Product_UpdatedAt_Operator = {
 };
 
 export type Product_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Product_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Product_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Product_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Product_Where_Or>[]>;
   _status?: InputMaybe<Product__Status_Operator>;
   affiliate_link?: InputMaybe<Product_Affiliate_Link_Operator>;
   category?: InputMaybe<Product_Category_Operator>;
@@ -14867,8 +14867,8 @@ export type Product_Where = {
 };
 
 export type Product_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Product_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Product_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Product_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Product_Where_Or>[]>;
   _status?: InputMaybe<Product__Status_Operator>;
   affiliate_link?: InputMaybe<Product_Affiliate_Link_Operator>;
   category?: InputMaybe<Product_Category_Operator>;
@@ -14882,8 +14882,8 @@ export type Product_Where_And = {
 };
 
 export type Product_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Product_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Product_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Product_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Product_Where_Or>[]>;
   _status?: InputMaybe<Product__Status_Operator>;
   affiliate_link?: InputMaybe<Product_Affiliate_Link_Operator>;
   category?: InputMaybe<Product_Category_Operator>;
@@ -14898,7 +14898,7 @@ export type Product_Where_Or = {
 
 export type Products = {
   __typename?: 'Products';
-  docs: Array<Product>;
+  docs: Product[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -16108,7 +16108,7 @@ export type SeriesWeekBlock = {
   blockName?: Maybe<Scalars['String']['output']>;
   blockType?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['String']['output']>;
-  video_classes?: Maybe<Array<VideoClass>>;
+  video_classes?: Maybe<VideoClass[]>;
 };
 
 
@@ -16120,7 +16120,7 @@ export type SuperSetGroupBlock = {
   __typename?: 'SuperSetGroupBlock';
   blockName?: Maybe<Scalars['String']['output']>;
   blockType?: Maybe<Scalars['String']['output']>;
-  exercises?: Maybe<Array<SuperSetGroupBlock_Exercises>>;
+  exercises?: Maybe<SuperSetGroupBlock_Exercises[]>;
   id?: Maybe<Scalars['String']['output']>;
 };
 
@@ -16794,12 +16794,12 @@ export enum TextContent__Status_MutationInput {
 }
 
 export type TextContent__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<TextContent__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<TextContent__Status_Input>[]>;
   equals?: InputMaybe<TextContent__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<TextContent__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<TextContent__Status_Input>[]>;
   not_equals?: InputMaybe<TextContent__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<TextContent__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<TextContent__Status_Input>[]>;
 };
 
 export type TextContent_Content_Operator = {
@@ -16822,44 +16822,44 @@ export type TextContent_CreatedAt_Operator = {
 };
 
 export type TextContent_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type TextContent_Subtitle_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type TextContent_Thumbnail_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type TextContent_Title_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type TextContent_UpdatedAt_Operator = {
@@ -16874,28 +16874,28 @@ export type TextContent_UpdatedAt_Operator = {
 };
 
 export type TextContent_Video_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type TextContent_Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type TextContent_Where = {
-  AND?: InputMaybe<Array<InputMaybe<TextContent_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<TextContent_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<TextContent_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<TextContent_Where_Or>[]>;
   _status?: InputMaybe<TextContent__Status_Operator>;
   content?: InputMaybe<TextContent_Content_Operator>;
   createdAt?: InputMaybe<TextContent_CreatedAt_Operator>;
@@ -16909,8 +16909,8 @@ export type TextContent_Where = {
 };
 
 export type TextContent_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<TextContent_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<TextContent_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<TextContent_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<TextContent_Where_Or>[]>;
   _status?: InputMaybe<TextContent__Status_Operator>;
   content?: InputMaybe<TextContent_Content_Operator>;
   createdAt?: InputMaybe<TextContent_CreatedAt_Operator>;
@@ -16924,8 +16924,8 @@ export type TextContent_Where_And = {
 };
 
 export type TextContent_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<TextContent_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<TextContent_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<TextContent_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<TextContent_Where_Or>[]>;
   _status?: InputMaybe<TextContent__Status_Operator>;
   content?: InputMaybe<TextContent_Content_Operator>;
   createdAt?: InputMaybe<TextContent_CreatedAt_Operator>;
@@ -16940,7 +16940,7 @@ export type TextContent_Where_Or = {
 
 export type TextContents = {
   __typename?: 'TextContents';
-  docs: Array<TextContent>;
+  docs: TextContent[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -17501,12 +17501,12 @@ export enum Trainer__Status_MutationInput {
 }
 
 export type Trainer__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Trainer__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Trainer__Status_Input>[]>;
   equals?: InputMaybe<Trainer__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Trainer__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Trainer__Status_Input>[]>;
   not_equals?: InputMaybe<Trainer__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Trainer__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Trainer__Status_Input>[]>;
 };
 
 export type Trainer_Bio_Operator = {
@@ -17529,44 +17529,44 @@ export type Trainer_CreatedAt_Operator = {
 };
 
 export type Trainer_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Trainer_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Trainer_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Trainer_Specialties_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Trainer_UpdatedAt_Operator = {
@@ -17581,8 +17581,8 @@ export type Trainer_UpdatedAt_Operator = {
 };
 
 export type Trainer_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Trainer_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Trainer_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Trainer_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Trainer_Where_Or>[]>;
   _status?: InputMaybe<Trainer__Status_Operator>;
   bio?: InputMaybe<Trainer_Bio_Operator>;
   createdAt?: InputMaybe<Trainer_CreatedAt_Operator>;
@@ -17594,8 +17594,8 @@ export type Trainer_Where = {
 };
 
 export type Trainer_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Trainer_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Trainer_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Trainer_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Trainer_Where_Or>[]>;
   _status?: InputMaybe<Trainer__Status_Operator>;
   bio?: InputMaybe<Trainer_Bio_Operator>;
   createdAt?: InputMaybe<Trainer_CreatedAt_Operator>;
@@ -17607,8 +17607,8 @@ export type Trainer_Where_And = {
 };
 
 export type Trainer_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Trainer_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Trainer_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Trainer_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Trainer_Where_Or>[]>;
   _status?: InputMaybe<Trainer__Status_Operator>;
   bio?: InputMaybe<Trainer_Bio_Operator>;
   createdAt?: InputMaybe<Trainer_CreatedAt_Operator>;
@@ -17621,7 +17621,7 @@ export type Trainer_Where_Or = {
 
 export type Trainers = {
   __typename?: 'Trainers';
-  docs: Array<Trainer>;
+  docs: Trainer[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -18362,12 +18362,12 @@ export enum UpdateControl__Status_MutationInput {
 }
 
 export type UpdateControl__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<UpdateControl__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<UpdateControl__Status_Input>[]>;
   equals?: InputMaybe<UpdateControl__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<UpdateControl__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<UpdateControl__Status_Input>[]>;
   not_equals?: InputMaybe<UpdateControl__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<UpdateControl__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<UpdateControl__Status_Input>[]>;
 };
 
 export type UpdateControl_CreatedAt_Operator = {
@@ -18388,36 +18388,36 @@ export type UpdateControl_Force_Update_Operator = {
 };
 
 export type UpdateControl_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type UpdateControl_Minimum_Version_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type UpdateControl_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type UpdateControl_Native_Update_Enabled_Operator = {
@@ -18452,19 +18452,19 @@ export type UpdateControl_UpdatedAt_Operator = {
 };
 
 export type UpdateControl_Version_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type UpdateControl_Where = {
-  AND?: InputMaybe<Array<InputMaybe<UpdateControl_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<UpdateControl_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<UpdateControl_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<UpdateControl_Where_Or>[]>;
   _status?: InputMaybe<UpdateControl__Status_Operator>;
   createdAt?: InputMaybe<UpdateControl_CreatedAt_Operator>;
   force_update?: InputMaybe<UpdateControl_Force_Update_Operator>;
@@ -18479,8 +18479,8 @@ export type UpdateControl_Where = {
 };
 
 export type UpdateControl_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<UpdateControl_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<UpdateControl_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<UpdateControl_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<UpdateControl_Where_Or>[]>;
   _status?: InputMaybe<UpdateControl__Status_Operator>;
   createdAt?: InputMaybe<UpdateControl_CreatedAt_Operator>;
   force_update?: InputMaybe<UpdateControl_Force_Update_Operator>;
@@ -18495,8 +18495,8 @@ export type UpdateControl_Where_And = {
 };
 
 export type UpdateControl_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<UpdateControl_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<UpdateControl_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<UpdateControl_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<UpdateControl_Where_Or>[]>;
   _status?: InputMaybe<UpdateControl__Status_Operator>;
   createdAt?: InputMaybe<UpdateControl_CreatedAt_Operator>;
   force_update?: InputMaybe<UpdateControl_Force_Update_Operator>;
@@ -18512,7 +18512,7 @@ export type UpdateControl_Where_Or = {
 
 export type UpdateControls = {
   __typename?: 'UpdateControls';
-  docs: Array<UpdateControl>;
+  docs: UpdateControl[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -18543,7 +18543,7 @@ export type User = {
   resetPasswordToken?: Maybe<Scalars['String']['output']>;
   role?: Maybe<User_Role>;
   salt?: Maybe<Scalars['String']['output']>;
-  sessions?: Maybe<Array<User_Sessions>>;
+  sessions?: Maybe<User_Sessions[]>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -18590,7 +18590,7 @@ export type UserVersion_Version = {
   resetPasswordToken?: Maybe<Scalars['String']['output']>;
   role?: Maybe<UserVersion_Version_Role>;
   salt?: Maybe<Scalars['String']['output']>;
-  sessions?: Maybe<Array<UserVersion_Version_Sessions>>;
+  sessions?: Maybe<UserVersion_Version_Sessions[]>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -18635,21 +18635,21 @@ export enum User__Status_MutationInput {
 }
 
 export type User__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<User__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<User__Status_Input>[]>;
   equals?: InputMaybe<User__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<User__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<User__Status_Input>[]>;
   not_equals?: InputMaybe<User__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<User__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<User__Status_Input>[]>;
 };
 
 export type User_Avatar_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type User_Bio_Operator = {
@@ -18672,34 +18672,34 @@ export type User_CreatedAt_Operator = {
 };
 
 export type User_Email_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['EmailAddress']['input']>[]>;
   contains?: InputMaybe<Scalars['EmailAddress']['input']>;
   equals?: InputMaybe<Scalars['EmailAddress']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['EmailAddress']['input']>[]>;
   like?: InputMaybe<Scalars['EmailAddress']['input']>;
   not_equals?: InputMaybe<Scalars['EmailAddress']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['EmailAddress']['input']>[]>;
 };
 
 export type User_FirstName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type User_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type User_IsActive_Operator = {
@@ -18709,13 +18709,13 @@ export type User_IsActive_Operator = {
 };
 
 export type User_LastName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export enum User_Role {
@@ -18737,11 +18737,11 @@ export enum User_Role_MutationInput {
 }
 
 export type User_Role_Operator = {
-  all?: InputMaybe<Array<InputMaybe<User_Role_Input>>>;
+  all?: InputMaybe<InputMaybe<User_Role_Input>[]>;
   equals?: InputMaybe<User_Role_Input>;
-  in?: InputMaybe<Array<InputMaybe<User_Role_Input>>>;
+  in?: InputMaybe<InputMaybe<User_Role_Input>[]>;
   not_equals?: InputMaybe<User_Role_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<User_Role_Input>>>;
+  not_in?: InputMaybe<InputMaybe<User_Role_Input>[]>;
 };
 
 export type User_Sessions__CreatedAt_Operator = {
@@ -18766,13 +18766,13 @@ export type User_Sessions__ExpiresAt_Operator = {
 };
 
 export type User_Sessions__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type User_UpdatedAt_Operator = {
@@ -18787,8 +18787,8 @@ export type User_UpdatedAt_Operator = {
 };
 
 export type User_Where = {
-  AND?: InputMaybe<Array<InputMaybe<User_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<User_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<User_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<User_Where_Or>[]>;
   _status?: InputMaybe<User__Status_Operator>;
   avatar?: InputMaybe<User_Avatar_Operator>;
   bio?: InputMaybe<User_Bio_Operator>;
@@ -18806,8 +18806,8 @@ export type User_Where = {
 };
 
 export type User_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<User_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<User_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<User_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<User_Where_Or>[]>;
   _status?: InputMaybe<User__Status_Operator>;
   avatar?: InputMaybe<User_Avatar_Operator>;
   bio?: InputMaybe<User_Bio_Operator>;
@@ -18825,8 +18825,8 @@ export type User_Where_And = {
 };
 
 export type User_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<User_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<User_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<User_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<User_Where_Or>[]>;
   _status?: InputMaybe<User__Status_Operator>;
   avatar?: InputMaybe<User_Avatar_Operator>;
   bio?: InputMaybe<User_Bio_Operator>;
@@ -18845,7 +18845,7 @@ export type User_Where_Or = {
 
 export type Users = {
   __typename?: 'Users';
-  docs: Array<User>;
+  docs: User[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -19763,7 +19763,7 @@ export type UsersUpdateDocAccess = {
 export type VideoClass = {
   __typename?: 'VideoClass';
   _status?: Maybe<VideoClass__Status>;
-  categories?: Maybe<Array<VideoClassCategory>>;
+  categories?: Maybe<VideoClassCategory[]>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['String']['output'];
@@ -19792,7 +19792,7 @@ export type VideoClassTrainerArgs = {
 
 export type VideoClassCategories = {
   __typename?: 'VideoClassCategories';
-  docs: Array<VideoClassCategory>;
+  docs: VideoClassCategory[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -20163,12 +20163,12 @@ export enum VideoClassCategory__Status_MutationInput {
 }
 
 export type VideoClassCategory__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VideoClassCategory__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VideoClassCategory__Status_Input>[]>;
   equals?: InputMaybe<VideoClassCategory__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VideoClassCategory__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VideoClassCategory__Status_Input>[]>;
   not_equals?: InputMaybe<VideoClassCategory__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VideoClassCategory__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VideoClassCategory__Status_Input>[]>;
 };
 
 export type VideoClassCategory_CreatedAt_Operator = {
@@ -20183,24 +20183,24 @@ export type VideoClassCategory_CreatedAt_Operator = {
 };
 
 export type VideoClassCategory_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoClassCategory_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoClassCategory_UpdatedAt_Operator = {
@@ -20215,8 +20215,8 @@ export type VideoClassCategory_UpdatedAt_Operator = {
 };
 
 export type VideoClassCategory_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VideoClassCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoClassCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoClassCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoClassCategory_Where_Or>[]>;
   _status?: InputMaybe<VideoClassCategory__Status_Operator>;
   createdAt?: InputMaybe<VideoClassCategory_CreatedAt_Operator>;
   id?: InputMaybe<VideoClassCategory_Id_Operator>;
@@ -20225,8 +20225,8 @@ export type VideoClassCategory_Where = {
 };
 
 export type VideoClassCategory_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VideoClassCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoClassCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoClassCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoClassCategory_Where_Or>[]>;
   _status?: InputMaybe<VideoClassCategory__Status_Operator>;
   createdAt?: InputMaybe<VideoClassCategory_CreatedAt_Operator>;
   id?: InputMaybe<VideoClassCategory_Id_Operator>;
@@ -20235,8 +20235,8 @@ export type VideoClassCategory_Where_And = {
 };
 
 export type VideoClassCategory_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VideoClassCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoClassCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoClassCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoClassCategory_Where_Or>[]>;
   _status?: InputMaybe<VideoClassCategory__Status_Operator>;
   createdAt?: InputMaybe<VideoClassCategory_CreatedAt_Operator>;
   id?: InputMaybe<VideoClassCategory_Id_Operator>;
@@ -20915,7 +20915,7 @@ export type VideoClassVersionParentArgs = {
 export type VideoClassVersion_Version = {
   __typename?: 'VideoClassVersion_Version';
   _status?: Maybe<VideoClassVersion_Version__Status>;
-  categories?: Maybe<Array<VideoClassCategory>>;
+  categories?: Maybe<VideoClassCategory[]>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   name?: Maybe<Scalars['String']['output']>;
@@ -20962,21 +20962,21 @@ export enum VideoClass__Status_MutationInput {
 }
 
 export type VideoClass__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VideoClass__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VideoClass__Status_Input>[]>;
   equals?: InputMaybe<VideoClass__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VideoClass__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VideoClass__Status_Input>[]>;
   not_equals?: InputMaybe<VideoClass__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VideoClass__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VideoClass__Status_Input>[]>;
 };
 
 export type VideoClass_Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoClass_CreatedAt_Operator = {
@@ -20999,42 +20999,42 @@ export type VideoClass_Description_Operator = {
 };
 
 export type VideoClass_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoClass_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoClass_Thumbnail_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoClass_Trainer_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoClass_UpdatedAt_Operator = {
@@ -21049,28 +21049,28 @@ export type VideoClass_UpdatedAt_Operator = {
 };
 
 export type VideoClass_Video_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoClass_Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoClass_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VideoClass_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoClass_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoClass_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoClass_Where_Or>[]>;
   _status?: InputMaybe<VideoClass__Status_Operator>;
   categories?: InputMaybe<VideoClass_Categories_Operator>;
   createdAt?: InputMaybe<VideoClass_CreatedAt_Operator>;
@@ -21085,8 +21085,8 @@ export type VideoClass_Where = {
 };
 
 export type VideoClass_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VideoClass_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoClass_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoClass_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoClass_Where_Or>[]>;
   _status?: InputMaybe<VideoClass__Status_Operator>;
   categories?: InputMaybe<VideoClass_Categories_Operator>;
   createdAt?: InputMaybe<VideoClass_CreatedAt_Operator>;
@@ -21101,8 +21101,8 @@ export type VideoClass_Where_And = {
 };
 
 export type VideoClass_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VideoClass_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoClass_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoClass_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoClass_Where_Or>[]>;
   _status?: InputMaybe<VideoClass__Status_Operator>;
   categories?: InputMaybe<VideoClass_Categories_Operator>;
   createdAt?: InputMaybe<VideoClass_CreatedAt_Operator>;
@@ -21118,7 +21118,7 @@ export type VideoClass_Where_Or = {
 
 export type VideoClasses = {
   __typename?: 'VideoClasses';
-  docs: Array<VideoClass>;
+  docs: VideoClass[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -21133,7 +21133,7 @@ export type VideoClasses = {
 
 export type VideoSeries = {
   __typename?: 'VideoSeries';
-  docs: Array<VideoSery>;
+  docs: VideoSery[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -21971,14 +21971,14 @@ export type VideoSeriesUpdateDocAccess = {
 export type VideoSery = {
   __typename?: 'VideoSery';
   _status?: Maybe<VideoSery__Status>;
-  categories?: Maybe<Array<VideoClassCategory>>;
+  categories?: Maybe<VideoClassCategory[]>;
   classes_per_week?: Maybe<Scalars['Float']['output']>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['String']['output'];
   intro_video?: Maybe<Media>;
   name?: Maybe<Scalars['String']['output']>;
-  series_weeks?: Maybe<Array<VideoSery_Series_Weeks>>;
+  series_weeks?: Maybe<VideoSery_Series_Weeks[]>;
   thumbnail?: Maybe<Media>;
   trainer?: Maybe<Trainer>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -22024,13 +22024,13 @@ export type VideoSeryVersionParentArgs = {
 export type VideoSeryVersion_Version = {
   __typename?: 'VideoSeryVersion_Version';
   _status?: Maybe<VideoSeryVersion_Version__Status>;
-  categories?: Maybe<Array<VideoClassCategory>>;
+  categories?: Maybe<VideoClassCategory[]>;
   classes_per_week?: Maybe<Scalars['Float']['output']>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   intro_video?: Maybe<Media>;
   name?: Maybe<Scalars['String']['output']>;
-  series_weeks?: Maybe<Array<VideoSeryVersion_Version_Series_Weeks>>;
+  series_weeks?: Maybe<VideoSeryVersion_Version_Series_Weeks[]>;
   thumbnail?: Maybe<Media>;
   trainer?: Maybe<Trainer>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -22078,21 +22078,21 @@ export enum VideoSery__Status_MutationInput {
 }
 
 export type VideoSery__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VideoSery__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VideoSery__Status_Input>[]>;
   equals?: InputMaybe<VideoSery__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VideoSery__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VideoSery__Status_Input>[]>;
   not_equals?: InputMaybe<VideoSery__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VideoSery__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VideoSery__Status_Input>[]>;
 };
 
 export type VideoSery_Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoSery_Classes_Per_Week_Operator = {
@@ -22124,51 +22124,51 @@ export type VideoSery_Description_Operator = {
 };
 
 export type VideoSery_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoSery_Intro_Video_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoSery_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoSery_Thumbnail_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoSery_Trainer_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VideoSery_UpdatedAt_Operator = {
@@ -22188,19 +22188,19 @@ export type VideoSery_User_Can_Access_Operator = {
 };
 
 export type VideoSery_Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VideoSery_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VideoSery_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoSery_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoSery_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoSery_Where_Or>[]>;
   _status?: InputMaybe<VideoSery__Status_Operator>;
   categories?: InputMaybe<VideoSery_Categories_Operator>;
   classes_per_week?: InputMaybe<VideoSery_Classes_Per_Week_Operator>;
@@ -22217,8 +22217,8 @@ export type VideoSery_Where = {
 };
 
 export type VideoSery_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VideoSery_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoSery_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoSery_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoSery_Where_Or>[]>;
   _status?: InputMaybe<VideoSery__Status_Operator>;
   categories?: InputMaybe<VideoSery_Categories_Operator>;
   classes_per_week?: InputMaybe<VideoSery_Classes_Per_Week_Operator>;
@@ -22235,8 +22235,8 @@ export type VideoSery_Where_And = {
 };
 
 export type VideoSery_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VideoSery_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VideoSery_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VideoSery_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VideoSery_Where_Or>[]>;
   _status?: InputMaybe<VideoSery__Status_Operator>;
   categories?: InputMaybe<VideoSery_Categories_Operator>;
   classes_per_week?: InputMaybe<VideoSery_Classes_Per_Week_Operator>;
@@ -22255,17 +22255,17 @@ export type VideoSery_Where_Or = {
 export type Workout = {
   __typename?: 'Workout';
   _status?: Maybe<Workout__Status>;
-  categories?: Maybe<Array<WorkoutCategory>>;
+  categories?: Maybe<WorkoutCategory[]>;
   completion_time?: Maybe<Workout_Completion_Time>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   difficulty?: Maybe<Workout_Difficulty>;
   display_image?: Maybe<Media>;
-  exercise_group?: Maybe<Array<Workout_Exercise_Group>>;
+  exercise_group?: Maybe<Workout_Exercise_Group[]>;
   id: Scalars['String']['output'];
   internal_display_name?: Maybe<Scalars['String']['output']>;
   is_finisher?: Maybe<Scalars['Boolean']['output']>;
-  muscle_groups?: Maybe<Array<MuscleGroup>>;
+  muscle_groups?: Maybe<MuscleGroup[]>;
   name?: Maybe<Scalars['String']['output']>;
   trial_workout?: Maybe<Scalars['Boolean']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -22289,7 +22289,7 @@ export type WorkoutMuscle_GroupsArgs = {
 
 export type WorkoutCategories = {
   __typename?: 'WorkoutCategories';
-  docs: Array<WorkoutCategory>;
+  docs: WorkoutCategory[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -22660,12 +22660,12 @@ export enum WorkoutCategory__Status_MutationInput {
 }
 
 export type WorkoutCategory__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<WorkoutCategory__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<WorkoutCategory__Status_Input>[]>;
   equals?: InputMaybe<WorkoutCategory__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<WorkoutCategory__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<WorkoutCategory__Status_Input>[]>;
   not_equals?: InputMaybe<WorkoutCategory__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<WorkoutCategory__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<WorkoutCategory__Status_Input>[]>;
 };
 
 export type WorkoutCategory_CreatedAt_Operator = {
@@ -22680,24 +22680,24 @@ export type WorkoutCategory_CreatedAt_Operator = {
 };
 
 export type WorkoutCategory_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type WorkoutCategory_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type WorkoutCategory_UpdatedAt_Operator = {
@@ -22712,8 +22712,8 @@ export type WorkoutCategory_UpdatedAt_Operator = {
 };
 
 export type WorkoutCategory_Where = {
-  AND?: InputMaybe<Array<InputMaybe<WorkoutCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<WorkoutCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<WorkoutCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<WorkoutCategory_Where_Or>[]>;
   _status?: InputMaybe<WorkoutCategory__Status_Operator>;
   createdAt?: InputMaybe<WorkoutCategory_CreatedAt_Operator>;
   id?: InputMaybe<WorkoutCategory_Id_Operator>;
@@ -22722,8 +22722,8 @@ export type WorkoutCategory_Where = {
 };
 
 export type WorkoutCategory_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<WorkoutCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<WorkoutCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<WorkoutCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<WorkoutCategory_Where_Or>[]>;
   _status?: InputMaybe<WorkoutCategory__Status_Operator>;
   createdAt?: InputMaybe<WorkoutCategory_CreatedAt_Operator>;
   id?: InputMaybe<WorkoutCategory_Id_Operator>;
@@ -22732,8 +22732,8 @@ export type WorkoutCategory_Where_And = {
 };
 
 export type WorkoutCategory_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<WorkoutCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<WorkoutCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<WorkoutCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<WorkoutCategory_Where_Or>[]>;
   _status?: InputMaybe<WorkoutCategory__Status_Operator>;
   createdAt?: InputMaybe<WorkoutCategory_CreatedAt_Operator>;
   id?: InputMaybe<WorkoutCategory_Id_Operator>;
@@ -23208,7 +23208,7 @@ export type WorkoutExerciseBlock = {
   __typename?: 'WorkoutExerciseBlock';
   blockName?: Maybe<Scalars['String']['output']>;
   blockType?: Maybe<Scalars['String']['output']>;
-  exercise?: Maybe<Array<WorkoutExerciseBlock_Exercise>>;
+  exercise?: Maybe<WorkoutExerciseBlock_Exercise[]>;
   id?: Maybe<Scalars['String']['output']>;
   workout_exercise?: Maybe<Exercise>;
 };
@@ -23674,7 +23674,7 @@ export type WorkoutGroup = {
   id: Scalars['String']['output'];
   name?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
-  workout_group?: Maybe<Array<WorkoutGroup_Workout_Group>>;
+  workout_group?: Maybe<WorkoutGroup_Workout_Group[]>;
 };
 
 export type WorkoutGroupBlock = {
@@ -24082,7 +24082,7 @@ export type WorkoutGroupVersion_Version = {
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
-  workout_group?: Maybe<Array<WorkoutGroupVersion_Version_Workout_Group>>;
+  workout_group?: Maybe<WorkoutGroupVersion_Version_Workout_Group[]>;
 };
 
 export type WorkoutGroupVersion_Version_Workout_Group = WorkoutGroupBlock;
@@ -24110,12 +24110,12 @@ export enum WorkoutGroup__Status_MutationInput {
 }
 
 export type WorkoutGroup__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<WorkoutGroup__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<WorkoutGroup__Status_Input>[]>;
   equals?: InputMaybe<WorkoutGroup__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<WorkoutGroup__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<WorkoutGroup__Status_Input>[]>;
   not_equals?: InputMaybe<WorkoutGroup__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<WorkoutGroup__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<WorkoutGroup__Status_Input>[]>;
 };
 
 export type WorkoutGroup_CreatedAt_Operator = {
@@ -24130,24 +24130,24 @@ export type WorkoutGroup_CreatedAt_Operator = {
 };
 
 export type WorkoutGroup_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type WorkoutGroup_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type WorkoutGroup_UpdatedAt_Operator = {
@@ -24162,8 +24162,8 @@ export type WorkoutGroup_UpdatedAt_Operator = {
 };
 
 export type WorkoutGroup_Where = {
-  AND?: InputMaybe<Array<InputMaybe<WorkoutGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<WorkoutGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<WorkoutGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<WorkoutGroup_Where_Or>[]>;
   _status?: InputMaybe<WorkoutGroup__Status_Operator>;
   createdAt?: InputMaybe<WorkoutGroup_CreatedAt_Operator>;
   id?: InputMaybe<WorkoutGroup_Id_Operator>;
@@ -24172,8 +24172,8 @@ export type WorkoutGroup_Where = {
 };
 
 export type WorkoutGroup_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<WorkoutGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<WorkoutGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<WorkoutGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<WorkoutGroup_Where_Or>[]>;
   _status?: InputMaybe<WorkoutGroup__Status_Operator>;
   createdAt?: InputMaybe<WorkoutGroup_CreatedAt_Operator>;
   id?: InputMaybe<WorkoutGroup_Id_Operator>;
@@ -24182,8 +24182,8 @@ export type WorkoutGroup_Where_And = {
 };
 
 export type WorkoutGroup_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<WorkoutGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<WorkoutGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<WorkoutGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<WorkoutGroup_Where_Or>[]>;
   _status?: InputMaybe<WorkoutGroup__Status_Operator>;
   createdAt?: InputMaybe<WorkoutGroup_CreatedAt_Operator>;
   id?: InputMaybe<WorkoutGroup_Id_Operator>;
@@ -24193,7 +24193,7 @@ export type WorkoutGroup_Where_Or = {
 
 export type WorkoutGroups = {
   __typename?: 'WorkoutGroups';
-  docs: Array<WorkoutGroup>;
+  docs: WorkoutGroup[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -24283,16 +24283,16 @@ export type WorkoutVersionParentArgs = {
 export type WorkoutVersion_Version = {
   __typename?: 'WorkoutVersion_Version';
   _status?: Maybe<WorkoutVersion_Version__Status>;
-  categories?: Maybe<Array<WorkoutCategory>>;
+  categories?: Maybe<WorkoutCategory[]>;
   completion_time?: Maybe<WorkoutVersion_Version_Completion_Time>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   description?: Maybe<Scalars['JSON']['output']>;
   difficulty?: Maybe<WorkoutVersion_Version_Difficulty>;
   display_image?: Maybe<Media>;
-  exercise_group?: Maybe<Array<WorkoutVersion_Version_Exercise_Group>>;
+  exercise_group?: Maybe<WorkoutVersion_Version_Exercise_Group[]>;
   internal_display_name?: Maybe<Scalars['String']['output']>;
   is_finisher?: Maybe<Scalars['Boolean']['output']>;
-  muscle_groups?: Maybe<Array<MuscleGroup>>;
+  muscle_groups?: Maybe<MuscleGroup[]>;
   name?: Maybe<Scalars['String']['output']>;
   trial_workout?: Maybe<Scalars['Boolean']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -24357,21 +24357,21 @@ export enum Workout__Status_MutationInput {
 }
 
 export type Workout__Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Workout__Status_Input>>>;
+  all?: InputMaybe<InputMaybe<Workout__Status_Input>[]>;
   equals?: InputMaybe<Workout__Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Workout__Status_Input>>>;
+  in?: InputMaybe<InputMaybe<Workout__Status_Input>[]>;
   not_equals?: InputMaybe<Workout__Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Workout__Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Workout__Status_Input>[]>;
 };
 
 export type Workout_Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export enum Workout_Completion_Time {
@@ -24393,12 +24393,12 @@ export enum Workout_Completion_Time_MutationInput {
 }
 
 export type Workout_Completion_Time_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Workout_Completion_Time_Input>>>;
+  all?: InputMaybe<InputMaybe<Workout_Completion_Time_Input>[]>;
   equals?: InputMaybe<Workout_Completion_Time_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Workout_Completion_Time_Input>>>;
+  in?: InputMaybe<InputMaybe<Workout_Completion_Time_Input>[]>;
   not_equals?: InputMaybe<Workout_Completion_Time_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Workout_Completion_Time_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Workout_Completion_Time_Input>[]>;
 };
 
 export type Workout_CreatedAt_Operator = {
@@ -24439,42 +24439,42 @@ export enum Workout_Difficulty_MutationInput {
 }
 
 export type Workout_Difficulty_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Workout_Difficulty_Input>>>;
+  all?: InputMaybe<InputMaybe<Workout_Difficulty_Input>[]>;
   equals?: InputMaybe<Workout_Difficulty_Input>;
-  in?: InputMaybe<Array<InputMaybe<Workout_Difficulty_Input>>>;
+  in?: InputMaybe<InputMaybe<Workout_Difficulty_Input>[]>;
   not_equals?: InputMaybe<Workout_Difficulty_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Workout_Difficulty_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Workout_Difficulty_Input>[]>;
 };
 
 export type Workout_Display_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Workout_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Workout_Internal_Display_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Workout_Is_Finisher_Operator = {
@@ -24484,23 +24484,23 @@ export type Workout_Is_Finisher_Operator = {
 };
 
 export type Workout_Muscle_Groups_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type Workout_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type Workout_Trial_Workout_Operator = {
@@ -24521,8 +24521,8 @@ export type Workout_UpdatedAt_Operator = {
 };
 
 export type Workout_Where = {
-  AND?: InputMaybe<Array<InputMaybe<Workout_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Workout_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Workout_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Workout_Where_Or>[]>;
   _status?: InputMaybe<Workout__Status_Operator>;
   categories?: InputMaybe<Workout_Categories_Operator>;
   completion_time?: InputMaybe<Workout_Completion_Time_Operator>;
@@ -24541,8 +24541,8 @@ export type Workout_Where = {
 };
 
 export type Workout_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<Workout_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Workout_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Workout_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Workout_Where_Or>[]>;
   _status?: InputMaybe<Workout__Status_Operator>;
   categories?: InputMaybe<Workout_Categories_Operator>;
   completion_time?: InputMaybe<Workout_Completion_Time_Operator>;
@@ -24561,8 +24561,8 @@ export type Workout_Where_And = {
 };
 
 export type Workout_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<Workout_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<Workout_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<Workout_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<Workout_Where_Or>[]>;
   _status?: InputMaybe<Workout__Status_Operator>;
   categories?: InputMaybe<Workout_Categories_Operator>;
   completion_time?: InputMaybe<Workout_Completion_Time_Operator>;
@@ -24599,17 +24599,17 @@ export enum Workout_Workout_Type_MutationInput {
 }
 
 export type Workout_Workout_Type_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Workout_Workout_Type_Input>>>;
+  all?: InputMaybe<InputMaybe<Workout_Workout_Type_Input>[]>;
   equals?: InputMaybe<Workout_Workout_Type_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Workout_Workout_Type_Input>>>;
+  in?: InputMaybe<InputMaybe<Workout_Workout_Type_Input>[]>;
   not_equals?: InputMaybe<Workout_Workout_Type_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Workout_Workout_Type_Input>>>;
+  not_in?: InputMaybe<InputMaybe<Workout_Workout_Type_Input>[]>;
 };
 
 export type Workouts = {
   __typename?: 'Workouts';
-  docs: Array<Workout>;
+  docs: Workout[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -24644,7 +24644,7 @@ export type AchievementDocAccess = {
 
 export type AllMedia = {
   __typename?: 'allMedia';
-  docs: Array<Media>;
+  docs: Media[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -25033,7 +25033,7 @@ export type MutationDietTypeUpdateInput = {
 
 export type MutationExerciseInput = {
   _status?: InputMaybe<Exercise__Status_MutationInput>;
-  alternative_exercises?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  alternative_exercises?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
   exercise_type?: InputMaybe<Exercise_Exercise_Type_MutationInput>;
@@ -25049,7 +25049,7 @@ export type MutationExerciseInput = {
 
 export type MutationExerciseUpdateInput = {
   _status?: InputMaybe<ExerciseUpdate__Status_MutationInput>;
-  alternative_exercises?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  alternative_exercises?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
   exercise_type?: InputMaybe<ExerciseUpdate_Exercise_Type_MutationInput>;
@@ -25098,7 +25098,7 @@ export type MutationGuideUpdateInput = {
 export type MutationHomepageInput = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   featured_workout?: InputMaybe<Scalars['String']['input']>;
-  recipe_suggestions?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  recipe_suggestions?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -25138,10 +25138,10 @@ export type MutationMealInput = {
   _status?: InputMaybe<Meal__Status_MutationInput>;
   calories?: InputMaybe<Scalars['Float']['input']>;
   carbs?: InputMaybe<Scalars['Float']['input']>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   cook_time?: InputMaybe<Scalars['Float']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
-  diet_types?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  diet_types?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   fat?: InputMaybe<Scalars['Float']['input']>;
   gluten_free?: InputMaybe<Scalars['Boolean']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
@@ -25160,10 +25160,10 @@ export type MutationMealUpdateInput = {
   _status?: InputMaybe<MealUpdate__Status_MutationInput>;
   calories?: InputMaybe<Scalars['Float']['input']>;
   carbs?: InputMaybe<Scalars['Float']['input']>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   cook_time?: InputMaybe<Scalars['Float']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
-  diet_types?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  diet_types?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   fat?: InputMaybe<Scalars['Float']['input']>;
   gluten_free?: InputMaybe<Scalars['Boolean']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
@@ -25332,7 +25332,7 @@ export type MutationPlanInput = {
   name: Scalars['String']['input'];
   plan_weeks?: InputMaybe<Scalars['JSON']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
-  workout_groups?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  workout_groups?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type MutationPlanUpdateInput = {
@@ -25343,7 +25343,7 @@ export type MutationPlanUpdateInput = {
   name?: InputMaybe<Scalars['String']['input']>;
   plan_weeks?: InputMaybe<Scalars['JSON']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
-  workout_groups?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  workout_groups?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type MutationProductInput = {
@@ -25457,7 +25457,7 @@ export type MutationUserInput = {
   resetPasswordToken?: InputMaybe<Scalars['String']['input']>;
   role: User_Role_MutationInput;
   salt?: InputMaybe<Scalars['String']['input']>;
-  sessions?: InputMaybe<Array<InputMaybe<MutationUser_SessionsInput>>>;
+  sessions?: InputMaybe<InputMaybe<MutationUser_SessionsInput>[]>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -25478,7 +25478,7 @@ export type MutationUserUpdateInput = {
   resetPasswordToken?: InputMaybe<Scalars['String']['input']>;
   role?: InputMaybe<UserUpdate_Role_MutationInput>;
   salt?: InputMaybe<Scalars['String']['input']>;
-  sessions?: InputMaybe<Array<InputMaybe<MutationUserUpdate_SessionsInput>>>;
+  sessions?: InputMaybe<InputMaybe<MutationUserUpdate_SessionsInput>[]>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -25510,7 +25510,7 @@ export type MutationVideoClassCategoryUpdateInput = {
 
 export type MutationVideoClassInput = {
   _status?: InputMaybe<VideoClass__Status_MutationInput>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
   name: Scalars['String']['input'];
@@ -25523,7 +25523,7 @@ export type MutationVideoClassInput = {
 
 export type MutationVideoClassUpdateInput = {
   _status?: InputMaybe<VideoClassUpdate__Status_MutationInput>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
@@ -25536,7 +25536,7 @@ export type MutationVideoClassUpdateInput = {
 
 export type MutationVideoSeryInput = {
   _status?: InputMaybe<VideoSery__Status_MutationInput>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   classes_per_week: Scalars['Float']['input'];
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
@@ -25552,7 +25552,7 @@ export type MutationVideoSeryInput = {
 
 export type MutationVideoSeryUpdateInput = {
   _status?: InputMaybe<VideoSeryUpdate__Status_MutationInput>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   classes_per_week?: InputMaybe<Scalars['Float']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
@@ -25598,7 +25598,7 @@ export type MutationWorkoutGroupUpdateInput = {
 
 export type MutationWorkoutInput = {
   _status?: InputMaybe<Workout__Status_MutationInput>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   completion_time?: InputMaybe<Workout_Completion_Time_MutationInput>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
@@ -25607,7 +25607,7 @@ export type MutationWorkoutInput = {
   exercise_group?: InputMaybe<Scalars['JSON']['input']>;
   internal_display_name?: InputMaybe<Scalars['String']['input']>;
   is_finisher?: InputMaybe<Scalars['Boolean']['input']>;
-  muscle_groups?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  muscle_groups?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   name?: InputMaybe<Scalars['String']['input']>;
   trial_workout?: InputMaybe<Scalars['Boolean']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -25616,7 +25616,7 @@ export type MutationWorkoutInput = {
 
 export type MutationWorkoutUpdateInput = {
   _status?: InputMaybe<WorkoutUpdate__Status_MutationInput>;
-  categories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  categories?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   completion_time?: InputMaybe<WorkoutUpdate_Completion_Time_MutationInput>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['JSON']['input']>;
@@ -25625,7 +25625,7 @@ export type MutationWorkoutUpdateInput = {
   exercise_group?: InputMaybe<Scalars['JSON']['input']>;
   internal_display_name?: InputMaybe<Scalars['String']['input']>;
   is_finisher?: InputMaybe<Scalars['Boolean']['input']>;
-  muscle_groups?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  muscle_groups?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   name?: InputMaybe<Scalars['String']['input']>;
   trial_workout?: InputMaybe<Scalars['Boolean']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -25838,14 +25838,14 @@ export type VersionsAchievement_CreatedAt_Operator = {
 };
 
 export type VersionsAchievement_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsAchievement_Latest_Operator = {
@@ -25855,12 +25855,12 @@ export type VersionsAchievement_Latest_Operator = {
 };
 
 export type VersionsAchievement_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsAchievement_UpdatedAt_Operator = {
@@ -25880,34 +25880,34 @@ export enum VersionsAchievement_Version___Status_Input {
 }
 
 export type VersionsAchievement_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsAchievement_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsAchievement_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsAchievement_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsAchievement_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsAchievement_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsAchievement_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsAchievement_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsAchievement_Version___Status_Input>[]>;
 };
 
 export type VersionsAchievement_Version__Achievement_Code_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsAchievement_Version__Category_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsAchievement_Version__Category_Order_Operator = {
@@ -25940,22 +25940,22 @@ export type VersionsAchievement_Version__Description_Operator = {
 };
 
 export type VersionsAchievement_Version__Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsAchievement_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsAchievement_Version__Order_Operator = {
@@ -25969,12 +25969,12 @@ export type VersionsAchievement_Version__Order_Operator = {
 };
 
 export type VersionsAchievement_Version__Progress_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsAchievement_Version__Total_Achievements_Operator = {
@@ -25999,8 +25999,8 @@ export type VersionsAchievement_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsAchievement_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsAchievement_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsAchievement_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsAchievement_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsAchievement_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsAchievement_CreatedAt_Operator>;
   id?: InputMaybe<VersionsAchievement_Id_Operator>;
   latest?: InputMaybe<VersionsAchievement_Latest_Operator>;
@@ -26021,8 +26021,8 @@ export type VersionsAchievement_Where = {
 };
 
 export type VersionsAchievement_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsAchievement_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsAchievement_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsAchievement_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsAchievement_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsAchievement_CreatedAt_Operator>;
   id?: InputMaybe<VersionsAchievement_Id_Operator>;
   latest?: InputMaybe<VersionsAchievement_Latest_Operator>;
@@ -26043,8 +26043,8 @@ export type VersionsAchievement_Where_And = {
 };
 
 export type VersionsAchievement_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsAchievement_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsAchievement_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsAchievement_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsAchievement_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsAchievement_CreatedAt_Operator>;
   id?: InputMaybe<VersionsAchievement_Id_Operator>;
   latest?: InputMaybe<VersionsAchievement_Latest_Operator>;
@@ -26066,7 +26066,7 @@ export type VersionsAchievement_Where_Or = {
 
 export type VersionsAchievements = {
   __typename?: 'versionsAchievements';
-  docs: Array<AchievementVersion>;
+  docs: AchievementVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -26091,14 +26091,14 @@ export type VersionsChallenge_CreatedAt_Operator = {
 };
 
 export type VersionsChallenge_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsChallenge_Latest_Operator = {
@@ -26108,12 +26108,12 @@ export type VersionsChallenge_Latest_Operator = {
 };
 
 export type VersionsChallenge_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsChallenge_UpdatedAt_Operator = {
@@ -26133,12 +26133,12 @@ export enum VersionsChallenge_Version___Status_Input {
 }
 
 export type VersionsChallenge_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsChallenge_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsChallenge_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsChallenge_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsChallenge_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsChallenge_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsChallenge_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsChallenge_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsChallenge_Version___Status_Input>[]>;
 };
 
 export type VersionsChallenge_Version__Active_Operator = {
@@ -26148,13 +26148,13 @@ export type VersionsChallenge_Version__Active_Operator = {
 };
 
 export type VersionsChallenge_Version__Challenge_Campaign_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsChallenge_Version__Challenge_Date_Operator = {
@@ -26180,32 +26180,32 @@ export type VersionsChallenge_Version__Challenge_Ends_At_Operator = {
 };
 
 export type VersionsChallenge_Version__Challenge_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsChallenge_Version__Challenge_Splash_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsChallenge_Version__Challenge_Watermark_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsChallenge_Version__CreatedAt_Operator = {
@@ -26220,14 +26220,14 @@ export type VersionsChallenge_Version__CreatedAt_Operator = {
 };
 
 export type VersionsChallenge_Version__Enrolled_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsChallenge_Version__Enrollment_Active_Operator = {
@@ -26248,8 +26248,8 @@ export type VersionsChallenge_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsChallenge_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsChallenge_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsChallenge_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsChallenge_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsChallenge_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsChallenge_CreatedAt_Operator>;
   id?: InputMaybe<VersionsChallenge_Id_Operator>;
   latest?: InputMaybe<VersionsChallenge_Latest_Operator>;
@@ -26270,8 +26270,8 @@ export type VersionsChallenge_Where = {
 };
 
 export type VersionsChallenge_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsChallenge_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsChallenge_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsChallenge_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsChallenge_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsChallenge_CreatedAt_Operator>;
   id?: InputMaybe<VersionsChallenge_Id_Operator>;
   latest?: InputMaybe<VersionsChallenge_Latest_Operator>;
@@ -26292,8 +26292,8 @@ export type VersionsChallenge_Where_And = {
 };
 
 export type VersionsChallenge_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsChallenge_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsChallenge_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsChallenge_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsChallenge_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsChallenge_CreatedAt_Operator>;
   id?: InputMaybe<VersionsChallenge_Id_Operator>;
   latest?: InputMaybe<VersionsChallenge_Latest_Operator>;
@@ -26315,7 +26315,7 @@ export type VersionsChallenge_Where_Or = {
 
 export type VersionsChallenges = {
   __typename?: 'versionsChallenges';
-  docs: Array<ChallengeVersion>;
+  docs: ChallengeVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -26340,14 +26340,14 @@ export type VersionsDietType_CreatedAt_Operator = {
 };
 
 export type VersionsDietType_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsDietType_Latest_Operator = {
@@ -26357,12 +26357,12 @@ export type VersionsDietType_Latest_Operator = {
 };
 
 export type VersionsDietType_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsDietType_UpdatedAt_Operator = {
@@ -26382,12 +26382,12 @@ export enum VersionsDietType_Version___Status_Input {
 }
 
 export type VersionsDietType_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsDietType_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsDietType_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsDietType_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsDietType_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsDietType_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsDietType_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsDietType_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsDietType_Version___Status_Input>[]>;
 };
 
 export type VersionsDietType_Version__CreatedAt_Operator = {
@@ -26402,13 +26402,13 @@ export type VersionsDietType_Version__CreatedAt_Operator = {
 };
 
 export type VersionsDietType_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsDietType_Version__UpdatedAt_Operator = {
@@ -26423,8 +26423,8 @@ export type VersionsDietType_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsDietType_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsDietType_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsDietType_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsDietType_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsDietType_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsDietType_CreatedAt_Operator>;
   id?: InputMaybe<VersionsDietType_Id_Operator>;
   latest?: InputMaybe<VersionsDietType_Latest_Operator>;
@@ -26437,8 +26437,8 @@ export type VersionsDietType_Where = {
 };
 
 export type VersionsDietType_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsDietType_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsDietType_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsDietType_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsDietType_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsDietType_CreatedAt_Operator>;
   id?: InputMaybe<VersionsDietType_Id_Operator>;
   latest?: InputMaybe<VersionsDietType_Latest_Operator>;
@@ -26451,8 +26451,8 @@ export type VersionsDietType_Where_And = {
 };
 
 export type VersionsDietType_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsDietType_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsDietType_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsDietType_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsDietType_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsDietType_CreatedAt_Operator>;
   id?: InputMaybe<VersionsDietType_Id_Operator>;
   latest?: InputMaybe<VersionsDietType_Latest_Operator>;
@@ -26466,7 +26466,7 @@ export type VersionsDietType_Where_Or = {
 
 export type VersionsDietTypes = {
   __typename?: 'versionsDietTypes';
-  docs: Array<DietTypeVersion>;
+  docs: DietTypeVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -26491,14 +26491,14 @@ export type VersionsExercise_CreatedAt_Operator = {
 };
 
 export type VersionsExercise_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsExercise_Latest_Operator = {
@@ -26508,12 +26508,12 @@ export type VersionsExercise_Latest_Operator = {
 };
 
 export type VersionsExercise_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsExercise_UpdatedAt_Operator = {
@@ -26533,21 +26533,21 @@ export enum VersionsExercise_Version___Status_Input {
 }
 
 export type VersionsExercise_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsExercise_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsExercise_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsExercise_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsExercise_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsExercise_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsExercise_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsExercise_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsExercise_Version___Status_Input>[]>;
 };
 
 export type VersionsExercise_Version__Alternative_Exercises_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsExercise_Version__CreatedAt_Operator = {
@@ -26575,21 +26575,21 @@ export enum VersionsExercise_Version__Exercise_Type_Input {
 }
 
 export type VersionsExercise_Version__Exercise_Type_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsExercise_Version__Exercise_Type_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsExercise_Version__Exercise_Type_Input>[]>;
   equals?: InputMaybe<VersionsExercise_Version__Exercise_Type_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsExercise_Version__Exercise_Type_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsExercise_Version__Exercise_Type_Input>[]>;
   not_equals?: InputMaybe<VersionsExercise_Version__Exercise_Type_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsExercise_Version__Exercise_Type_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsExercise_Version__Exercise_Type_Input>[]>;
 };
 
 export type VersionsExercise_Version__Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsExercise_Version__Instructions_Operator = {
@@ -26601,35 +26601,35 @@ export type VersionsExercise_Version__Instructions_Operator = {
 };
 
 export type VersionsExercise_Version__Muscle_Groups_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsExercise_Version__Thumbnail_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsExercise_Version__Title_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsExercise_Version__UpdatedAt_Operator = {
@@ -26644,28 +26644,28 @@ export type VersionsExercise_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsExercise_Version__Video_Demonstration_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsExercise_Version__Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsExercise_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsExercise_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsExercise_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsExercise_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsExercise_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsExercise_CreatedAt_Operator>;
   id?: InputMaybe<VersionsExercise_Id_Operator>;
   latest?: InputMaybe<VersionsExercise_Latest_Operator>;
@@ -26687,8 +26687,8 @@ export type VersionsExercise_Where = {
 };
 
 export type VersionsExercise_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsExercise_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsExercise_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsExercise_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsExercise_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsExercise_CreatedAt_Operator>;
   id?: InputMaybe<VersionsExercise_Id_Operator>;
   latest?: InputMaybe<VersionsExercise_Latest_Operator>;
@@ -26710,8 +26710,8 @@ export type VersionsExercise_Where_And = {
 };
 
 export type VersionsExercise_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsExercise_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsExercise_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsExercise_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsExercise_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsExercise_CreatedAt_Operator>;
   id?: InputMaybe<VersionsExercise_Id_Operator>;
   latest?: InputMaybe<VersionsExercise_Latest_Operator>;
@@ -26734,7 +26734,7 @@ export type VersionsExercise_Where_Or = {
 
 export type VersionsExercises = {
   __typename?: 'versionsExercises';
-  docs: Array<ExerciseVersion>;
+  docs: ExerciseVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -26759,14 +26759,14 @@ export type VersionsGuide_CreatedAt_Operator = {
 };
 
 export type VersionsGuide_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsGuide_Latest_Operator = {
@@ -26776,12 +26776,12 @@ export type VersionsGuide_Latest_Operator = {
 };
 
 export type VersionsGuide_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsGuide_UpdatedAt_Operator = {
@@ -26801,12 +26801,12 @@ export enum VersionsGuide_Version___Status_Input {
 }
 
 export type VersionsGuide_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsGuide_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsGuide_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsGuide_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsGuide_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsGuide_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsGuide_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsGuide_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsGuide_Version___Status_Input>[]>;
 };
 
 export type VersionsGuide_Version__CreatedAt_Operator = {
@@ -26829,53 +26829,53 @@ export type VersionsGuide_Version__Description_Operator = {
 };
 
 export type VersionsGuide_Version__Display_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsGuide_Version__Goal_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsGuide_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsGuide_Version__Revenuecat_Offering_Identifier_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsGuide_Version__Trainer_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export enum VersionsGuide_Version__Type_Input {
@@ -26884,12 +26884,12 @@ export enum VersionsGuide_Version__Type_Input {
 }
 
 export type VersionsGuide_Version__Type_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsGuide_Version__Type_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsGuide_Version__Type_Input>[]>;
   equals?: InputMaybe<VersionsGuide_Version__Type_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsGuide_Version__Type_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsGuide_Version__Type_Input>[]>;
   not_equals?: InputMaybe<VersionsGuide_Version__Type_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsGuide_Version__Type_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsGuide_Version__Type_Input>[]>;
 };
 
 export type VersionsGuide_Version__UpdatedAt_Operator = {
@@ -26920,8 +26920,8 @@ export type VersionsGuide_Version__Workouts_Per_Week_Operator = {
 };
 
 export type VersionsGuide_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsGuide_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsGuide_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsGuide_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsGuide_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsGuide_CreatedAt_Operator>;
   id?: InputMaybe<VersionsGuide_Id_Operator>;
   latest?: InputMaybe<VersionsGuide_Latest_Operator>;
@@ -26942,8 +26942,8 @@ export type VersionsGuide_Where = {
 };
 
 export type VersionsGuide_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsGuide_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsGuide_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsGuide_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsGuide_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsGuide_CreatedAt_Operator>;
   id?: InputMaybe<VersionsGuide_Id_Operator>;
   latest?: InputMaybe<VersionsGuide_Latest_Operator>;
@@ -26964,8 +26964,8 @@ export type VersionsGuide_Where_And = {
 };
 
 export type VersionsGuide_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsGuide_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsGuide_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsGuide_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsGuide_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsGuide_CreatedAt_Operator>;
   id?: InputMaybe<VersionsGuide_Id_Operator>;
   latest?: InputMaybe<VersionsGuide_Latest_Operator>;
@@ -26987,7 +26987,7 @@ export type VersionsGuide_Where_Or = {
 
 export type VersionsGuides = {
   __typename?: 'versionsGuides';
-  docs: Array<GuideVersion>;
+  docs: GuideVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -27012,14 +27012,14 @@ export type VersionsIcon_CreatedAt_Operator = {
 };
 
 export type VersionsIcon_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsIcon_Latest_Operator = {
@@ -27029,12 +27029,12 @@ export type VersionsIcon_Latest_Operator = {
 };
 
 export type VersionsIcon_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsIcon_UpdatedAt_Operator = {
@@ -27054,12 +27054,12 @@ export enum VersionsIcon_Version___Status_Input {
 }
 
 export type VersionsIcon_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsIcon_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsIcon_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsIcon_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsIcon_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsIcon_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsIcon_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsIcon_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsIcon_Version___Status_Input>[]>;
 };
 
 export type VersionsIcon_Version__CreatedAt_Operator = {
@@ -27074,22 +27074,22 @@ export type VersionsIcon_Version__CreatedAt_Operator = {
 };
 
 export type VersionsIcon_Version__Icon_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsIcon_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsIcon_Version__UpdatedAt_Operator = {
@@ -27104,8 +27104,8 @@ export type VersionsIcon_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsIcon_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsIcon_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsIcon_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsIcon_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsIcon_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsIcon_CreatedAt_Operator>;
   id?: InputMaybe<VersionsIcon_Id_Operator>;
   latest?: InputMaybe<VersionsIcon_Latest_Operator>;
@@ -27119,8 +27119,8 @@ export type VersionsIcon_Where = {
 };
 
 export type VersionsIcon_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsIcon_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsIcon_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsIcon_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsIcon_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsIcon_CreatedAt_Operator>;
   id?: InputMaybe<VersionsIcon_Id_Operator>;
   latest?: InputMaybe<VersionsIcon_Latest_Operator>;
@@ -27134,8 +27134,8 @@ export type VersionsIcon_Where_And = {
 };
 
 export type VersionsIcon_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsIcon_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsIcon_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsIcon_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsIcon_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsIcon_CreatedAt_Operator>;
   id?: InputMaybe<VersionsIcon_Id_Operator>;
   latest?: InputMaybe<VersionsIcon_Latest_Operator>;
@@ -27150,7 +27150,7 @@ export type VersionsIcon_Where_Or = {
 
 export type VersionsIcons = {
   __typename?: 'versionsIcons';
-  docs: Array<IconVersion>;
+  docs: IconVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -27165,7 +27165,7 @@ export type VersionsIcons = {
 
 export type VersionsMealCategories = {
   __typename?: 'versionsMealCategories';
-  docs: Array<MealCategoryVersion>;
+  docs: MealCategoryVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -27190,14 +27190,14 @@ export type VersionsMealCategory_CreatedAt_Operator = {
 };
 
 export type VersionsMealCategory_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsMealCategory_Latest_Operator = {
@@ -27207,12 +27207,12 @@ export type VersionsMealCategory_Latest_Operator = {
 };
 
 export type VersionsMealCategory_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsMealCategory_UpdatedAt_Operator = {
@@ -27232,12 +27232,12 @@ export enum VersionsMealCategory_Version___Status_Input {
 }
 
 export type VersionsMealCategory_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsMealCategory_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsMealCategory_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsMealCategory_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsMealCategory_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsMealCategory_Version___Status_Input>[]>;
 };
 
 export type VersionsMealCategory_Version__CreatedAt_Operator = {
@@ -27252,22 +27252,22 @@ export type VersionsMealCategory_Version__CreatedAt_Operator = {
 };
 
 export type VersionsMealCategory_Version__Icon_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsMealCategory_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsMealCategory_Version__UpdatedAt_Operator = {
@@ -27282,8 +27282,8 @@ export type VersionsMealCategory_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsMealCategory_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMealCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMealCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMealCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMealCategory_Id_Operator>;
   latest?: InputMaybe<VersionsMealCategory_Latest_Operator>;
@@ -27297,8 +27297,8 @@ export type VersionsMealCategory_Where = {
 };
 
 export type VersionsMealCategory_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMealCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMealCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMealCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMealCategory_Id_Operator>;
   latest?: InputMaybe<VersionsMealCategory_Latest_Operator>;
@@ -27312,8 +27312,8 @@ export type VersionsMealCategory_Where_And = {
 };
 
 export type VersionsMealCategory_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMealCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMealCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMealCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMealCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMealCategory_Id_Operator>;
   latest?: InputMaybe<VersionsMealCategory_Latest_Operator>;
@@ -27338,14 +27338,14 @@ export type VersionsMeal_CreatedAt_Operator = {
 };
 
 export type VersionsMeal_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsMeal_Latest_Operator = {
@@ -27355,12 +27355,12 @@ export type VersionsMeal_Latest_Operator = {
 };
 
 export type VersionsMeal_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsMeal_UpdatedAt_Operator = {
@@ -27380,12 +27380,12 @@ export enum VersionsMeal_Version___Status_Input {
 }
 
 export type VersionsMeal_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsMeal_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsMeal_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsMeal_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsMeal_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsMeal_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsMeal_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsMeal_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsMeal_Version___Status_Input>[]>;
 };
 
 export type VersionsMeal_Version__Calories_Operator = {
@@ -27409,12 +27409,12 @@ export type VersionsMeal_Version__Carbs_Operator = {
 };
 
 export type VersionsMeal_Version__Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsMeal_Version__Cook_Time_Operator = {
@@ -27439,12 +27439,12 @@ export type VersionsMeal_Version__CreatedAt_Operator = {
 };
 
 export type VersionsMeal_Version__Diet_Types_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsMeal_Version__Fat_Operator = {
@@ -27464,12 +27464,12 @@ export type VersionsMeal_Version__Gluten_Free_Operator = {
 };
 
 export type VersionsMeal_Version__Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsMeal_Version__Is_Quick_Meal_Operator = {
@@ -27485,14 +27485,14 @@ export type VersionsMeal_Version__Lactose_Free_Operator = {
 };
 
 export type VersionsMeal_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsMeal_Version__Nut_Free_Operator = {
@@ -27533,8 +27533,8 @@ export type VersionsMeal_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsMeal_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMeal_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMeal_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMeal_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMeal_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMeal_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMeal_Id_Operator>;
   latest?: InputMaybe<VersionsMeal_Latest_Operator>;
@@ -27560,8 +27560,8 @@ export type VersionsMeal_Where = {
 };
 
 export type VersionsMeal_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMeal_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMeal_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMeal_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMeal_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMeal_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMeal_Id_Operator>;
   latest?: InputMaybe<VersionsMeal_Latest_Operator>;
@@ -27587,8 +27587,8 @@ export type VersionsMeal_Where_And = {
 };
 
 export type VersionsMeal_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMeal_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMeal_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMeal_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMeal_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMeal_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMeal_Id_Operator>;
   latest?: InputMaybe<VersionsMeal_Latest_Operator>;
@@ -27615,7 +27615,7 @@ export type VersionsMeal_Where_Or = {
 
 export type VersionsMeals = {
   __typename?: 'versionsMeals';
-  docs: Array<MealVersion>;
+  docs: MealVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -27640,14 +27640,14 @@ export type VersionsMuscleGroup_CreatedAt_Operator = {
 };
 
 export type VersionsMuscleGroup_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsMuscleGroup_Latest_Operator = {
@@ -27657,12 +27657,12 @@ export type VersionsMuscleGroup_Latest_Operator = {
 };
 
 export type VersionsMuscleGroup_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsMuscleGroup_UpdatedAt_Operator = {
@@ -27682,12 +27682,12 @@ export enum VersionsMuscleGroup_Version___Status_Input {
 }
 
 export type VersionsMuscleGroup_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsMuscleGroup_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsMuscleGroup_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsMuscleGroup_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsMuscleGroup_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsMuscleGroup_Version___Status_Input>[]>;
 };
 
 export type VersionsMuscleGroup_Version__CreatedAt_Operator = {
@@ -27702,13 +27702,13 @@ export type VersionsMuscleGroup_Version__CreatedAt_Operator = {
 };
 
 export type VersionsMuscleGroup_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsMuscleGroup_Version__UpdatedAt_Operator = {
@@ -27723,8 +27723,8 @@ export type VersionsMuscleGroup_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsMuscleGroup_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMuscleGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMuscleGroup_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMuscleGroup_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMuscleGroup_Id_Operator>;
   latest?: InputMaybe<VersionsMuscleGroup_Latest_Operator>;
@@ -27737,8 +27737,8 @@ export type VersionsMuscleGroup_Where = {
 };
 
 export type VersionsMuscleGroup_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMuscleGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMuscleGroup_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMuscleGroup_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMuscleGroup_Id_Operator>;
   latest?: InputMaybe<VersionsMuscleGroup_Latest_Operator>;
@@ -27751,8 +27751,8 @@ export type VersionsMuscleGroup_Where_And = {
 };
 
 export type VersionsMuscleGroup_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsMuscleGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsMuscleGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsMuscleGroup_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsMuscleGroup_CreatedAt_Operator>;
   id?: InputMaybe<VersionsMuscleGroup_Id_Operator>;
   latest?: InputMaybe<VersionsMuscleGroup_Latest_Operator>;
@@ -27766,7 +27766,7 @@ export type VersionsMuscleGroup_Where_Or = {
 
 export type VersionsMuscleGroups = {
   __typename?: 'versionsMuscleGroups';
-  docs: Array<MuscleGroupVersion>;
+  docs: MuscleGroupVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -27791,14 +27791,14 @@ export type VersionsPlan_CreatedAt_Operator = {
 };
 
 export type VersionsPlan_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsPlan_Latest_Operator = {
@@ -27808,12 +27808,12 @@ export type VersionsPlan_Latest_Operator = {
 };
 
 export type VersionsPlan_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsPlan_UpdatedAt_Operator = {
@@ -27833,12 +27833,12 @@ export enum VersionsPlan_Version___Status_Input {
 }
 
 export type VersionsPlan_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsPlan_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsPlan_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsPlan_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsPlan_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsPlan_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsPlan_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsPlan_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsPlan_Version___Status_Input>[]>;
 };
 
 export enum VersionsPlan_Version__Activity_Level_Input {
@@ -27849,12 +27849,12 @@ export enum VersionsPlan_Version__Activity_Level_Input {
 }
 
 export type VersionsPlan_Version__Activity_Level_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsPlan_Version__Activity_Level_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsPlan_Version__Activity_Level_Input>[]>;
   equals?: InputMaybe<VersionsPlan_Version__Activity_Level_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsPlan_Version__Activity_Level_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsPlan_Version__Activity_Level_Input>[]>;
   not_equals?: InputMaybe<VersionsPlan_Version__Activity_Level_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsPlan_Version__Activity_Level_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsPlan_Version__Activity_Level_Input>[]>;
 };
 
 export type VersionsPlan_Version__CreatedAt_Operator = {
@@ -27878,13 +27878,13 @@ export type VersionsPlan_Version__Days_Operator = {
 };
 
 export type VersionsPlan_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsPlan_Version__UpdatedAt_Operator = {
@@ -27899,17 +27899,17 @@ export type VersionsPlan_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsPlan_Version__Workout_Groups_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsPlan_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsPlan_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsPlan_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsPlan_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsPlan_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsPlan_CreatedAt_Operator>;
   id?: InputMaybe<VersionsPlan_Id_Operator>;
   latest?: InputMaybe<VersionsPlan_Latest_Operator>;
@@ -27925,8 +27925,8 @@ export type VersionsPlan_Where = {
 };
 
 export type VersionsPlan_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsPlan_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsPlan_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsPlan_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsPlan_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsPlan_CreatedAt_Operator>;
   id?: InputMaybe<VersionsPlan_Id_Operator>;
   latest?: InputMaybe<VersionsPlan_Latest_Operator>;
@@ -27942,8 +27942,8 @@ export type VersionsPlan_Where_And = {
 };
 
 export type VersionsPlan_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsPlan_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsPlan_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsPlan_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsPlan_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsPlan_CreatedAt_Operator>;
   id?: InputMaybe<VersionsPlan_Id_Operator>;
   latest?: InputMaybe<VersionsPlan_Latest_Operator>;
@@ -27960,7 +27960,7 @@ export type VersionsPlan_Where_Or = {
 
 export type VersionsPlans = {
   __typename?: 'versionsPlans';
-  docs: Array<PlanVersion>;
+  docs: PlanVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -27985,14 +27985,14 @@ export type VersionsProduct_CreatedAt_Operator = {
 };
 
 export type VersionsProduct_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsProduct_Latest_Operator = {
@@ -28002,12 +28002,12 @@ export type VersionsProduct_Latest_Operator = {
 };
 
 export type VersionsProduct_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsProduct_UpdatedAt_Operator = {
@@ -28027,34 +28027,34 @@ export enum VersionsProduct_Version___Status_Input {
 }
 
 export type VersionsProduct_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsProduct_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsProduct_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsProduct_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsProduct_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsProduct_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsProduct_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsProduct_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsProduct_Version___Status_Input>[]>;
 };
 
 export type VersionsProduct_Version__Affiliate_Link_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsProduct_Version__Category_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsProduct_Version__CreatedAt_Operator = {
@@ -28077,22 +28077,22 @@ export type VersionsProduct_Version__Description_Operator = {
 };
 
 export type VersionsProduct_Version__Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsProduct_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsProduct_Version__Price_Operator = {
@@ -28117,8 +28117,8 @@ export type VersionsProduct_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsProduct_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsProduct_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsProduct_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsProduct_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsProduct_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsProduct_CreatedAt_Operator>;
   id?: InputMaybe<VersionsProduct_Id_Operator>;
   latest?: InputMaybe<VersionsProduct_Latest_Operator>;
@@ -28136,8 +28136,8 @@ export type VersionsProduct_Where = {
 };
 
 export type VersionsProduct_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsProduct_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsProduct_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsProduct_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsProduct_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsProduct_CreatedAt_Operator>;
   id?: InputMaybe<VersionsProduct_Id_Operator>;
   latest?: InputMaybe<VersionsProduct_Latest_Operator>;
@@ -28155,8 +28155,8 @@ export type VersionsProduct_Where_And = {
 };
 
 export type VersionsProduct_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsProduct_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsProduct_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsProduct_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsProduct_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsProduct_CreatedAt_Operator>;
   id?: InputMaybe<VersionsProduct_Id_Operator>;
   latest?: InputMaybe<VersionsProduct_Latest_Operator>;
@@ -28175,7 +28175,7 @@ export type VersionsProduct_Where_Or = {
 
 export type VersionsProducts = {
   __typename?: 'versionsProducts';
-  docs: Array<ProductVersion>;
+  docs: ProductVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -28200,14 +28200,14 @@ export type VersionsTextContent_CreatedAt_Operator = {
 };
 
 export type VersionsTextContent_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsTextContent_Latest_Operator = {
@@ -28217,12 +28217,12 @@ export type VersionsTextContent_Latest_Operator = {
 };
 
 export type VersionsTextContent_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsTextContent_UpdatedAt_Operator = {
@@ -28242,12 +28242,12 @@ export enum VersionsTextContent_Version___Status_Input {
 }
 
 export type VersionsTextContent_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsTextContent_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsTextContent_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsTextContent_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsTextContent_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsTextContent_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsTextContent_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsTextContent_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsTextContent_Version___Status_Input>[]>;
 };
 
 export type VersionsTextContent_Version__Content_Operator = {
@@ -28270,33 +28270,33 @@ export type VersionsTextContent_Version__CreatedAt_Operator = {
 };
 
 export type VersionsTextContent_Version__Subtitle_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsTextContent_Version__Thumbnail_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsTextContent_Version__Title_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsTextContent_Version__UpdatedAt_Operator = {
@@ -28311,28 +28311,28 @@ export type VersionsTextContent_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsTextContent_Version__Video_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsTextContent_Version__Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsTextContent_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsTextContent_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsTextContent_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsTextContent_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsTextContent_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsTextContent_CreatedAt_Operator>;
   id?: InputMaybe<VersionsTextContent_Id_Operator>;
   latest?: InputMaybe<VersionsTextContent_Latest_Operator>;
@@ -28350,8 +28350,8 @@ export type VersionsTextContent_Where = {
 };
 
 export type VersionsTextContent_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsTextContent_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsTextContent_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsTextContent_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsTextContent_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsTextContent_CreatedAt_Operator>;
   id?: InputMaybe<VersionsTextContent_Id_Operator>;
   latest?: InputMaybe<VersionsTextContent_Latest_Operator>;
@@ -28369,8 +28369,8 @@ export type VersionsTextContent_Where_And = {
 };
 
 export type VersionsTextContent_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsTextContent_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsTextContent_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsTextContent_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsTextContent_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsTextContent_CreatedAt_Operator>;
   id?: InputMaybe<VersionsTextContent_Id_Operator>;
   latest?: InputMaybe<VersionsTextContent_Latest_Operator>;
@@ -28389,7 +28389,7 @@ export type VersionsTextContent_Where_Or = {
 
 export type VersionsTextContents = {
   __typename?: 'versionsTextContents';
-  docs: Array<TextContentVersion>;
+  docs: TextContentVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -28414,14 +28414,14 @@ export type VersionsTrainer_CreatedAt_Operator = {
 };
 
 export type VersionsTrainer_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsTrainer_Latest_Operator = {
@@ -28431,12 +28431,12 @@ export type VersionsTrainer_Latest_Operator = {
 };
 
 export type VersionsTrainer_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsTrainer_UpdatedAt_Operator = {
@@ -28456,12 +28456,12 @@ export enum VersionsTrainer_Version___Status_Input {
 }
 
 export type VersionsTrainer_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsTrainer_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsTrainer_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsTrainer_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsTrainer_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsTrainer_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsTrainer_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsTrainer_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsTrainer_Version___Status_Input>[]>;
 };
 
 export type VersionsTrainer_Version__Bio_Operator = {
@@ -28484,33 +28484,33 @@ export type VersionsTrainer_Version__CreatedAt_Operator = {
 };
 
 export type VersionsTrainer_Version__Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsTrainer_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsTrainer_Version__Specialties_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsTrainer_Version__UpdatedAt_Operator = {
@@ -28525,8 +28525,8 @@ export type VersionsTrainer_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsTrainer_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsTrainer_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsTrainer_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsTrainer_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsTrainer_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsTrainer_CreatedAt_Operator>;
   id?: InputMaybe<VersionsTrainer_Id_Operator>;
   latest?: InputMaybe<VersionsTrainer_Latest_Operator>;
@@ -28542,8 +28542,8 @@ export type VersionsTrainer_Where = {
 };
 
 export type VersionsTrainer_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsTrainer_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsTrainer_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsTrainer_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsTrainer_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsTrainer_CreatedAt_Operator>;
   id?: InputMaybe<VersionsTrainer_Id_Operator>;
   latest?: InputMaybe<VersionsTrainer_Latest_Operator>;
@@ -28559,8 +28559,8 @@ export type VersionsTrainer_Where_And = {
 };
 
 export type VersionsTrainer_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsTrainer_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsTrainer_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsTrainer_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsTrainer_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsTrainer_CreatedAt_Operator>;
   id?: InputMaybe<VersionsTrainer_Id_Operator>;
   latest?: InputMaybe<VersionsTrainer_Latest_Operator>;
@@ -28577,7 +28577,7 @@ export type VersionsTrainer_Where_Or = {
 
 export type VersionsTrainers = {
   __typename?: 'versionsTrainers';
-  docs: Array<TrainerVersion>;
+  docs: TrainerVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -28602,14 +28602,14 @@ export type VersionsUpdateControl_CreatedAt_Operator = {
 };
 
 export type VersionsUpdateControl_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUpdateControl_Latest_Operator = {
@@ -28619,12 +28619,12 @@ export type VersionsUpdateControl_Latest_Operator = {
 };
 
 export type VersionsUpdateControl_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsUpdateControl_UpdatedAt_Operator = {
@@ -28644,12 +28644,12 @@ export enum VersionsUpdateControl_Version___Status_Input {
 }
 
 export type VersionsUpdateControl_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsUpdateControl_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsUpdateControl_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsUpdateControl_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsUpdateControl_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsUpdateControl_Version___Status_Input>[]>;
 };
 
 export type VersionsUpdateControl_Version__CreatedAt_Operator = {
@@ -28670,25 +28670,25 @@ export type VersionsUpdateControl_Version__Force_Update_Operator = {
 };
 
 export type VersionsUpdateControl_Version__Minimum_Version_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUpdateControl_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUpdateControl_Version__Native_Update_Enabled_Operator = {
@@ -28723,19 +28723,19 @@ export type VersionsUpdateControl_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsUpdateControl_Version__Version_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUpdateControl_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsUpdateControl_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsUpdateControl_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsUpdateControl_CreatedAt_Operator>;
   id?: InputMaybe<VersionsUpdateControl_Id_Operator>;
   latest?: InputMaybe<VersionsUpdateControl_Latest_Operator>;
@@ -28754,8 +28754,8 @@ export type VersionsUpdateControl_Where = {
 };
 
 export type VersionsUpdateControl_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsUpdateControl_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsUpdateControl_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsUpdateControl_CreatedAt_Operator>;
   id?: InputMaybe<VersionsUpdateControl_Id_Operator>;
   latest?: InputMaybe<VersionsUpdateControl_Latest_Operator>;
@@ -28774,8 +28774,8 @@ export type VersionsUpdateControl_Where_And = {
 };
 
 export type VersionsUpdateControl_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsUpdateControl_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsUpdateControl_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsUpdateControl_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsUpdateControl_CreatedAt_Operator>;
   id?: InputMaybe<VersionsUpdateControl_Id_Operator>;
   latest?: InputMaybe<VersionsUpdateControl_Latest_Operator>;
@@ -28795,7 +28795,7 @@ export type VersionsUpdateControl_Where_Or = {
 
 export type VersionsUpdateControls = {
   __typename?: 'versionsUpdateControls';
-  docs: Array<UpdateControlVersion>;
+  docs: UpdateControlVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -28820,14 +28820,14 @@ export type VersionsUser_CreatedAt_Operator = {
 };
 
 export type VersionsUser_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUser_Latest_Operator = {
@@ -28837,12 +28837,12 @@ export type VersionsUser_Latest_Operator = {
 };
 
 export type VersionsUser_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsUser_UpdatedAt_Operator = {
@@ -28862,21 +28862,21 @@ export enum VersionsUser_Version___Status_Input {
 }
 
 export type VersionsUser_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsUser_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsUser_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsUser_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsUser_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsUser_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsUser_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsUser_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsUser_Version___Status_Input>[]>;
 };
 
 export type VersionsUser_Version__Avatar_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsUser_Version__Bio_Operator = {
@@ -28899,34 +28899,34 @@ export type VersionsUser_Version__CreatedAt_Operator = {
 };
 
 export type VersionsUser_Version__Email_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['EmailAddress']['input']>[]>;
   contains?: InputMaybe<Scalars['EmailAddress']['input']>;
   equals?: InputMaybe<Scalars['EmailAddress']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['EmailAddress']['input']>[]>;
   like?: InputMaybe<Scalars['EmailAddress']['input']>;
   not_equals?: InputMaybe<Scalars['EmailAddress']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['EmailAddress']['input']>[]>;
 };
 
 export type VersionsUser_Version__FirstName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUser_Version__Hash_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUser_Version__IsActive_Operator = {
@@ -28936,13 +28936,13 @@ export type VersionsUser_Version__IsActive_Operator = {
 };
 
 export type VersionsUser_Version__LastName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUser_Version__LockUntil_Operator = {
@@ -28978,14 +28978,14 @@ export type VersionsUser_Version__ResetPasswordExpiration_Operator = {
 };
 
 export type VersionsUser_Version__ResetPasswordToken_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export enum VersionsUser_Version__Role_Input {
@@ -28995,22 +28995,22 @@ export enum VersionsUser_Version__Role_Input {
 }
 
 export type VersionsUser_Version__Role_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsUser_Version__Role_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsUser_Version__Role_Input>[]>;
   equals?: InputMaybe<VersionsUser_Version__Role_Input>;
-  in?: InputMaybe<Array<InputMaybe<VersionsUser_Version__Role_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsUser_Version__Role_Input>[]>;
   not_equals?: InputMaybe<VersionsUser_Version__Role_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsUser_Version__Role_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsUser_Version__Role_Input>[]>;
 };
 
 export type VersionsUser_Version__Salt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUser_Version__Sessions__CreatedAt_Operator = {
@@ -29035,13 +29035,13 @@ export type VersionsUser_Version__Sessions__ExpiresAt_Operator = {
 };
 
 export type VersionsUser_Version__Sessions__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsUser_Version__UpdatedAt_Operator = {
@@ -29056,8 +29056,8 @@ export type VersionsUser_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsUser_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsUser_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsUser_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsUser_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsUser_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsUser_CreatedAt_Operator>;
   id?: InputMaybe<VersionsUser_Id_Operator>;
   latest?: InputMaybe<VersionsUser_Latest_Operator>;
@@ -29085,8 +29085,8 @@ export type VersionsUser_Where = {
 };
 
 export type VersionsUser_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsUser_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsUser_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsUser_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsUser_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsUser_CreatedAt_Operator>;
   id?: InputMaybe<VersionsUser_Id_Operator>;
   latest?: InputMaybe<VersionsUser_Latest_Operator>;
@@ -29114,8 +29114,8 @@ export type VersionsUser_Where_And = {
 };
 
 export type VersionsUser_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsUser_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsUser_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsUser_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsUser_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsUser_CreatedAt_Operator>;
   id?: InputMaybe<VersionsUser_Id_Operator>;
   latest?: InputMaybe<VersionsUser_Latest_Operator>;
@@ -29144,7 +29144,7 @@ export type VersionsUser_Where_Or = {
 
 export type VersionsUsers = {
   __typename?: 'versionsUsers';
-  docs: Array<UserVersion>;
+  docs: UserVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -29159,7 +29159,7 @@ export type VersionsUsers = {
 
 export type VersionsVideoClassCategories = {
   __typename?: 'versionsVideoClassCategories';
-  docs: Array<VideoClassCategoryVersion>;
+  docs: VideoClassCategoryVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -29184,14 +29184,14 @@ export type VersionsVideoClassCategory_CreatedAt_Operator = {
 };
 
 export type VersionsVideoClassCategory_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoClassCategory_Latest_Operator = {
@@ -29201,12 +29201,12 @@ export type VersionsVideoClassCategory_Latest_Operator = {
 };
 
 export type VersionsVideoClassCategory_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoClassCategory_UpdatedAt_Operator = {
@@ -29226,12 +29226,12 @@ export enum VersionsVideoClassCategory_Version___Status_Input {
 }
 
 export type VersionsVideoClassCategory_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsVideoClassCategory_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsVideoClassCategory_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Version___Status_Input>[]>;
 };
 
 export type VersionsVideoClassCategory_Version__CreatedAt_Operator = {
@@ -29246,13 +29246,13 @@ export type VersionsVideoClassCategory_Version__CreatedAt_Operator = {
 };
 
 export type VersionsVideoClassCategory_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoClassCategory_Version__UpdatedAt_Operator = {
@@ -29267,8 +29267,8 @@ export type VersionsVideoClassCategory_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsVideoClassCategory_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoClassCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoClassCategory_Id_Operator>;
   latest?: InputMaybe<VersionsVideoClassCategory_Latest_Operator>;
@@ -29281,8 +29281,8 @@ export type VersionsVideoClassCategory_Where = {
 };
 
 export type VersionsVideoClassCategory_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoClassCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoClassCategory_Id_Operator>;
   latest?: InputMaybe<VersionsVideoClassCategory_Latest_Operator>;
@@ -29295,8 +29295,8 @@ export type VersionsVideoClassCategory_Where_And = {
 };
 
 export type VersionsVideoClassCategory_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoClassCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoClassCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoClassCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoClassCategory_Id_Operator>;
   latest?: InputMaybe<VersionsVideoClassCategory_Latest_Operator>;
@@ -29320,14 +29320,14 @@ export type VersionsVideoClass_CreatedAt_Operator = {
 };
 
 export type VersionsVideoClass_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoClass_Latest_Operator = {
@@ -29337,12 +29337,12 @@ export type VersionsVideoClass_Latest_Operator = {
 };
 
 export type VersionsVideoClass_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoClass_UpdatedAt_Operator = {
@@ -29362,21 +29362,21 @@ export enum VersionsVideoClass_Version___Status_Input {
 }
 
 export type VersionsVideoClass_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsVideoClass_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsVideoClass_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsVideoClass_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsVideoClass_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsVideoClass_Version___Status_Input>[]>;
 };
 
 export type VersionsVideoClass_Version__Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoClass_Version__CreatedAt_Operator = {
@@ -29399,31 +29399,31 @@ export type VersionsVideoClass_Version__Description_Operator = {
 };
 
 export type VersionsVideoClass_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoClass_Version__Thumbnail_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoClass_Version__Trainer_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoClass_Version__UpdatedAt_Operator = {
@@ -29438,28 +29438,28 @@ export type VersionsVideoClass_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsVideoClass_Version__Video_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoClass_Version__Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoClass_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoClass_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoClass_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoClass_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoClass_Id_Operator>;
   latest?: InputMaybe<VersionsVideoClass_Latest_Operator>;
@@ -29478,8 +29478,8 @@ export type VersionsVideoClass_Where = {
 };
 
 export type VersionsVideoClass_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoClass_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoClass_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoClass_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoClass_Id_Operator>;
   latest?: InputMaybe<VersionsVideoClass_Latest_Operator>;
@@ -29498,8 +29498,8 @@ export type VersionsVideoClass_Where_And = {
 };
 
 export type VersionsVideoClass_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoClass_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoClass_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoClass_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoClass_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoClass_Id_Operator>;
   latest?: InputMaybe<VersionsVideoClass_Latest_Operator>;
@@ -29519,7 +29519,7 @@ export type VersionsVideoClass_Where_Or = {
 
 export type VersionsVideoClasses = {
   __typename?: 'versionsVideoClasses';
-  docs: Array<VideoClassVersion>;
+  docs: VideoClassVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -29534,7 +29534,7 @@ export type VersionsVideoClasses = {
 
 export type VersionsVideoSeries = {
   __typename?: 'versionsVideoSeries';
-  docs: Array<VideoSeryVersion>;
+  docs: VideoSeryVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -29559,14 +29559,14 @@ export type VersionsVideoSery_CreatedAt_Operator = {
 };
 
 export type VersionsVideoSery_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoSery_Latest_Operator = {
@@ -29576,12 +29576,12 @@ export type VersionsVideoSery_Latest_Operator = {
 };
 
 export type VersionsVideoSery_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoSery_UpdatedAt_Operator = {
@@ -29601,21 +29601,21 @@ export enum VersionsVideoSery_Version___Status_Input {
 }
 
 export type VersionsVideoSery_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsVideoSery_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsVideoSery_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsVideoSery_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsVideoSery_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsVideoSery_Version___Status_Input>[]>;
 };
 
 export type VersionsVideoSery_Version__Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoSery_Version__Classes_Per_Week_Operator = {
@@ -29647,40 +29647,40 @@ export type VersionsVideoSery_Version__Description_Operator = {
 };
 
 export type VersionsVideoSery_Version__Intro_Video_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoSery_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoSery_Version__Thumbnail_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoSery_Version__Trainer_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsVideoSery_Version__UpdatedAt_Operator = {
@@ -29700,19 +29700,19 @@ export type VersionsVideoSery_Version__User_Can_Access_Operator = {
 };
 
 export type VersionsVideoSery_Version__Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsVideoSery_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoSery_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoSery_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoSery_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoSery_Id_Operator>;
   latest?: InputMaybe<VersionsVideoSery_Latest_Operator>;
@@ -29733,8 +29733,8 @@ export type VersionsVideoSery_Where = {
 };
 
 export type VersionsVideoSery_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoSery_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoSery_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoSery_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoSery_Id_Operator>;
   latest?: InputMaybe<VersionsVideoSery_Latest_Operator>;
@@ -29755,8 +29755,8 @@ export type VersionsVideoSery_Where_And = {
 };
 
 export type VersionsVideoSery_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsVideoSery_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsVideoSery_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsVideoSery_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsVideoSery_CreatedAt_Operator>;
   id?: InputMaybe<VersionsVideoSery_Id_Operator>;
   latest?: InputMaybe<VersionsVideoSery_Latest_Operator>;
@@ -29778,7 +29778,7 @@ export type VersionsVideoSery_Where_Or = {
 
 export type VersionsWorkoutCategories = {
   __typename?: 'versionsWorkoutCategories';
-  docs: Array<WorkoutCategoryVersion>;
+  docs: WorkoutCategoryVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -29803,14 +29803,14 @@ export type VersionsWorkoutCategory_CreatedAt_Operator = {
 };
 
 export type VersionsWorkoutCategory_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsWorkoutCategory_Latest_Operator = {
@@ -29820,12 +29820,12 @@ export type VersionsWorkoutCategory_Latest_Operator = {
 };
 
 export type VersionsWorkoutCategory_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsWorkoutCategory_UpdatedAt_Operator = {
@@ -29845,12 +29845,12 @@ export enum VersionsWorkoutCategory_Version___Status_Input {
 }
 
 export type VersionsWorkoutCategory_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsWorkoutCategory_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsWorkoutCategory_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Version___Status_Input>[]>;
 };
 
 export type VersionsWorkoutCategory_Version__CreatedAt_Operator = {
@@ -29865,13 +29865,13 @@ export type VersionsWorkoutCategory_Version__CreatedAt_Operator = {
 };
 
 export type VersionsWorkoutCategory_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsWorkoutCategory_Version__UpdatedAt_Operator = {
@@ -29886,8 +29886,8 @@ export type VersionsWorkoutCategory_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsWorkoutCategory_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkoutCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkoutCategory_Id_Operator>;
   latest?: InputMaybe<VersionsWorkoutCategory_Latest_Operator>;
@@ -29900,8 +29900,8 @@ export type VersionsWorkoutCategory_Where = {
 };
 
 export type VersionsWorkoutCategory_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkoutCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkoutCategory_Id_Operator>;
   latest?: InputMaybe<VersionsWorkoutCategory_Latest_Operator>;
@@ -29914,8 +29914,8 @@ export type VersionsWorkoutCategory_Where_And = {
 };
 
 export type VersionsWorkoutCategory_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkoutCategory_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkoutCategory_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkoutCategory_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkoutCategory_Id_Operator>;
   latest?: InputMaybe<VersionsWorkoutCategory_Latest_Operator>;
@@ -29939,14 +29939,14 @@ export type VersionsWorkoutGroup_CreatedAt_Operator = {
 };
 
 export type VersionsWorkoutGroup_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsWorkoutGroup_Latest_Operator = {
@@ -29956,12 +29956,12 @@ export type VersionsWorkoutGroup_Latest_Operator = {
 };
 
 export type VersionsWorkoutGroup_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsWorkoutGroup_UpdatedAt_Operator = {
@@ -29981,12 +29981,12 @@ export enum VersionsWorkoutGroup_Version___Status_Input {
 }
 
 export type VersionsWorkoutGroup_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsWorkoutGroup_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsWorkoutGroup_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Version___Status_Input>[]>;
 };
 
 export type VersionsWorkoutGroup_Version__CreatedAt_Operator = {
@@ -30001,13 +30001,13 @@ export type VersionsWorkoutGroup_Version__CreatedAt_Operator = {
 };
 
 export type VersionsWorkoutGroup_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsWorkoutGroup_Version__UpdatedAt_Operator = {
@@ -30022,8 +30022,8 @@ export type VersionsWorkoutGroup_Version__UpdatedAt_Operator = {
 };
 
 export type VersionsWorkoutGroup_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkoutGroup_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkoutGroup_Id_Operator>;
   latest?: InputMaybe<VersionsWorkoutGroup_Latest_Operator>;
@@ -30036,8 +30036,8 @@ export type VersionsWorkoutGroup_Where = {
 };
 
 export type VersionsWorkoutGroup_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkoutGroup_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkoutGroup_Id_Operator>;
   latest?: InputMaybe<VersionsWorkoutGroup_Latest_Operator>;
@@ -30050,8 +30050,8 @@ export type VersionsWorkoutGroup_Where_And = {
 };
 
 export type VersionsWorkoutGroup_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkoutGroup_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkoutGroup_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkoutGroup_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkoutGroup_Id_Operator>;
   latest?: InputMaybe<VersionsWorkoutGroup_Latest_Operator>;
@@ -30065,7 +30065,7 @@ export type VersionsWorkoutGroup_Where_Or = {
 
 export type VersionsWorkoutGroups = {
   __typename?: 'versionsWorkoutGroups';
-  docs: Array<WorkoutGroupVersion>;
+  docs: WorkoutGroupVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -30090,14 +30090,14 @@ export type VersionsWorkout_CreatedAt_Operator = {
 };
 
 export type VersionsWorkout_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsWorkout_Latest_Operator = {
@@ -30107,12 +30107,12 @@ export type VersionsWorkout_Latest_Operator = {
 };
 
 export type VersionsWorkout_Parent_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsWorkout_UpdatedAt_Operator = {
@@ -30132,21 +30132,21 @@ export enum VersionsWorkout_Version___Status_Input {
 }
 
 export type VersionsWorkout_Version___Status_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version___Status_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsWorkout_Version___Status_Input>[]>;
   equals?: InputMaybe<VersionsWorkout_Version___Status_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version___Status_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsWorkout_Version___Status_Input>[]>;
   not_equals?: InputMaybe<VersionsWorkout_Version___Status_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version___Status_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsWorkout_Version___Status_Input>[]>;
 };
 
 export type VersionsWorkout_Version__Categories_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export enum VersionsWorkout_Version__Completion_Time_Input {
@@ -30156,12 +30156,12 @@ export enum VersionsWorkout_Version__Completion_Time_Input {
 }
 
 export type VersionsWorkout_Version__Completion_Time_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Completion_Time_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsWorkout_Version__Completion_Time_Input>[]>;
   equals?: InputMaybe<VersionsWorkout_Version__Completion_Time_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Completion_Time_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsWorkout_Version__Completion_Time_Input>[]>;
   not_equals?: InputMaybe<VersionsWorkout_Version__Completion_Time_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Completion_Time_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsWorkout_Version__Completion_Time_Input>[]>;
 };
 
 export type VersionsWorkout_Version__CreatedAt_Operator = {
@@ -30190,31 +30190,31 @@ export enum VersionsWorkout_Version__Difficulty_Input {
 }
 
 export type VersionsWorkout_Version__Difficulty_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Difficulty_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsWorkout_Version__Difficulty_Input>[]>;
   equals?: InputMaybe<VersionsWorkout_Version__Difficulty_Input>;
-  in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Difficulty_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsWorkout_Version__Difficulty_Input>[]>;
   not_equals?: InputMaybe<VersionsWorkout_Version__Difficulty_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Difficulty_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsWorkout_Version__Difficulty_Input>[]>;
 };
 
 export type VersionsWorkout_Version__Display_Image_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsWorkout_Version__Internal_Display_Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsWorkout_Version__Is_Finisher_Operator = {
@@ -30224,23 +30224,23 @@ export type VersionsWorkout_Version__Is_Finisher_Operator = {
 };
 
 export type VersionsWorkout_Version__Muscle_Groups_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   equals?: InputMaybe<Scalars['JSON']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
   not_equals?: InputMaybe<Scalars['JSON']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['JSON']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['JSON']['input']>[]>;
 };
 
 export type VersionsWorkout_Version__Name_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  all?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  not_in?: InputMaybe<InputMaybe<Scalars['String']['input']>[]>;
 };
 
 export type VersionsWorkout_Version__Trial_Workout_Operator = {
@@ -30267,17 +30267,17 @@ export enum VersionsWorkout_Version__Workout_Type_Input {
 }
 
 export type VersionsWorkout_Version__Workout_Type_Operator = {
-  all?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Workout_Type_Input>>>;
+  all?: InputMaybe<InputMaybe<VersionsWorkout_Version__Workout_Type_Input>[]>;
   equals?: InputMaybe<VersionsWorkout_Version__Workout_Type_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Workout_Type_Input>>>;
+  in?: InputMaybe<InputMaybe<VersionsWorkout_Version__Workout_Type_Input>[]>;
   not_equals?: InputMaybe<VersionsWorkout_Version__Workout_Type_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<VersionsWorkout_Version__Workout_Type_Input>>>;
+  not_in?: InputMaybe<InputMaybe<VersionsWorkout_Version__Workout_Type_Input>[]>;
 };
 
 export type VersionsWorkout_Where = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkout_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkout_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkout_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkout_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkout_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkout_Id_Operator>;
   latest?: InputMaybe<VersionsWorkout_Latest_Operator>;
@@ -30300,8 +30300,8 @@ export type VersionsWorkout_Where = {
 };
 
 export type VersionsWorkout_Where_And = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkout_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkout_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkout_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkout_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkout_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkout_Id_Operator>;
   latest?: InputMaybe<VersionsWorkout_Latest_Operator>;
@@ -30324,8 +30324,8 @@ export type VersionsWorkout_Where_And = {
 };
 
 export type VersionsWorkout_Where_Or = {
-  AND?: InputMaybe<Array<InputMaybe<VersionsWorkout_Where_And>>>;
-  OR?: InputMaybe<Array<InputMaybe<VersionsWorkout_Where_Or>>>;
+  AND?: InputMaybe<InputMaybe<VersionsWorkout_Where_And>[]>;
+  OR?: InputMaybe<InputMaybe<VersionsWorkout_Where_Or>[]>;
   createdAt?: InputMaybe<VersionsWorkout_CreatedAt_Operator>;
   id?: InputMaybe<VersionsWorkout_Id_Operator>;
   latest?: InputMaybe<VersionsWorkout_Latest_Operator>;
@@ -30349,7 +30349,7 @@ export type VersionsWorkout_Where_Or = {
 
 export type VersionsWorkouts = {
   __typename?: 'versionsWorkouts';
-  docs: Array<WorkoutVersion>;
+  docs: WorkoutVersion[];
   hasNextPage: Scalars['Boolean']['output'];
   hasPrevPage: Scalars['Boolean']['output'];
   limit: Scalars['Int']['output'];
@@ -30488,14 +30488,14 @@ export type GetMealsQueryVariables = Exact<{
 }>;
 
 
-export type GetMealsQuery = { __typename?: 'Query', Meals?: { __typename?: 'Meals', hasNextPage: boolean, hasPrevPage: boolean, nextPage?: number | null, page: number, prevPage?: number | null, totalDocs: number, totalPages: number, docs: Array<{ __typename?: 'Meal', id: string, name?: string | null, calories?: number | null, carbs?: number | null, fat?: number | null, protein?: number | null, cook_time?: number | null, prep_time?: number | null, gluten_free?: boolean | null, lactose_free?: boolean | null, nut_free?: boolean | null, is_quick_meal?: boolean | null, createdAt?: string | null, updatedAt?: string | null, image?: { __typename?: 'Media', url?: string | null, alt?: string | null, width?: number | null, height?: number | null } | null, categories?: Array<{ __typename?: 'MealCategory', id: string, name?: string | null }> | null, diet_types?: Array<{ __typename?: 'DietType', id: string, name?: string | null }> | null }> } | null };
+export type GetMealsQuery = { __typename?: 'Query', Meals?: { __typename?: 'Meals', hasNextPage: boolean, hasPrevPage: boolean, nextPage?: number | null, page: number, prevPage?: number | null, totalDocs: number, totalPages: number, docs: { __typename?: 'Meal', id: string, name?: string | null, calories?: number | null, carbs?: number | null, fat?: number | null, protein?: number | null, cook_time?: number | null, prep_time?: number | null, gluten_free?: boolean | null, lactose_free?: boolean | null, nut_free?: boolean | null, is_quick_meal?: boolean | null, createdAt?: string | null, updatedAt?: string | null, image?: { __typename?: 'Media', url?: string | null, alt?: string | null, width?: number | null, height?: number | null } | null, categories?: { __typename?: 'MealCategory', id: string, name?: string | null }[] | null, diet_types?: { __typename?: 'DietType', id: string, name?: string | null }[] | null }[] } | null };
 
 export type GetMealQueryVariables = Exact<{
   id: Scalars['String']['input'];
 }>;
 
 
-export type GetMealQuery = { __typename?: 'Query', Meal?: { __typename?: 'Meal', id: string, name?: string | null, calories?: number | null, carbs?: number | null, fat?: number | null, protein?: number | null, cook_time?: number | null, prep_time?: number | null, gluten_free?: boolean | null, lactose_free?: boolean | null, nut_free?: boolean | null, is_quick_meal?: boolean | null, createdAt?: string | null, updatedAt?: string | null, image?: { __typename?: 'Media', url?: string | null, alt?: string | null, width?: number | null, height?: number | null } | null, categories?: Array<{ __typename?: 'MealCategory', id: string, name?: string | null }> | null, diet_types?: Array<{ __typename?: 'DietType', id: string, name?: string | null }> | null, ingredients?: Array<{ __typename?: 'IngredientBlock', id?: string | null, blockName?: string | null, blockType?: string | null, name?: string | null, amount?: number | null, serving_unit?: IngredientBlock_Serving_Unit | null }> | null, method?: Array<{ __typename?: 'MealMethodBlock', id?: string | null, blockName?: string | null, blockType?: string | null, step?: string | null }> | null } | null };
+export type GetMealQuery = { __typename?: 'Query', Meal?: { __typename?: 'Meal', id: string, name?: string | null, calories?: number | null, carbs?: number | null, fat?: number | null, protein?: number | null, cook_time?: number | null, prep_time?: number | null, gluten_free?: boolean | null, lactose_free?: boolean | null, nut_free?: boolean | null, is_quick_meal?: boolean | null, createdAt?: string | null, updatedAt?: string | null, image?: { __typename?: 'Media', url?: string | null, alt?: string | null, width?: number | null, height?: number | null } | null, categories?: { __typename?: 'MealCategory', id: string, name?: string | null }[] | null, diet_types?: { __typename?: 'DietType', id: string, name?: string | null }[] | null, ingredients?: { __typename?: 'IngredientBlock', id?: string | null, blockName?: string | null, blockType?: string | null, name?: string | null, amount?: number | null, serving_unit?: IngredientBlock_Serving_Unit | null }[] | null, method?: { __typename?: 'MealMethodBlock', id?: string | null, blockName?: string | null, blockType?: string | null, step?: string | null }[] | null } | null };
 
 
 

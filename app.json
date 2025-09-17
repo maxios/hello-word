@@ -6,7 +6,7 @@
     "scheme": "strng",
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/shared/assets/favicon.png"
     },
     "owner": "strng",
     "extra": {
@@ -33,16 +33,14 @@
     "version": "3.3.1",
     "runtimeVersion": "1.5",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/shared/assets/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/shared/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#141414"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "associatedDomains": [
         "applinks:api.vercel-prod.strngapp.com",
@@ -55,17 +53,13 @@
         "usesNonExemptEncryption": false
       },
       "entitlements": {
-        "com.apple.developer.in-app-payments": [
-          "merchant.com.strong.andsxy"
-        ]
+        "com.apple.developer.in-app-payments": ["merchant.com.strong.andsxy"]
       },
       "infoPlist": {
         "NSAppTransportSecurity": {
           "NSAllowsLocalNetworking": true
         },
-        "UIBackgroundModes": [
-          "audio"
-        ],
+        "UIBackgroundModes": ["audio"],
         "NSCameraUsageDescription": "STRNG needs access to your camera so you can take pictures and share them with your friends.",
         "NSPhotoLibraryUsageDescription": "STRNG needs access to your photos so you can upload images to track your progress, save memories, and share them with your friends.",
         "NSUserTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
@@ -75,7 +69,7 @@
     },
     "android": {
       "googleServicesFile": "./google-services.json",
-      "icon": "./assets/icon.png",
+      "icon": "./src/shared/assets/icon.png",
       "package": "com.strong.andsxy",
       "intentFilters": [
         {
@@ -87,10 +81,7 @@
               "host": "api.vercel-prod.strngapp.com"
             }
           ],
-          "category": [
-            "BROWSABLE",
-            "DEFAULT"
-          ]
+          "category": ["BROWSABLE", "DEFAULT"]
         }
       ]
     },

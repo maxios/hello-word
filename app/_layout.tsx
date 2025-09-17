@@ -30,7 +30,7 @@ import { RootSiblingParent } from "react-native-root-siblings";
 // import {RevenueCatProvider, useRevenueCat} from '../context/revenuecat';
 // import {ErrorBoundary} from '../components/ErrorBoundary';
 // import tokens from '../theme/tokens';
-import splashImage from "../assets/splash.png";
+import splashImage from "@/assets/splash.png";
 // import {getNextUserOnboardingStep} from '../pages/onboarding/utils';
 // import {Sentry} from '../lib/sentry';
 import { Button } from "@/components/Button";
@@ -113,14 +113,13 @@ const AnimatedSplashScreen: React.FC<{
 
       await Promise.all([
         loadAsync({
-           
-          "OpenSans-400": require("../assets/fonts/Open_Sans/OpenSans-Regular.ttf"),
-           
-          "OpenSans-600": require("../assets/fonts/Open_Sans/OpenSans-SemiBold.ttf"),
-           
-          "OpenSans-700": require("../assets/fonts/Open_Sans/OpenSans-Bold.ttf"),
-           
-          "Poppins-700": require("../assets/fonts/Poppins/Poppins-Bold.ttf"),
+          "OpenSans-400": require("@/assets/fonts/Open_Sans/OpenSans-Regular.ttf"),
+
+          "OpenSans-600": require("@/assets/fonts/Open_Sans/OpenSans-SemiBold.ttf"),
+
+          "OpenSans-700": require("@/assets/fonts/Open_Sans/OpenSans-Bold.ttf"),
+
+          "Poppins-700": require("@/assets/fonts/Poppins/Poppins-Bold.ttf"),
         }),
       ]);
     } catch (e) {
@@ -128,7 +127,6 @@ const AnimatedSplashScreen: React.FC<{
     } finally {
       setAppReady(true);
     }
-     
   }, []);
 
   return (

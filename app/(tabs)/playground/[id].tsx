@@ -10,8 +10,8 @@ import {
 } from "react-native";
 
 // Import components to showcase
-import { playground } from "@/components";
 import { ChevronLeftIcon, EyeIcon, EyeSlashIcon } from "@/components/icons";
+import { playground } from "@/components/index";
 import { ComponentShowcase } from "@/components/playground/ComponentShowcase";
 import { router, useLocalSearchParams } from "expo-router";
 

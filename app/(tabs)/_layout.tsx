@@ -8,7 +8,7 @@ import {
   MoveIcon,
 } from "@/components/icons";
 import { colors } from "@/constants/Colors";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const TABS = [

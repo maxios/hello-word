@@ -23,7 +23,7 @@ const IntroPage = () => {
       </View>
       <View className="flex-col justify-center gap-2 px-4">
         <Button
-          variant="outlined"
+          variant="primary"
           label="Start Your STRNG Workout"
           onPress={() => handleNavigation("/home")}
         />

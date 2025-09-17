@@ -1,4 +1,4 @@
-import { playground } from "@/components";
+import { playground } from "@/components/index";
 import { CategoryCard } from "@/components/playground/CategoryCard";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { clsx } from "clsx";

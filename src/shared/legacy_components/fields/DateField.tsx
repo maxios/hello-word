@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unused-prop-types */
+ 
 import {YStack, XStack, View} from 'tamagui';
 import {DimensionValue, Pressable} from 'react-native';
 import {

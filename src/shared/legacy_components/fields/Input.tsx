@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unused-prop-types */
+ 
 import {YStack, XStack} from 'tamagui';
 import {DimensionValue, TextInput, TextInputProps} from 'react-native';
 import {forwardRef, useState, useImperativeHandle, useRef} from 'react';

@@ -30,7 +30,7 @@ export const CarouselItem = ({ item, isFirst, isLast }: CarouselItemProps) => {
           <Text
             key={index}
             allowFontScaling={false}
-            className="font-ui-bold text-heading-lg self-start bg-white px-1 uppercase text-black"
+            className="self-start bg-white px-1 font-ui-bold text-heading-lg uppercase text-black"
           >
             {word}
           </Text>

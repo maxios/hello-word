@@ -152,7 +152,7 @@ const AwardComponent: React.FC<{selectedDate: Date; scheduleData: any}> = ({
     const weekIdentifier = startOfWeekOnce.toISOString();
     // Count completed days in the current week
     let completedDaysCount = 0;
-    // eslint-disable-next-line no-plusplus
+     
     for (let i = 0; i < 7; i++) {
       const currentDate = new Date(startOfWeek);
       currentDate.setDate(startOfWeek.getDate() + i);

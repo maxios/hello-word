@@ -15,7 +15,7 @@ interface InputProps {
   name: string;
   label?: string;
   placeholder?: string;
-  options: Array<{label: string; value: string}>;
+  options: {label: string; value: string}[];
   rules?: UseControllerProps['rules'];
   isRequired?: boolean;
   hasNoBorder?: boolean;

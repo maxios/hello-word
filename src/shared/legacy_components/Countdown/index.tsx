@@ -40,7 +40,7 @@ export const CountdownSet = ({
     tickTime,
     onTick: (seconds: number) => {
       realm.write(() => {
-        // eslint-disable-next-line no-param-reassign
+         
         set.secondsLeft = seconds;
       });
     },
@@ -93,7 +93,7 @@ export const CountdownSet = ({
         onFinish?.();
       }
     } catch (e) {
-      // eslint-disable-next-line no-console
+       
       console.log(e);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

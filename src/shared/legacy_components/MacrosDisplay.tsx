@@ -193,7 +193,7 @@ const MacrosDisplay: React.FC<{
                 {`${props.macronutrientBreakdown.kcal.toFixed(0)} KCAL`}
               </Text>
               <Text variant="uiS">
-                {/* eslint-disable-next-line no-nested-ternary */}
+                { }
                 {props.macronutrientBreakdown.deficit === 0
                   ? ''
                   : props.macronutrientBreakdown.deficit < 0

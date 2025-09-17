@@ -77,7 +77,7 @@ export const PhotoUpload: React.FC<{name: string}> = ({name}) => {
                   case 2:
                     return onChange('');
                   default:
-                    // eslint-disable-next-line consistent-return, no-useless-return
+                     
                     return;
                 }
               },

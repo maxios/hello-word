@@ -87,6 +87,16 @@ const sampleProducts = [
   },
 ];
 
+export const bestPractices = {
+  title: "✅ Best Practices",
+  practices: [],
+};
+
+export const usageGuidelines = {
+  title: "📋 Usage Guidelines",
+  content: "",
+};
+
 export const components: PlaygroundComponent[] = [
   {
     id: "image-carousel",
@@ -333,3 +343,13 @@ export const components: PlaygroundComponent[] = [
 // when using fetchData or when items array is empty`,
   },
 ];
+
+export const meta = {
+  id: "carousel",
+  name: "Carousel",
+  icon: "🔄",
+  description: "Interactive carousel components with various styles and states",
+  componentCount: components.length,
+  usageGuidelines,
+  bestPractices,
+};

@@ -100,7 +100,7 @@ export const MealProductWrapper = ({
     return null;
   }
 
-  // eslint-disable-next-line no-underscore-dangle
+   
   const isRecipe = product.__typename === 'Recipe';
 
   const actions = [
@@ -200,10 +200,10 @@ export const MealProductCard = ({
 
               // TODO: fix the difference between datoCMS and our database schema in cateegories
               if (typeof category === 'object') {
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                 
                 // @ts-expect-error
                 id = category?.id;
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                 
                 // @ts-expect-error
                 name = category?.name;
               }

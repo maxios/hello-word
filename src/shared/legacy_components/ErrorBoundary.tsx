@@ -1,4 +1,4 @@
-/* eslint-disable react/state-in-constructor */
+ 
 import {ErrorBoundaryProps, SplashScreen} from 'expo-router';
 import React from 'react';
 

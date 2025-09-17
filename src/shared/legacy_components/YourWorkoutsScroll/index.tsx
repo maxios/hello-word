@@ -1,5 +1,5 @@
-/* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable no-underscore-dangle */
+ 
+ 
 import React, {useMemo, useCallback} from 'react';
 import dayjs from 'dayjs';
 import {ProductCardsScroll} from '../ProductCards/ProductCardsScroll';

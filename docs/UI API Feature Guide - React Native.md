@@ -9,21 +9,27 @@ Think of UI components as "APIs" that expose exactly what data they need and wha
 ## Architecture Layers
 
 ### 1. **UI Schemas** - Data Contracts
+
 TypeScript interfaces that define exactly what shape of data each UI component needs.
 
 ### 2. **Mapping Engine** - Data Transformation
+
 Declarative JSON configurations that transform external API responses into UI-friendly schemas.
 
 ### 3. **Collections** - Data Storage
+
 TanStack DB collections that handle caching, normalization, and optimistic updates.
 
 ### 4. **Action Hooks** - Business Logic
+
 Custom hooks that encapsulate all business logic and return ready-to-use functions.
 
 ### 5. **Pure UI Components** - Presentation Only
+
 Components that only render props and call callbacks - zero business logic.
 
 ### 6. **Container Components** - Orchestration
+
 Thin components that connect data queries and action hooks to UI components.
 
 ---
@@ -77,41 +83,41 @@ Define how to transform external API data into your UI schemas:
 ```typescript
 // Mapper for transforming API response to UserProfile schema
 const userProfileMapper = {
-  id: 'user_id',
+  id: "user_id",
   displayName: {
-    path: 'profile.full_name',
-    fallback: 'profile.first_name'
+    path: "profile.full_name",
+    fallback: "profile.first_name",
   },
-  email: 'contact.email_address',
-  avatarUrl: 'profile.avatar.large_url',
+  email: "contact.email_address",
+  avatarUrl: "profile.avatar.large_url",
   stats: {
-    posts: 'statistics.post_count',
-    followers: 'statistics.follower_count',
-    following: 'statistics.following_count'
+    posts: "statistics.post_count",
+    followers: "statistics.follower_count",
+    following: "statistics.following_count",
   },
   isFollowing: {
-    path: 'relationship.is_following',
-    fallback: false
-  }
+    path: "relationship.is_following",
+    fallback: false,
+  },
 };
 
 const postMapper = {
-  id: 'post_id',
-  content: 'text_content',
+  id: "post_id",
+  content: "text_content",
   author: {
-    id: 'author.user_id',
-    name: 'author.display_name',
-    avatar: 'author.profile_picture'
+    id: "author.user_id",
+    name: "author.display_name",
+    avatar: "author.profile_picture",
   },
   publishedAt: {
-    path: 'created_timestamp',
-    transform: (timestamp: number) => new Date(timestamp * 1000).toISOString()
+    path: "created_timestamp",
+    transform: (timestamp: number) => new Date(timestamp * 1000).toISOString(),
   },
   engagement: {
-    likes: 'metrics.like_count',
-    comments: 'metrics.comment_count',
-    isLiked: 'current_user_reaction.has_liked'
-  }
+    likes: "metrics.like_count",
+    comments: "metrics.comment_count",
+    isLiked: "current_user_reaction.has_liked",
+  },
 };
 ```
 
@@ -124,16 +130,16 @@ Create a generic engine that applies mapping configurations:
 ```typescript
 // Generic path resolver with dot notation support
 const getValueByPath = (obj: any, path: string): any => {
-  return path.split('.').reduce((current, key) => {
+  return path.split(".").reduce((current, key) => {
     if (current === null || current === undefined) return undefined;
-    
+
     // Handle array indices: users[0].name
     const arrayMatch = key.match(/^(\w+)\[(\d+)\]$/);
     if (arrayMatch) {
       const [, arrayKey, index] = arrayMatch;
       return current[arrayKey]?.[parseInt(index)];
     }
-    
+
     return current[key];
   }, obj);
 };
@@ -142,45 +148,45 @@ const getValueByPath = (obj: any, path: string): any => {
 class MapperEngine {
   static map<T>(externalData: any, mapperConfig: any): T {
     const result = {} as T;
-    
+
     for (const [key, mapping] of Object.entries(mapperConfig)) {
       const value = this.processMapping(externalData, mapping);
       if (value !== undefined) {
         (result as any)[key] = value;
       }
     }
-    
+
     return result;
   }
 
   private static processMapping(data: any, mapping: any): any {
     // Simple string path
-    if (typeof mapping === 'string') {
+    if (typeof mapping === "string") {
       return getValueByPath(data, mapping);
     }
-    
+
     // Object with path and options
     if (mapping.path) {
       let value = getValueByPath(data, mapping.path);
-      
+
       // Apply transformation if provided
       if (mapping.transform && value !== undefined) {
         value = mapping.transform(value);
       }
-      
+
       // Use fallback if value is undefined
       if (value === undefined && mapping.fallback !== undefined) {
         value = mapping.fallback;
       }
-      
+
       return value;
     }
-    
+
     // Nested object mapping
-    if (typeof mapping === 'object' && !Array.isArray(mapping)) {
+    if (typeof mapping === "object" && !Array.isArray(mapping)) {
       return this.map(data, mapping);
     }
-    
+
     return undefined;
   }
 }
@@ -198,28 +204,28 @@ import { queryCollectionOptions } from "@tanstack/query-db-collection";
 
 // API Client
 class ApiClient {
-  private baseUrl = 'https://api.example.com';
-  
+  private baseUrl = "https://api.example.com";
+
   async get(endpoint: string) {
     const response = await fetch(`${this.baseUrl}${endpoint}`);
     if (!response.ok) throw new Error(`API Error: ${response.status}`);
     return response.json();
   }
-  
+
   async post(endpoint: string, data: any) {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
     if (!response.ok) throw new Error(`API Error: ${response.status}`);
     return response.json();
   }
-  
+
   async patch(endpoint: string, data: any) {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
     if (!response.ok) throw new Error(`API Error: ${response.status}`);
@@ -234,20 +240,20 @@ export const userCollection = createCollection(
   queryCollectionOptions({
     queryKey: ["users"],
     queryFn: async () => {
-      const rawUsers = await apiClient.get('/users');
+      const rawUsers = await apiClient.get("/users");
       // Transform using mapper engine
-      return rawUsers.map((user: any) => 
-        MapperEngine.map(user, userProfileMapper)
+      return rawUsers.map((user: any) =>
+        MapperEngine.map(user, userProfileMapper),
       );
     },
     getKey: (user: UserProfile) => user.id,
-    
+
     // Optimistic updates with server sync
     onUpdate: async ({ transaction }) => {
       const { key: userId, modified: updates } = transaction.mutations[0];
       await apiClient.patch(`/users/${userId}`, updates);
     },
-  })
+  }),
 );
 
 // Posts Collection
@@ -255,18 +261,16 @@ export const postCollection = createCollection(
   queryCollectionOptions({
     queryKey: ["posts"],
     queryFn: async () => {
-      const rawPosts = await apiClient.get('/posts');
-      return rawPosts.map((post: any) => 
-        MapperEngine.map(post, postMapper)
-      );
+      const rawPosts = await apiClient.get("/posts");
+      return rawPosts.map((post: any) => MapperEngine.map(post, postMapper));
     },
     getKey: (post: Post) => post.id,
-    
+
     onUpdate: async ({ transaction }) => {
       const { key: postId, modified: updates } = transaction.mutations[0];
       await apiClient.patch(`/posts/${postId}`, updates);
     },
-  })
+  }),
 );
 ```
 
@@ -286,7 +290,7 @@ export const useUserProfile = (userId: string) => {
     query
       .from({ users: userCollection })
       .where(({ users }) => eq(users.id, userId))
-      .selectOne()
+      .selectOne(),
   );
 };
 
@@ -296,7 +300,7 @@ export const useUserPosts = (userId: string) => {
     query
       .from({ posts: postCollection })
       .where(({ posts }) => eq(posts.author.id, userId))
-      .orderBy(({ posts }) => posts.publishedAt, 'desc')
+      .orderBy(({ posts }) => posts.publishedAt, "desc"),
   );
 };
 ```
@@ -316,8 +320,8 @@ class UserActions {
       isFollowing: !currentUser.isFollowing,
       stats: {
         ...currentUser.stats,
-        followers: currentUser.isFollowing 
-          ? currentUser.stats.followers - 1 
+        followers: currentUser.isFollowing
+          ? currentUser.stats.followers - 1
           : currentUser.stats.followers + 1,
       },
     };
@@ -331,8 +335,8 @@ class PostActions {
       engagement: {
         ...currentPost.engagement,
         isLiked: !currentPost.engagement.isLiked,
-        likes: currentPost.engagement.isLiked 
-          ? currentPost.engagement.likes - 1 
+        likes: currentPost.engagement.isLiked
+          ? currentPost.engagement.likes - 1
           : currentPost.engagement.likes + 1,
       },
     };
@@ -342,28 +346,31 @@ class PostActions {
 // Action hooks that encapsulate all business logic
 export const useUserActions = (userId: string) => {
   const { data: user } = useUserProfile(userId);
-  
+
   const followUser = React.useCallback(() => {
     if (!user) return;
-    
+
     const updatedUser = UserActions.toggleFollow(userId, user);
     userCollection.update(userId, () => updatedUser);
   }, [userId, user]);
-  
+
   return {
     followUser,
   };
 };
 
 export const usePostActions = (posts: Post[] | null = null) => {
-  const likePost = React.useCallback((postId: string) => {
-    const post = posts?.find(p => p.id === postId);
-    if (!post) return;
-    
-    const updatedPost = PostActions.toggleLike(post);
-    postCollection.update(postId, () => updatedPost);
-  }, [posts]);
-  
+  const likePost = React.useCallback(
+    (postId: string) => {
+      const post = posts?.find((p) => p.id === postId);
+      if (!post) return;
+
+      const updatedPost = PostActions.toggleLike(post);
+      postCollection.update(postId, () => updatedPost);
+    },
+    [posts],
+  );
+
   return {
     likePost,
   };
@@ -389,16 +396,16 @@ interface UserProfileViewProps {
   onPostLike: (postId: string) => void;
 }
 
-const UserProfileView: React.FC<UserProfileViewProps> = ({ 
-  user, 
-  posts, 
-  isLoading, 
-  onFollow, 
-  onPostLike 
+const UserProfileView: React.FC<UserProfileViewProps> = ({
+  user,
+  posts,
+  isLoading,
+  onFollow,
+  onPostLike
 }) => {
   if (isLoading) return <Text>Loading...</Text>;
   if (!user) return <Text>User not found</Text>;
-  
+
   return (
     <View style={styles.container}>
       {/* User Info Section */}
@@ -408,14 +415,14 @@ const UserProfileView: React.FC<UserProfileViewProps> = ({
         )}
         <Text style={styles.displayName}>{user.displayName}</Text>
         <Text style={styles.email}>{user.email}</Text>
-        
+
         {/* Stats */}
         <View style={styles.stats}>
           <Text>Posts: {user.stats.posts} </Text>
           <Text>Followers: {user.stats.followers} </Text>
           <Text>Following: {user.stats.following}</Text>
         </View>
-        
+
         {/* Follow Button */}
         <TouchableOpacity onPress={onFollow} style={styles.followButton}>
           <Text style={styles.followButtonText}>
@@ -423,7 +430,7 @@ const UserProfileView: React.FC<UserProfileViewProps> = ({
           </Text>
         </TouchableOpacity>
       </View>
-      
+
       {/* Posts Section */}
       <Text style={styles.postsTitle}>Posts:</Text>
       <FlatList
@@ -454,12 +461,12 @@ const PostItem: React.FC<PostItemProps> = ({ post, onLike }) => (
         {new Date(post.publishedAt).toLocaleDateString()}
       </Text>
     </View>
-    
+
     <Text style={styles.postContent}>{post.content}</Text>
-    
+
     <TouchableOpacity onPress={() => onLike(post.id)} style={styles.likeButton}>
       <Text style={[
-        styles.likeText, 
+        styles.likeText,
         post.engagement.isLiked && styles.likedText
       ]}>
         ❤️ {post.engagement.likes} 💬 {post.engagement.comments}
@@ -475,11 +482,11 @@ const styles = StyleSheet.create({
   displayName: { fontSize: 24, fontWeight: 'bold', marginBottom: 5 },
   email: { fontSize: 16, color: '#666', marginBottom: 10 },
   stats: { flexDirection: 'row', marginBottom: 15 },
-  followButton: { 
-    backgroundColor: '#007AFF', 
-    paddingHorizontal: 20, 
-    paddingVertical: 10, 
-    borderRadius: 8 
+  followButton: {
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8
   },
   followButtonText: { color: 'white', fontWeight: 'bold' },
   postsTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10 },
@@ -508,7 +515,7 @@ const UserProfileContainer: React.FC<{ userId: string }> = ({ userId }) => {
   const { data: posts, isLoading: postsLoading } = useUserPosts(userId);
   const { followUser } = useUserActions(userId);
   const { likePost } = usePostActions(posts);
-  
+
   return (
     <UserProfileView
       user={user}
@@ -551,97 +558,25 @@ export const App: React.FC = () => {
 };
 ```
 
-## Testing Strategy
-
-### Test Pure UI Components
-```typescript
-import { render, fireEvent } from '@testing-library/react-native';
-
-test('UserProfileView displays user information correctly', () => {
-  const mockUser: UserProfile = {
-    id: '1',
-    displayName: 'John Doe',
-    email: 'john@example.com',
-    stats: { posts: 42, followers: 100, following: 50 },
-    isFollowing: false,
-  };
-  
-  const onFollow = jest.fn();
-  const onPostLike = jest.fn();
-  
-  const { getByText } = render(
-    <UserProfileView 
-      user={mockUser}
-      posts={[]}
-      isLoading={false}
-      onFollow={onFollow}
-      onPostLike={onPostLike}
-    />
-  );
-  
-  expect(getByText('John Doe')).toBeTruthy();
-  expect(getByText('john@example.com')).toBeTruthy();
-  expect(getByText('Followers: 100')).toBeTruthy();
-  
-  fireEvent.press(getByText('Follow'));
-  expect(onFollow).toHaveBeenCalled();
-});
-```
-
-### Test Business Logic
-```typescript
-test('UserActions.toggleFollow updates user correctly', () => {
-  const user: UserProfile = {
-    id: '1',
-    displayName: 'John',
-    isFollowing: false,
-    stats: { followers: 100, posts: 0, following: 0 },
-  };
-  
-  const result = UserActions.toggleFollow('1', user);
-  
-  expect(result.isFollowing).toBe(true);
-  expect(result.stats.followers).toBe(101);
-});
-```
-
-### Test Action Hooks
-```typescript
-import { renderHook, act } from '@testing-library/react-hooks';
-
-test('useUserActions returns working followUser function', () => {
-  // Mock the data hooks
-  jest.mock('./hooks', () => ({
-    useUserProfile: () => ({ data: mockUser }),
-  }));
-  
-  const { result } = renderHook(() => useUserActions('1'));
-  
-  act(() => {
-    result.current.followUser();
-  });
-  
-  // Verify the collection was updated
-  expect(userCollection.update).toHaveBeenCalled();
-});
-```
-
 ## Benefits of This Architecture
 
 ### For UI Developers
+
 - **Simple Components**: Just render props and call callbacks
 - **Easy Testing**: Mock props and verify rendering
 - **No Data Concerns**: Don't need to understand APIs or business logic
 - **Reusable**: Same component works with different data sources
 
-### For Backend Developers  
+### For Backend Developers
+
 - **Clear Requirements**: UI schemas define exactly what data is needed
 - **Flexible APIs**: Can change API structure without affecting UI
 - **Independent Work**: Can modify data layer without touching UI
 
 ### For the Team
+
 - **Parallel Development**: UI and backend teams work independently
-- **Clear Boundaries**: Each layer has well-defined responsibilities  
+- **Clear Boundaries**: Each layer has well-defined responsibilities
 - **Easy Debugging**: Issues are isolated to specific layers
 - **Maintainable**: Changes in one layer don't cascade to others
 

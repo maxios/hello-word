@@ -1,5 +1,4 @@
 import { APP_ENV } from '@/const/const';
-import { ApolloError } from '@apollo/client';
 // import {Sentry} from './sentry';
 
 /**
@@ -34,10 +33,6 @@ export const formatErrorMessage = (
 
   if (error instanceof Error) {
     // Sentry.captureException(error);
-
-    if (error instanceof ApolloError) {
-      return error.message;
-    }
 
     if (APP_ENV !== 'production') {
       return `Showing full error in '${APP_ENV}' env:\n\n(${

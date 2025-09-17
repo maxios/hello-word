@@ -5,8 +5,7 @@
 
 import { useCallback, useState } from 'react';
 import { useRouter } from 'expo-router';
-import { StackActions } from '@react-navigation/native';
-import { useNavigation } from '@react-navigation/native';
+import { StackActions , useNavigation } from '@react-navigation/native';
 import { useToastManager } from '@/components/Toast';
 import { authService } from '../services/authService';
 import { AuthMapper } from '../mappers/authMapper';

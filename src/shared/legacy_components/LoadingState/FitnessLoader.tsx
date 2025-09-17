@@ -1,4 +1,4 @@
-/* eslint-disable consistent-return */
+ 
 import React, {useEffect, useRef, useCallback, useMemo, useState} from 'react';
 import {Animated, Easing, ActivityIndicator} from 'react-native';
 import {View} from 'tamagui';

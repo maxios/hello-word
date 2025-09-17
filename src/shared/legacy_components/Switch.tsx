@@ -5,11 +5,11 @@ import {Text} from './Text';
 interface SwitchProps {
   label: string;
   value: string | undefined;
-  items: Array<{
+  items: {
     heading: string;
     subheading: string;
     value: string;
-  }>;
+  }[];
   onChange: (value: string) => void;
 }
 

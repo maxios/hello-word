@@ -19,7 +19,7 @@ export const TransparentBackHeader: React.FC<{
           fontSize: bodyFont.size.uiLink,
         },
         headerBackground: props.animatedHeaderBackgroundStyles
-          ? // eslint-disable-next-line react/no-unstable-nested-components
+          ?  
             () => (
               <Animated.View
                 style={[{flex: 1}, props.animatedHeaderBackgroundStyles]}

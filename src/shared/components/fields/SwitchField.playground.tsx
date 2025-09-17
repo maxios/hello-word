@@ -1,5 +1,4 @@
-import { useForm } from "react-hook-form";
-import { SwitchField } from "./SwitchField";
+import { SwitchUI } from "./SwitchField";
 
 export const components: PlaygroundComponent[] = [
   // === Basic SwitchField ===
@@ -8,14 +7,11 @@ export const components: PlaygroundComponent[] = [
     name: "Basic SwitchField",
     description: "Toggle switch for boolean settings",
     component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
       return (
-        <SwitchField
-          control={control}
-          name="notifications"
+        <SwitchUI
+          value={false}
+          onChange={() => {}}
+          disabled={false}
           label="Push Notifications"
         />
       );
@@ -29,15 +25,12 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Required Switch",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
-            <SwitchField
-              control={control}
-              name="requiredSwitch"
+            <SwitchUI
               label="Terms Agreement"
+              value={false}
+              onChange={() => {}}
+              disabled={false}
               required
             />
           );
@@ -52,19 +45,15 @@ export const components: PlaygroundComponent[] = [
       {
         name: "With Error",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
-            <SwitchField
-              control={control}
-              name="errorSwitch"
+            <SwitchUI
               label="Age Verification"
-              error={{
-                message: "You must be 18 or older",
-                type: "required",
-              }}
+              value={false}
+              onChange={() => {}}
+              disabled={false}
+              error="You must be 18 or older"
+              helperText="You must be 18 or older"
+              className="w-full"
             />
           );
         },
@@ -78,16 +67,13 @@ export const components: PlaygroundComponent[] = [
       {
         name: "Disabled",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
-            <SwitchField
-              control={control}
-              name="disabledSwitch"
+            <SwitchUI
+              value={false}
+              onChange={() => {}}
+              disabled={true}
               label="Premium Feature"
-              disabled
+              className="w-full"
             />
           );
         },
@@ -98,409 +84,23 @@ export const components: PlaygroundComponent[] = [
   disabled
 />`,
       },
-    ],
-  },
-
-  // === SwitchField Notifications ===
-  {
-    id: "switchfield-notifications",
-    name: "SwitchField Notifications",
-    description: "Notification and communication settings",
-    component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
-      return (
-        <SwitchField
-          control={control}
-          name="emailNotifications"
-          label="Email Notifications"
-        />
-      );
-    },
-    code: `<SwitchField
-  control={control}
-  name="emailNotifications"
-  label="Email Notifications"
-/>`,
-    variations: [
       {
-        name: "Push Notifications",
+        name: "Active",
         component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
           return (
-            <SwitchField
-              control={control}
-              name="pushNotifications"
-              label="Push Notifications"
+            <SwitchUI
+              value={true}
+              onChange={() => {}}
+              label="Active toggle"
+              className="w-full"
             />
           );
         },
         code: `<SwitchField
   control={control}
-  name="pushNotifications"
-  label="Push Notifications"
-/>`,
-      },
-      {
-        name: "SMS Notifications",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="smsNotifications"
-              label="SMS Notifications"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="smsNotifications"
-  label="SMS Notifications"
-/>`,
-      },
-      {
-        name: "Marketing Emails",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="marketingEmails"
-              label="Marketing Emails"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="marketingEmails"
-  label="Marketing Emails"
-/>`,
-      },
-    ],
-  },
-
-  // === SwitchField Settings ===
-  {
-    id: "switchfield-settings",
-    name: "SwitchField Settings",
-    description: "App settings and preferences",
-    component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
-      return (
-        <SwitchField control={control} name="darkMode" label="Dark Mode" />
-      );
-    },
-    code: `<SwitchField
-  control={control}
-  name="darkMode"
-  label="Dark Mode"
-/>`,
-    variations: [
-      {
-        name: "Auto Save",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField control={control} name="autoSave" label="Auto Save" />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="autoSave"
-  label="Auto Save"
-/>`,
-      },
-      {
-        name: "Analytics",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField control={control} name="analytics" label="Analytics" />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="analytics"
-  label="Analytics"
-/>`,
-      },
-      {
-        name: "Two-Factor Auth",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="twoFactor"
-              label="Two-Factor Authentication"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="twoFactor"
-  label="Two-Factor Authentication"
-/>`,
-      },
-    ],
-  },
-
-  // === SwitchField Privacy ===
-  {
-    id: "switchfield-privacy",
-    name: "SwitchField Privacy",
-    description: "Privacy and security settings",
-    component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
-      return (
-        <SwitchField
-          control={control}
-          name="locationSharing"
-          label="Location Sharing"
-        />
-      );
-    },
-    code: `<SwitchField
-  control={control}
-  name="locationSharing"
-  label="Location Sharing"
-/>`,
-    variations: [
-      {
-        name: "Profile Visibility",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="profileVisibility"
-              label="Public Profile"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="profileVisibility"
-  label="Public Profile"
-/>`,
-      },
-      {
-        name: "Data Collection",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="dataCollection"
-              label="Data Collection"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="dataCollection"
-  label="Data Collection"
-/>`,
-      },
-      {
-        name: "Third-Party Sharing",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="thirdPartySharing"
-              label="Third-Party Data Sharing"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="thirdPartySharing"
-  label="Third-Party Data Sharing"
-/>`,
-      },
-    ],
-  },
-
-  // === SwitchField with Helper Text ===
-  {
-    id: "switchfield-helper",
-    name: "SwitchField with Helper Text",
-    description: "Switch with additional guidance",
-    component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
-      return (
-        <SwitchField
-          control={control}
-          name="helperSwitch"
-          label="Beta Features"
-          helperText="Enable experimental features that may be unstable"
-        />
-      );
-    },
-    code: `<SwitchField
-  control={control}
-  name="helperSwitch"
-  label="Beta Features"
-  helperText="Enable experimental features that may be unstable"
-/>`,
-    variations: [
-      {
-        name: "With Error and Helper",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="errorHelperSwitch"
-              label="Age Verification"
-              error={{
-                message: "You must be 18 or older to continue",
-                type: "required",
-              }}
-              helperText="This is required for legal compliance"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="errorHelperSwitch"
-  label="Age Verification"
-  error={{ message: "You must be 18 or older to continue" }}
-  helperText="This is required for legal compliance"
-/>`,
-      },
-    ],
-  },
-
-  // === SwitchField Features ===
-  {
-    id: "switchfield-features",
-    name: "SwitchField Features",
-    description: "Feature toggles and experimental settings",
-    component: () => {
-      const {
-        control,
-        formState: { errors },
-      } = useForm();
-      return (
-        <SwitchField
-          control={control}
-          name="advancedFeatures"
-          label="Advanced Features"
-        />
-      );
-    },
-    code: `<SwitchField
-  control={control}
-  name="advancedFeatures"
-  label="Advanced Features"
-/>`,
-    variations: [
-      {
-        name: "Voice Commands",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="voiceCommands"
-              label="Voice Commands"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="voiceCommands"
-  label="Voice Commands"
-/>`,
-      },
-      {
-        name: "Gesture Controls",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="gestureControls"
-              label="Gesture Controls"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="gestureControls"
-  label="Gesture Controls"
-/>`,
-      },
-      {
-        name: "AI Suggestions",
-        component: () => {
-          const {
-            control,
-            formState: { errors },
-          } = useForm();
-          return (
-            <SwitchField
-              control={control}
-              name="aiSuggestions"
-              label="AI Suggestions"
-            />
-          );
-        },
-        code: `<SwitchField
-  control={control}
-  name="aiSuggestions"
-  label="AI Suggestions"
+  name="disabledSwitch"
+  label="Premium Feature"
+  disabled
 />`,
       },
     ],

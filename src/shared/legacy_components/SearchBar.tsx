@@ -78,7 +78,7 @@ export const SearchBar: React.FC<Props> = ({
         {filters ? (
           <Button
             variant="subtle"
-            // eslint-disable-next-line react/jsx-handler-names
+             
             onPress={filters.onPress}
             size="input_small"
             px={16}

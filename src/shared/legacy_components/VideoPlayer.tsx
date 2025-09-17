@@ -52,7 +52,7 @@ export const VideoPlayer = forwardRef(
             return expoVideoRef?.current?.playAsync();
           })
           .catch((e) => {
-            // eslint-disable-next-line no-console
+             
             console.warn(e);
             showToast({
               message: 'Video failed to load.',
