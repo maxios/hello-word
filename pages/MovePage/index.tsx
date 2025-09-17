@@ -12,7 +12,7 @@ export const MovePage = () => {
           subtext="Enhance your fitness journey with our additional multi-week program guides, extra workouts and engaging follow along classes."
           pt={0}
         />
-        <View className="flex bg-surface-0 px-4 pb-60">
+        <View className="bg-surface-0 flex px-4 pb-60">
           {promoCards.map(({ heading, subtext, image, href }) => {
             const shouldHighlight = false;
             const isGuidesCard = heading === "Guides";

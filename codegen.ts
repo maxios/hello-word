@@ -7,8 +7,6 @@ const config: CodegenConfig = {
     'src/**/*.gql',
     'src/**/*.{ts,tsx}',
     '!src/gql/**/*',
-    '!src/**/BlurUpImage/**/*',
-    '!src/**/BlurUpImage.tsx'
   ],
   generates: {
     // Generate introspection file
@@ -38,6 +36,26 @@ const config: CodegenConfig = {
         }
       },
       plugins: []
+    },
+    // Generate React Query hooks
+    './src/gql/hooks.ts': {
+      plugins: [
+        'typescript',
+        'typescript-operations',
+        'typescript-react-query'
+      ],
+      config: {
+        useTypeImports: true,
+        fetcher: 'graphql-request',
+        scalars: {
+          DateTime: 'string',
+          JSON: 'any',
+          JSONObject: 'Record<string, any>'
+        },
+        addInfiniteQuery: true,
+        exposeQueryKeys: true,
+        exposeMutationKeys: true
+      }
     },
   },
   ignoreNoDocuments: true

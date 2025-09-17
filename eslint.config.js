@@ -14,7 +14,7 @@ module.exports = defineConfig([
       ...tailwindcss.configs.recommended.rules,
       "tailwindcss/no-custom-classname": "off",
     },
-    ignores: ['dist/*', 'node_modules/*', 'ios/*', 'android/*', './**/*.playground.tsx'],
+    ignores: ['src/gql/*', 'dist/*', 'node_modules/*', 'ios/*', 'android/*', './**/*.playground.tsx'],
     settings: {
       "import/resolver": {
         "typescript": {
