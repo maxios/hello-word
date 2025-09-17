@@ -52,7 +52,7 @@ export function SelectUI({
       {label && (
         <Text className="mb-2 text-sm font-medium text-foreground">
           {label}
-          {required && <Text className="text-error-DEFAULT"> *</Text>}
+          {required && <Text className="text-error-default"> *</Text>}
         </Text>
       )}
 
@@ -60,7 +60,7 @@ export function SelectUI({
         className={clsx(
           "flex-row items-center justify-between rounded-md border bg-background px-4 py-3",
           "focus:border-primary",
-          error && "border-error-DEFAULT",
+          error && "border-error-default",
           !error && "border-border",
           disabled && "opacity-50",
         )}
@@ -161,7 +161,7 @@ export function SelectUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}

@@ -104,7 +104,7 @@ const SignupPage = () => {
                 returnKeyType="next"
               />
               {errors.firstName && (
-                <Text className="text-error-DEFAULT mt-2 text-sm">
+                <Text className="text-error-default mt-2 text-sm">
                   {errors.firstName.message}
                 </Text>
               )}
@@ -118,7 +118,7 @@ const SignupPage = () => {
                 returnKeyType="next"
               />
               {errors.lastName && (
-                <Text className="text-error-DEFAULT mt-2 text-sm">
+                <Text className="text-error-default mt-2 text-sm">
                   {errors.lastName.message}
                 </Text>
               )}
@@ -135,7 +135,7 @@ const SignupPage = () => {
             returnKeyType="next"
           />
           {errors.email && (
-            <Text className="text-error-DEFAULT mt-2 text-sm">
+            <Text className="text-error-default mt-2 text-sm">
               {errors.email.message}
             </Text>
           )}
@@ -150,7 +150,7 @@ const SignupPage = () => {
             returnKeyType="done"
           />
           {errors.password && (
-            <Text className="text-error-DEFAULT mt-2 text-sm">
+            <Text className="text-error-default mt-2 text-sm">
               {errors.password.message}
             </Text>
           )}

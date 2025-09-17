@@ -46,9 +46,9 @@ export function TextAreaUI({
       numberOfLines={numberOfLines}
       autoCapitalize="sentences"
       autoCorrect={true}
-      returnKeyType="default"
+      returnKeyType="done"
       maxLength={maxLength}
-      leftIcon={<SubjectIcon size={20} className="text-muted-foreground" />}
+      leftIcon={<SubjectIcon className="text-muted-foreground" />}
     />
   );
 }

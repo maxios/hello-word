@@ -30,7 +30,7 @@ export function SwitchUI({
           {label && (
             <Text className="text-sm font-medium text-foreground">
               {label}
-              {required && <Text className="text-error-DEFAULT"> *</Text>}
+              {required && <Text className="text-error-default"> *</Text>}
             </Text>
           )}
         </View>
@@ -49,7 +49,7 @@ export function SwitchUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}

@@ -40,9 +40,7 @@ export function CheckboxUI({
         <View
           className={clsx(
             "mr-3 mt-0.5 size-5 items-center justify-center rounded border",
-            value
-              ? "border-primary bg-primary"
-              : "border-border bg-background",
+            value ? "border-primary bg-primary" : "border-border bg-background",
             disabled && "opacity-50",
           )}
         >
@@ -53,7 +51,7 @@ export function CheckboxUI({
           {label && (
             <Text className="text-sm font-medium text-foreground">
               {label}
-              {required && <Text className="text-error-DEFAULT"> *</Text>}
+              {required && <Text className="text-error-default"> *</Text>}
             </Text>
           )}
 
@@ -61,10 +59,7 @@ export function CheckboxUI({
             <Text className="mt-1 text-sm text-muted-foreground">
               {description}
               {linkText && onLinkPress && (
-                <Text
-                  className="text-primary underline"
-                  onPress={onLinkPress}
-                >
+                <Text className="text-primary underline" onPress={onLinkPress}>
                   {" "}
                   {linkText}
                 </Text>
@@ -78,7 +73,7 @@ export function CheckboxUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}

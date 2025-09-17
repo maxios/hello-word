@@ -42,7 +42,7 @@ export function NumberFieldUI({
       autoCapitalize="none"
       autoCorrect={false}
       returnKeyType="done"
-      leftIcon={<TrendingUpIcon size={20} className="text-muted-foreground" />}
+      leftIcon={<TrendingUpIcon className="text-muted-foreground" />}
     />
   );
 }

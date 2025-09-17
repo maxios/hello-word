@@ -52,18 +52,18 @@ export const colors = {
   },
   error: {
     light: '#5CABFF',
-    DEFAULT: '#F25D5D',
+    default: '#F25D5D',
     dark: '#F8A0A0',
     'semantic-dark': '#BC2F2F',
   },
   warning: {
     light: '#F7D197',
-    DEFAULT: '#F2B55A',
+    default: '#F2B55A',
     dark: '#AE7624',
   },
   success: {
     light: '#B5E8B0',
-    DEFAULT: '#85D97E',
+    default: '#85D97E',
     dark: '#4B7548',
   },
   // Semantic color mappings

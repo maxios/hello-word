@@ -40,7 +40,7 @@ export function SliderUI({
       {label && (
         <Text className="mb-2 text-body-small font-bold text-foreground">
           {label}
-          {required && <Text className="text-error-DEFAULT"> *</Text>}
+          {required && <Text className="text-error-default"> *</Text>}
         </Text>
       )}
 
@@ -71,7 +71,7 @@ export function SliderUI({
           disabled={disabled}
           minimumTrackTintColor="#3B82F6"
           maximumTrackTintColor="#E5E7EB"
-          thumbStyle={{
+          style={{
             backgroundColor: "#3B82F6",
             width: 20,
             height: 20,
@@ -83,7 +83,7 @@ export function SliderUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}

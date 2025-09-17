@@ -76,7 +76,7 @@ const ResetPasswordInitPage = () => {
             )}
           />
           {errors.email && (
-            <Text className="text-error-DEFAULT mt-2 text-sm">
+            <Text className="text-error-default mt-2 text-sm">
               {errors.email.message}
             </Text>
           )}

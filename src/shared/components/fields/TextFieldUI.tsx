@@ -64,7 +64,7 @@ export function TextFieldUI({
       {label && (
         <Text className="mb-2 text-body-small font-bold text-foreground">
           {label}
-          {required && <Text className="text-error-DEFAULT"> *</Text>}
+          {required && <Text className="text-error-default"> *</Text>}
         </Text>
       )}
 
@@ -102,7 +102,7 @@ export function TextFieldUI({
             rightIcon && "pr-12",
             multiline && "text-top min-h-[80px]",
             isFocused && "border-primary",
-            error && "border-error-DEFAULT",
+            error && "border-error-default",
             !isFocused && !error && "border-border",
             disabled && "opacity-50",
           )}
@@ -124,7 +124,7 @@ export function TextFieldUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}

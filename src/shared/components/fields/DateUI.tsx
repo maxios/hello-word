@@ -58,7 +58,7 @@ export function DateUI({
       {label && (
         <Text className="mb-2 text-body-small font-bold text-foreground">
           {label}
-          {required && <Text className="text-error-DEFAULT"> *</Text>}
+          {required && <Text className="text-error-default"> *</Text>}
         </Text>
       )}
 
@@ -66,7 +66,7 @@ export function DateUI({
         className={clsx(
           "flex-row items-center justify-between rounded-md border bg-background px-4 py-3",
           "focus:border-primary",
-          error && "border-error-DEFAULT",
+          error && "border-error-default",
           !error && "border-border",
           disabled && "opacity-50",
         )}
@@ -75,10 +75,7 @@ export function DateUI({
         activeOpacity={0.7}
       >
         <View className="flex-1 flex-row items-center">
-          <CalendarBlankIcon
-            size={20}
-            className="mr-3 text-muted-foreground"
-          />
+          <CalendarBlankIcon size={20} className="mr-3 text-muted-foreground" />
           <Text
             className={clsx(
               "flex-1 text-body-small",
@@ -88,7 +85,7 @@ export function DateUI({
             {value ? formatDate(value) : placeholder}
           </Text>
         </View>
-        <ChevronDownIcon size={20} className="text-muted-foreground" />
+        <ChevronDownIcon className="text-muted-foreground" />
       </TouchableOpacity>
 
       {showPicker && (
@@ -111,7 +108,7 @@ export function DateUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}

@@ -2,21 +2,44 @@
 
 A comprehensive collection of form field components built with React Hook Form and NativeWind, designed for React Native applications.
 
+## Architecture
+
+This library follows a **separation of concerns** pattern:
+
+- **UI Components** (`*UI.tsx`) - Pure presentation components that handle all UI logic, state, and rendering
+- **Field Wrappers** (`*Field.tsx`) - Thin wrappers that integrate UI components with React Hook Form using `Controller`
+
+This architecture provides:
+
+- 🎯 **Flexibility** - Use UI components standalone or with form integration
+- 🧪 **Testability** - Test UI logic independently from form logic
+- ♻️ **Reusability** - Reuse UI components in non-form contexts
+- 🎨 **Consistency** - All components follow the same pattern
+
 ## Features
 
-- ✅ **React Hook Form Integration** - All components use `Controller` for seamless form management
+- ✅ **React Hook Form Integration** - All Field components use `Controller` for seamless form management
+- ✅ **Pure UI Components** - All UI components work independently without form dependencies
 - ✅ **NativeWind Styling** - Consistent design system with Tailwind CSS classes
 - ✅ **TypeScript Support** - Full type safety with generic types
 - ✅ **Accessibility** - Proper labels, error states, and keyboard navigation
 - ✅ **Dark Mode Support** - All components support light/dark themes
 - ✅ **Customizable** - Extensive props for customization
 - ✅ **Error Handling** - Built-in error display and validation support
+- ✅ **Interactive Playgrounds** - Each UI component has its own playground for testing
 
 ## Components
 
-### TextField
+Each component has two versions:
+
+- **UI Component** - For standalone usage with direct state management
+- **Field Component** - For React Hook Form integration
+
+### TextField / TextFieldUI
 
 Basic text input with support for icons, validation, and various keyboard types.
+
+**With React Hook Form:**
 
 ```tsx
 <TextField
@@ -26,10 +49,24 @@ Basic text input with support for icons, validation, and various keyboard types.
   placeholder="Enter your first name"
   required
   error={errors.firstName}
+/>
+```
+
+**Standalone UI Component:**
+
+```tsx
+const [value, setValue] = useState("");
+
+<TextFieldUI
+  value={value}
+  onChange={setValue}
+  label="First Name"
+  placeholder="Enter your first name"
+  required
   leftIcon={<UserIcon />}
   rightIcon={<ClearIcon />}
-  onRightIconPress={() => clearField()}
-/>
+  onRightIconPress={() => setValue("")}
+/>;
 ```
 
 **Props:**

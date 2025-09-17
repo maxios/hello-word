@@ -34,16 +34,14 @@ export function RadioUI({
       {label && (
         <Text className="mb-3 text-sm font-medium text-foreground">
           {label}
-          {required && <Text className="text-error-DEFAULT"> *</Text>}
+          {required && <Text className="text-error-default"> *</Text>}
         </Text>
       )}
 
       <View
         className={clsx(
           "w-full",
-          direction === "horizontal"
-            ? "flex-row flex-wrap gap-4"
-            : "space-y-3",
+          direction === "horizontal" ? "flex-row flex-wrap gap-4" : "space-y-3",
         )}
       >
         {options.map((option: SelectOption, index: number) => (
@@ -58,12 +56,9 @@ export function RadioUI({
             activeOpacity={0.7}
           >
             {value === option.value ? (
-              <OnRadioButtonIcon size={20} className="mr-2 text-primary" />
+              <OnRadioButtonIcon className="mr-2 text-primary" />
             ) : (
-              <OffRadioButtonIcon
-                size={20}
-                className="mr-2 text-muted-foreground"
-              />
+              <OffRadioButtonIcon className="mr-2 text-muted-foreground" />
             )}
             <Text
               className={clsx(
@@ -81,7 +76,7 @@ export function RadioUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}

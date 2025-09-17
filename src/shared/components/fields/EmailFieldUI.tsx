@@ -23,7 +23,7 @@ export function EmailFieldUI(props: EmailFieldUIProps) {
       autoCorrect={false}
       autoComplete="email"
       returnKeyType="next"
-      leftIcon={<MailIcon size={20} className="text-muted-foreground" />}
+      leftIcon={<MailIcon className="text-muted-foreground" />}
     />
   );
 }

@@ -79,7 +79,7 @@ export function FileUI({
       {label && (
         <Text className="mb-2 text-body-small font-bold text-foreground">
           {label}
-          {required && <Text className="text-error-DEFAULT"> *</Text>}
+          {required && <Text className="text-error-default"> *</Text>}
         </Text>
       )}
 
@@ -103,7 +103,7 @@ export function FileUI({
                     onPress={() => removeFileAtIndex(index)}
                     className="p-2"
                   >
-                    <XIcon size={20} className="text-error-DEFAULT" />
+                    <XIcon className="text-error-default" />
                   </TouchableOpacity>
                 </View>
               ))
@@ -116,11 +116,8 @@ export function FileUI({
                 <Text className="ml-3 flex-1 text-sm text-foreground">
                   {value.fileName || "Selected file"}
                 </Text>
-                <TouchableOpacity
-                  onPress={removeFile}
-                  className="p-2"
-                >
-                  <XIcon size={20} className="text-error-DEFAULT" />
+                <TouchableOpacity onPress={removeFile} className="p-2">
+                  <XIcon className="text-error-default" />
                 </TouchableOpacity>
               </View>
             )}
@@ -137,7 +134,7 @@ export function FileUI({
           disabled={disabled}
           activeOpacity={0.7}
         >
-          <DownloadIcon size={24} className="mr-2 text-muted-foreground" />
+          <DownloadIcon className="mr-2 text-muted-foreground" />
           <Text className="text-base text-muted-foreground">
             {value ? "Add more files" : "Choose files"}
           </Text>
@@ -148,7 +145,7 @@ export function FileUI({
         <Text
           className={clsx(
             "mt-2 text-sm",
-            error ? "text-error-DEFAULT" : "text-muted-foreground",
+            error ? "text-error-default" : "text-muted-foreground",
           )}
         >
           {error || helperText}
