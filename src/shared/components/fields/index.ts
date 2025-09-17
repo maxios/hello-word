@@ -13,3 +13,5 @@ export { SwitchField } from './SwitchField';
 export { TextAreaField } from './TextAreaField';
 export { TextField } from './TextField';
 
+
+export { SwitchUI } from './SwitchUI';

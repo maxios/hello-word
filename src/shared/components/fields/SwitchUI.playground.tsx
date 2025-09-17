@@ -1,4 +1,4 @@
-import { SwitchUI } from "./SwitchField";
+import { SwitchUI } from "./SwitchUI";
 
 export const components: PlaygroundComponent[] = [
   // === Basic SwitchField ===

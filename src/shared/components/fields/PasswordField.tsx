@@ -1,32 +1,42 @@
-import { useState } from "react";
-import { EyeIcon } from "../icons/EyeIcon";
-import { EyeSlashIcon } from "../icons/EyeSlashIcon";
-import { LockIcon } from "../icons/LockIcon";
-import { TextField } from "./TextField";
+import { Controller } from "react-hook-form";
+import { PasswordFieldUI } from "./PasswordFieldUI";
 import { TextFieldProps } from "./types";
 
-export function PasswordField<T extends Record<string, any>>(
-  props: TextFieldProps<T>,
-) {
-  const [showPassword, setShowPassword] = useState(false);
-
+/**
+ * react-hook-form wrapper for the component
+ *
+ * @param param0 TextFieldProps<T>
+ * @returns
+ */
+export function PasswordField<T extends Record<string, any>>({
+  control,
+  name,
+  label,
+  placeholder,
+  disabled = false,
+  required = false,
+  className,
+  error,
+  helperText,
+}: TextFieldProps<T>) {
   return (
-    <TextField<T>
-      {...props}
-      secureTextEntry={!showPassword}
-      autoCapitalize="none"
-      autoCorrect={false}
-      autoComplete="password"
-      returnKeyType="done"
-      leftIcon={<LockIcon className="text-muted-foreground" />}
-      rightIcon={
-        showPassword ? (
-          <EyeSlashIcon className="text-muted-foreground" />
-        ) : (
-          <EyeIcon className="text-muted-foreground" />
-        )
-      }
-      onRightIconPress={() => setShowPassword(!showPassword)}
+    <Controller
+      control={control}
+      name={name}
+      render={({ field: { value, onChange, onBlur } }) => (
+        <PasswordFieldUI
+          label={label}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          disabled={disabled}
+          required={required}
+          className={className}
+          error={error?.message}
+          helperText={helperText}
+        />
+      )}
     />
   );
 }

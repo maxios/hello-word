@@ -1,19 +1,42 @@
-import { MailIcon } from "../icons/MailIcon";
-import { TextField } from "./TextField";
+import { Controller } from "react-hook-form";
+import { EmailFieldUI } from "./EmailFieldUI";
 import { TextFieldProps } from "./types";
 
-export function EmailField<T extends Record<string, any>>(
-  props: TextFieldProps<T>,
-) {
+/**
+ * react-hook-form wrapper for the component
+ *
+ * @param param0 TextFieldProps<T>
+ * @returns
+ */
+export function EmailField<T extends Record<string, any>>({
+  control,
+  name,
+  label,
+  placeholder,
+  disabled = false,
+  required = false,
+  className,
+  error,
+  helperText,
+}: TextFieldProps<T>) {
   return (
-    <TextField<T>
-      {...props}
-      keyboardType="email-address"
-      autoCapitalize="none"
-      autoCorrect={false}
-      autoComplete="email"
-      returnKeyType="next"
-      leftIcon={<MailIcon size={20} className="text-muted-foreground" />}
+    <Controller
+      control={control}
+      name={name}
+      render={({ field: { value, onChange, onBlur } }) => (
+        <EmailFieldUI
+          label={label}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          disabled={disabled}
+          required={required}
+          className={className}
+          error={error?.message}
+          helperText={helperText}
+        />
+      )}
     />
   );
 }
