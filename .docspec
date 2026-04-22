@@ -1,0 +1,98 @@
+dep_version: "0.1.0"
+
+project:
+  name: strnger-app
+  description: >-
+    React Native/Expo mobile app for meals, challenges, and movement tracking,
+    built on NativeWind, Expo Router, Yoga GraphQL, and a UI-as-API
+    micro-product architecture.
+  docs_root: docs/dep
+
+audiences:
+  - id: new-dev
+    name: New feature developer
+    goal: >-
+      Ship a new feature end-to-end following the UI-as-API micro-product
+      pattern (schemas, mappers, collections, action hooks, container).
+    context: >-
+      Intermediate React Native / TypeScript. Unfamiliar with this project's
+      architecture, component playground, and feature layout conventions.
+    entry_point: docs/dep/explanation/entry-new-feature-developer.md
+    vocabulary_level: intermediate
+    time_budget: deep
+    success_criteria: >-
+      Within the first week can scaffold a feature directory, wire a Yoga
+      GraphQL query, expose a Cosmos playground, and open a PR that follows
+      the project's architectural layers.
+
+  - id: ui-dev
+    name: UI / component developer
+    goal: >-
+      Build, style, and document pure UI components using the playground
+      system, NativeWind utilities, and the project's design tokens.
+    context: >-
+      Intermediate React Native; comfortable with Tailwind utilities; may be
+      new to React Cosmos or to the project's token/playground conventions.
+    entry_point: docs/dep/explanation/entry-ui-component-developer.md
+    vocabulary_level: intermediate
+    time_budget: scanning
+    success_criteria: >-
+      Can add a variant-rich component with a matching .playground.tsx file,
+      design-token-aligned styles, and a cosmos fixture that demonstrates
+      every variant.
+
+  - id: integrator
+    name: API / data integrator
+    goal: >-
+      Wire Yoga GraphQL queries with codegen, mappers, and collections into
+      a feature's action hooks and container.
+    context: >-
+      Intermediate GraphQL and TypeScript; may be new to this project's
+      mapper/collection pattern and the codegen workflow.
+    entry_point: docs/dep/explanation/entry-api-integrator.md
+    vocabulary_level: intermediate
+    time_budget: scanning
+    success_criteria: >-
+      Can add a new GraphQL operation, run codegen, consume the typed hook
+      in a container component, and apply the project's mapper pattern for
+      API-to-UI transformation.
+
+  - id: release-eng
+    name: Release engineer
+    goal: >-
+      Cut EAS builds and ship OTA updates correctly across staging and
+      production for iOS and Android.
+    context: >-
+      Familiar with EAS, code signing, and mobile release workflows; may be
+      new to this project's profile/channel matrix.
+    entry_point: docs/dep/explanation/entry-release-engineer.md
+    vocabulary_level: advanced
+    time_budget: urgent
+    success_criteria: >-
+      Can correctly pick the EAS profile and update channel for a given
+      release scenario (staging smoke, production submit, OTA hotfix)
+      without consulting the team.
+
+architecture:
+  directory_map:
+    tutorials: docs/dep/tutorials
+    how-to: docs/dep/how-to
+    reference: docs/dep/reference
+    explanation: docs/dep/explanation
+    decision-records: docs/dep/decision-records
+  require_index_files: true
+  link_style: relative
+
+governance:
+  ownership_strategy: per-document
+  fallback_owner: khaled.mailhub@gmail.com
+  review_cadence:
+    tutorial: 90
+    how-to: 60
+    reference: 30
+    explanation: 180
+    decision-record: 365
+
+generation:
+  ai_provider: constrained
+  require_human_review: true

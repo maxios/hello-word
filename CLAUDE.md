@@ -2,6 +2,27 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Documentation: DEP with `.docspec` as Source of Truth
+
+This project uses **DEP (Documentation Engineering Process)** for all project documentation. The `.docspec` file at the repository root is the **single source of truth** for documentation structure, audiences, governance, and generation rules.
+
+**Core rules**:
+
+- **`.docspec` is authoritative.** Audiences, directory layout, review cadence, and ownership are defined there — do not invent parallel structures elsewhere.
+- **Generated docs live under `docs/dep/`** in the Diátaxis-style folders declared by `.docspec` (`tutorials/`, `how-to/`, `reference/`, `explanation/`, `decision-records/`).
+- **Every doc has DEP frontmatter** (`type`, `audience`, `owner`, `created`, `last_verified`, `confidence`, `depends_on`, `tags`, `links`). Types must stay pure — no how-to steps in explanation docs, no rationale in reference docs.
+- **When code changes invalidate a doc**, update the doc (and its `last_verified`) in the same change, or run the DEP sync skill.
+- **Entry points per audience** are declared in `.docspec` under `audiences[].entry_point`; the docs index at [docs/dep/index.md](docs/dep/index.md) mirrors them.
+
+**DEP skills to use**:
+
+- `dep:dep-generate` — scaffold or generate docs against `.docspec`.
+- `dep:dep-sync` — reconcile doc freshness with recent code changes.
+- `dep:dep-validate` — check frontmatter, type purity, graph integrity, and lifecycle freshness.
+- `dep:dep-audit` — retrofit DEP compliance onto existing unstructured docs.
+
+When asked to write, update, or reorganize docs in this repo: read `.docspec` first, then run the appropriate DEP skill rather than editing freeform.
+
 ## Commands
 
 ### Development
