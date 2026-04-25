@@ -17,7 +17,7 @@ dep:
 
 # Why Micro-Product Methodology
 
-strnger-app organises its feature work around a single idea: a feature is a
+Flota organises its feature work around a single idea: a feature is a
 *micro-product*, not a pull request. This page explains what that distinction
 means, why the project adopted it, and what it trades away.
 

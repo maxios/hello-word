@@ -35,7 +35,7 @@ defined in [package.json](../../../package.json).
 | Dev client | `true` |
 | iOS image | `macos-sequoia-15.3-xcode-16.2` |
 | iOS resource class | `m-medium` |
-| Env | `CHANNEL=development`, `BUNDLE_ID=com.strong.andsxy` |
+| Env | `CHANNEL=development`, `BUNDLE_ID=com.flota.app` |
 | Script alias | `eas:device:build`, `eas:device:android:build` |
 
 ### `development-simulator`
@@ -92,7 +92,7 @@ defined in [package.json](../../../package.json).
 | Auto-increment | `true` |
 | iOS image | `macos-sequoia-15.3-xcode-16.2`, resource class `large` |
 | Android image | `auto`, resource class `large`, buildType `app-bundle` |
-| Env | `CHANNEL=production`, `BUNDLE_ID=com.strong.andsxy` |
+| Env | `CHANNEL=production`, `BUNDLE_ID=com.flota.app` |
 | Script alias | `eas:submit:all:production`, `eas:submit:ios:production`, `eas:submit:android:production`, `eas:build-android:production` |
 
 ### `production-apk`
@@ -111,20 +111,20 @@ defined in [package.json](../../../package.json).
 
 | Platform | Field | Value |
 |----------|-------|-------|
-| iOS | bundleIdentifier | `com.strong.andsxy` |
-| iOS | ascAppId | `1492688256` |
-| iOS | appleTeamId | `FYSL5V9UHX` |
-| iOS | appName | `STRNG` |
+| iOS | bundleIdentifier | `com.flota.app` (placeholder) |
+| iOS | ascAppId | `TODO-app-store-connect-app-id` |
+| iOS | appleTeamId | `TODO-apple-team-id` |
+| iOS | appName | `Flota` |
 | Android | — | Not configured (staging iOS-only submit) |
 
 ### `production` (submit)
 
 | Platform | Field | Value |
 |----------|-------|-------|
-| iOS | bundleIdentifier | `com.strong.andsxy` |
-| iOS | ascAppId | `1492688256` |
-| iOS | appleTeamId | `FYSL5V9UHX` |
-| Android | applicationId | `com.strong.andsxy` |
+| iOS | bundleIdentifier | `com.flota.app` |
+| iOS | ascAppId | `TODO-app-store-connect-app-id` |
+| iOS | appleTeamId | `TODO-apple-team-id` |
+| Android | applicationId | `com.flota.app` |
 | Android | track | `internal` |
 
 ## EAS Update Channels

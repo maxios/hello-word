@@ -1,7 +1,10 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
+const GRAPHQL_SCHEMA_URL =
+  process.env.EXPO_PUBLIC_GRAPHQL_URL ?? 'https://countries.trevorblades.com/graphql';
+
 const config: CodegenConfig = {
-  schema: 'https://strng-payloadcms.vercel.app/api/graphql',
+  schema: GRAPHQL_SCHEMA_URL,
   documents: [
     'src/**/*.graphql',
     'src/**/*.gql',
@@ -37,26 +40,10 @@ const config: CodegenConfig = {
       },
       plugins: []
     },
-    // Generate React Query hooks
-    './src/gql/hooks.ts': {
-      plugins: [
-        'typescript',
-        'typescript-operations',
-        'typescript-react-query'
-      ],
-      config: {
-        useTypeImports: true,
-        fetcher: 'graphql-request',
-        scalars: {
-          DateTime: 'string',
-          JSON: 'any',
-          JSONObject: 'Record<string, any>'
-        },
-        addInfiniteQuery: true,
-        exposeQueryKeys: true,
-        exposeMutationKeys: true
-      }
-    },
+    // (Removed) typescript-react-query plugin — its generated hooks use the
+    // react-query v3/v4 positional API, which conflicts with the installed
+    // @tanstack/react-query v5. We use the `client` preset's TypedDocumentNode
+    // output instead and compose our own thin hooks in src/shared/hooks/.
   },
   ignoreNoDocuments: true
 };

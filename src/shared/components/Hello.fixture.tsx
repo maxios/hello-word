@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
  
-export default ({name}: {name: string}) => (
+export default ({ name = "flota" }: { name?: string }) => (
   <View style={styles.container}>
     <Text style={styles.text}>Hello {name}!</Text>
   </View>

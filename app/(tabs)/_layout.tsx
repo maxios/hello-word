@@ -2,10 +2,11 @@ import { Tabs } from "expo-router";
 import { Platform, Text } from "react-native";
 
 import {
-  ChallengeIcon,
+  EyeIcon,
   HomeIcon,
-  MealsIcon,
-  MoveIcon,
+  MagnifyingGlassIcon,
+  PencilIcon,
+  SettingsIcon,
 } from "@/components/icons";
 import { colors } from "@/constants/Colors";
 import { clsx } from "clsx";
@@ -13,17 +14,32 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const TABS = [
   { name: "home", label: "Home", Icon: HomeIcon },
-  { name: "move", label: "Move", Icon: MoveIcon },
-  { name: "meals", label: "Meals", Icon: MealsIcon },
-  { name: "challenges", label: "challenge", Icon: ChallengeIcon },
+  { name: "catalog", label: "Catalog", Icon: MagnifyingGlassIcon },
+  { name: "compose", label: "Compose", Icon: PencilIcon },
+  { name: "settings", label: "Settings", Icon: SettingsIcon },
+  { name: "playground", label: "Playground", Icon: EyeIcon },
 ];
 
-export const getLabel = ({ focused, label }: any) => {
+type IconComponent = React.ComponentType<{ color?: string }>;
+
+export const getLabel = ({
+  focused,
+  label,
+}: {
+  focused: boolean;
+  label: string;
+}) => {
   const color = focused ? "text-high-emphasis" : "text-medium-emphasis";
   return <Text className={clsx(color, "font-body-medium")}>{label}</Text>;
 };
 
-export const getIcon = ({ focused, Icon }: any) => {
+export const getIcon = ({
+  focused,
+  Icon,
+}: {
+  focused: boolean;
+  Icon: IconComponent;
+}) => {
   const color = focused ? "high-emphasis" : "low-emphasis";
   return <Icon color={colors[color]} />;
 };
@@ -66,7 +82,6 @@ export default function TabLayout() {
             tabBarActiveTintColor: colors["high-emphasis"],
             tabBarInactiveTintColor: colors["medium-emphasis"],
             tabBarStyle: {
-              display: name === "challenges" ? "none" : "flex",
               backgroundColor: colors.surface[12],
               borderTopWidth: 0,
               height:

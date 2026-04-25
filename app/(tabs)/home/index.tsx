@@ -1,84 +1,151 @@
-import { Image } from "expo-image";
-import { Platform, StyleSheet, Text, View } from "react-native";
-
-import { HelloWave } from "@/components/HelloWave";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { Button } from "@/components/Button";
 import { PlaygroundButton } from "@/components/PlaygroundButton";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+import { router } from "expo-router";
+import { Pressable, ScrollView, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+type DemoCard = {
+  title: string;
+  stack: string;
+  description: string;
+  href: string;
+};
+
+const demoCards: DemoCard[] = [
+  {
+    title: "Catalog",
+    stack: "GraphQL query · codegen · 6-layer feature",
+    description:
+      "List + detail against a public GraphQL API. Demonstrates the full UI-as-API stack: schemas, mapper, collection, action hook, pure UI, container.",
+    href: "/catalog",
+  },
+  {
+    title: "Compose",
+    stack: "react-hook-form · valibot · GraphQL mutation",
+    description:
+      "Every field component composed into one form. Submits via a local Yoga mock with optimistic update + server-error-to-field mapping.",
+    href: "/compose",
+  },
+  {
+    title: "Settings",
+    stack: "NativeWind · design tokens · dark mode",
+    description:
+      "Dark-mode toggle, typography scale, and color-token gallery. Everything you need when theming a new screen.",
+    href: "/settings",
+  },
+  {
+    title: "Playground",
+    stack: "React Cosmos · component catalog",
+    description:
+      "Browse every component's variants, fixture code, and usage guidelines.",
+    href: "/playground",
+  },
+];
+
+const routingDemos: { title: string; description: string; href: string }[] = [
+  {
+    title: "Modal route",
+    description: "Demonstrates Expo Router's modal presentation at /modal.",
+    href: "/modal",
+  },
+  {
+    title: "Protected route",
+    description:
+      "Gated area requiring a session. Redirects to /auth/login when absent.",
+    href: "/protected",
+  },
+  {
+    title: "Dynamic route",
+    description:
+      "See /catalog/[code] — the detail page rendered from URL params.",
+    href: "/catalog",
+  },
+];
 
 export default function HomeScreen() {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={{ flex: 1 }}>
-      <ParallaxScrollView
-        headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-        headerImage={
-          <Image
-            source={require("@/assets/images/partial-react-logo.png")}
-            style={styles.reactLogo}
-          />
-        }
+    <View className="flex-1 bg-background">
+      <ScrollView
+        contentContainerStyle={{
+          paddingTop: insets.top + 16,
+          paddingHorizontal: 16,
+          paddingBottom: insets.bottom + 120,
+          gap: 20,
+        }}
+        showsVerticalScrollIndicator={false}
       >
-        <ThemedView style={styles.titleContainer}>
-          <Text className="text-2xl text-high-emphasis">Welcome!</Text>
-          <HelloWave />
-        </ThemedView>
-        <ThemedView style={styles.stepContainer}>
-          <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-          <ThemedText>
-            Edit{" "}
-            <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{" "}
-            to see changes. Press{" "}
-            <ThemedText type="defaultSemiBold">
-              {Platform.select({
-                ios: "cmd + d",
-                android: "cmd + m",
-                web: "F12",
-              })}
-            </ThemedText>{" "}
-            to open developer tools.
-          </ThemedText>
-        </ThemedView>
-        <ThemedView style={styles.stepContainer}>
-          <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          <ThemedText>
-            {`Tap the Explore tab to learn more about what's included in this starter app.`}
-          </ThemedText>
-        </ThemedView>
-        <ThemedView style={styles.stepContainer}>
-          <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-          <ThemedText>
-            {`When you're ready, run `}
-            <ThemedText type="defaultSemiBold">
-              npm run reset-project
-            </ThemedText>{" "}
-            to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{" "}
-            directory. This will move the current{" "}
-            <ThemedText type="defaultSemiBold">app</ThemedText> to{" "}
-            <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-          </ThemedText>
-        </ThemedView>
-      </ParallaxScrollView>
+        <View className="gap-1">
+          <Text className="font-heading text-heading-lg font-bold uppercase text-high-emphasis">
+            Flota
+          </Text>
+          <Text className="text-body-medium text-medium-emphasis">
+            A generic Expo + Yoga GraphQL starter. Each tab below demonstrates
+            one slice of the stack.
+          </Text>
+        </View>
+
+        <View className="gap-3">
+          <Text className="font-heading text-heading-sm font-bold uppercase text-high-emphasis">
+            Stack demos
+          </Text>
+          {demoCards.map((card) => (
+            <Pressable
+              key={card.href}
+              onPress={() => router.push(card.href)}
+              className="gap-2 rounded-xl border border-surface-16 bg-surface-4 p-4 active:bg-surface-8"
+            >
+              <Text className="font-heading text-heading-xs font-bold uppercase text-high-emphasis">
+                {card.title}
+              </Text>
+              <Text className="text-ui-small uppercase text-brand-mid">
+                {card.stack}
+              </Text>
+              <Text className="text-body-small text-medium-emphasis">
+                {card.description}
+              </Text>
+            </Pressable>
+          ))}
+        </View>
+
+        <View className="gap-3">
+          <Text className="font-heading text-heading-sm font-bold uppercase text-high-emphasis">
+            Routing demos
+          </Text>
+          {routingDemos.map((demo) => (
+            <Pressable
+              key={demo.href}
+              onPress={() => router.push(demo.href)}
+              className="flex-row items-center justify-between rounded-xl border border-surface-16 bg-surface-4 p-4 active:bg-surface-8"
+            >
+              <View className="flex-1 gap-1 pr-3">
+                <Text className="font-heading text-body-medium font-bold text-high-emphasis">
+                  {demo.title}
+                </Text>
+                <Text className="text-body-small text-medium-emphasis">
+                  {demo.description}
+                </Text>
+              </View>
+              <Text className="text-body-medium text-brand-mid">→</Text>
+            </Pressable>
+          ))}
+        </View>
+
+        <View className="gap-2 pt-4">
+          <Button
+            variant="outlined"
+            label="Sign in"
+            onPress={() => router.push("/auth/login")}
+          />
+          <Button
+            variant="text"
+            label="Create an account"
+            onPress={() => router.push("/auth/signup")}
+          />
+        </View>
+      </ScrollView>
       <PlaygroundButton variant="floating" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
-  },
-});

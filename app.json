@@ -3,24 +3,24 @@
     "experiments": {
       "tsconfigPaths": true
     },
-    "scheme": "strng",
+    "scheme": "flota",
     "web": {
       "bundler": "metro",
       "favicon": "./src/shared/assets/favicon.png"
     },
-    "owner": "strng",
+    "owner": "TODO-your-expo-account",
     "extra": {
       "storybookEnabled": true,
       "enablePlayground": true,
       "eas": {
-        "projectId": "6f7d57c0-834f-45d1-a9eb-a717400bc2ba",
+        "projectId": "TODO-run-eas-init-to-generate",
         "build": {
           "experimental": {
             "ios": {
               "appExtensions": [
                 {
                   "targetName": "NotificationService",
-                  "bundleIdentifier": "com.strong.andsxy.richpush"
+                  "bundleIdentifier": "com.flota.app.richpush"
                 }
               ]
             }
@@ -28,10 +28,10 @@
         }
       }
     },
-    "name": "STRNG",
-    "slug": "strng",
-    "version": "3.3.1",
-    "runtimeVersion": "1.5",
+    "name": "Flota",
+    "slug": "flota",
+    "version": "1.0.0",
+    "runtimeVersion": "1.0",
     "orientation": "portrait",
     "icon": "./src/shared/assets/icon.png",
     "userInterfaceStyle": "automatic",
@@ -42,51 +42,28 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "associatedDomains": [
-        "applinks:api.vercel-prod.strngapp.com",
-        "strng://"
-      ],
       "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": false,
-      "bundleIdentifier": "com.strong.andsxy",
+      "bundleIdentifier": "com.flota.app",
       "config": {
         "usesNonExemptEncryption": false
-      },
-      "entitlements": {
-        "com.apple.developer.in-app-payments": ["merchant.com.strong.andsxy"]
       },
       "infoPlist": {
         "NSAppTransportSecurity": {
           "NSAllowsLocalNetworking": true
         },
-        "UIBackgroundModes": ["audio"],
-        "NSCameraUsageDescription": "STRNG needs access to your camera so you can take pictures and share them with your friends.",
-        "NSPhotoLibraryUsageDescription": "STRNG needs access to your photos so you can upload images to track your progress, save memories, and share them with your friends.",
-        "NSUserTrackingUsageDescription": "This identifier will be used to deliver personalized ads to you.",
-        "NSHealthShareUsageDescription": "STRNG needs access to your health data to track your steps, calories, and heart rate for better fitness insights.",
-        "NSHealthUpdateUsageDescription": "STRNG needs access to your health data to track your steps, calories, and heart rate for better fitness insights."
+        "NSCameraUsageDescription": "Flota needs camera access to capture images within the demo features.",
+        "NSPhotoLibraryUsageDescription": "Flota needs photo library access to upload images within the demo features.",
+        "NSUserTrackingUsageDescription": "This identifier is used for analytics in production builds."
       }
     },
     "android": {
       "googleServicesFile": "./google-services.json",
       "icon": "./src/shared/assets/icon.png",
-      "package": "com.strong.andsxy",
-      "intentFilters": [
-        {
-          "action": "VIEW",
-          "autoVerify": true,
-          "data": [
-            {
-              "scheme": "https",
-              "host": "api.vercel-prod.strngapp.com"
-            }
-          ],
-          "category": ["BROWSABLE", "DEFAULT"]
-        }
-      ]
+      "package": "com.flota.app"
     },
     "updates": {
-      "url": "https://u.expo.dev/6f7d57c0-834f-45d1-a9eb-a717400bc2ba"
+      "url": "TODO-set-after-eas-init"
     },
     "plugins": [
       "expo-font",
@@ -96,7 +73,7 @@
       [
         "expo-updates",
         {
-          "username": "strng"
+          "username": "TODO-your-expo-account"
         }
       ],
       [

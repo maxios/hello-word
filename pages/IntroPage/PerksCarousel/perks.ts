@@ -7,22 +7,22 @@ export const perks: Perk[] = [
   {
     id: 1,
     image: perk1Image,
-    title: 'Your personalized fitness plan',
+    title: 'Every stack piece, demonstrated',
     description:
-      'The STRNG Fitness app is an all-inclusive customizable health & fitness package with a holistic approach to well-being. We’ll provide your workouts and nutrition plan according to your specific fitness goals to help you become the very best version of yourself.',
+      'Flota is a generic Expo starter that doubles as a living reference. Every tab, component, and doc exists to show how to use one part of the stack — Expo Router, NativeWind, GraphQL + codegen, React Cosmos, and the UI-as-API pattern.',
   },
   {
     id: 2,
     image: perk2Image,
-    title: 'FITNESS AT YOUR FINGERTIPS',
+    title: 'UI-as-API micro-products',
     description:
-      'With STRNG you can workout at home or at the gym, select a structured but customizable routine, select your trainer, and add extra classes from our catalogue of Pilates, Yoga, HIIT, Barre and even Muay Thai!',
+      'Features ship in six layers: schemas, mapper, collection, action hook, pure UI, and container. The catalog tab is the canonical end-to-end example you can copy when starting your own feature.',
   },
   {
     id: 3,
     image: perk3Image,
-    title: 'STRNGER TOGETHER',
+    title: 'DEP documentation, validated',
     description:
-      'Join our community of over 14.5 million fitness friends who are all working towards a happier & healthier lifestyle. STRNG is a support network like no other; we want you to succeed and we want you to enjoy the journey with us, because we truly believe that when we work together we can achieve incredible results.',
+      'Every doc under docs/dep/ carries structured frontmatter tied to .docspec. Run the DEP skills to scaffold, sync, or validate — no more stale wikis, no more parallel doc trees.',
   },
 ];

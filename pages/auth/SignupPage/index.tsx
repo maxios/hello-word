@@ -161,7 +161,7 @@ const SignupPage = () => {
           <CheckboxField
             control={control}
             name="terms"
-            label="Agree to the STRNG Terms & Conditions"
+            label="Agree to the Flota Terms & Conditions"
             linkText="Terms & Conditions"
             onLinkPress={() => router.push("/settings/terms-and-conditions")}
             required
@@ -177,7 +177,7 @@ const SignupPage = () => {
           <CheckboxField
             control={control}
             name="marketing"
-            description="Sign up to STRNG marketing emails, including exclusive offers, news and more."
+            description="Sign up to Flota product updates, including announcements and news."
             disabled={isLoading}
           />
         </View>

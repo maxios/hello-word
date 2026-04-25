@@ -32,40 +32,37 @@ under `schemas/`; you already know
    NOT call into the feature's service — the fixture must be static:
 
    ```ts
-   // src/features/meal-plan/components/MealPlanView.fixtures.ts
-   import type { MealPlan } from '../schemas/mealPlan.types';
+   // src/features/catalog/components/CatalogView.fixtures.ts
+   import type { CountryDetail } from '../schemas/catalog.types';
 
-   export const mealPlanEmpty: MealPlan = {
-     id: 'sample-empty', title: 'Empty Plan', totalCalories: 0, items: [],
+   export const catalogEmpty: CountryDetail = {
+     id: 'XX', name: 'Unknown', flag: '', languageCount: 0, languages: [],
    };
 
-   export const mealPlanFull: MealPlan = {
-     id: 'sample-full',
-     title: 'High-Protein Day',
-     totalCalories: 2400,
-     items: [
-       { id: '1', name: 'Oats & Berries' },
-       { id: '2', name: 'Chicken Salad' },
-       { id: '3', name: 'Salmon & Rice' },
-     ],
+   export const catalogFull: CountryDetail = {
+     id: 'JP',
+     name: 'Japan',
+     flag: '🇯🇵',
+     languageCount: 1,
+     languages: [{ id: 'ja', name: 'Japanese' }],
    };
    ```
 
 2. Create the `.playground.tsx` fixture next to the component:
 
    ```tsx
-   // src/features/meal-plan/components/MealPlanView.playground.tsx
+   // src/features/catalog/components/CatalogView.playground.tsx
    import { View } from 'react-native';
-   import { MealPlanView } from './MealPlanView';
-   import { mealPlanEmpty, mealPlanFull } from './MealPlanView.fixtures';
+   import { CatalogView } from './CatalogView';
+   import { catalogEmpty, catalogFull } from './CatalogView.fixtures';
 
-   export default function MealPlanViewFixture() {
+   export default function CatalogViewFixture() {
      return (
        <View className="p-4 gap-6">
-         <MealPlanView data={null} isLoading error={null} />
-         <MealPlanView data={null} isLoading={false} error={new Error('Fetch failed')} />
-         <MealPlanView data={mealPlanEmpty} isLoading={false} error={null} />
-         <MealPlanView data={mealPlanFull} isLoading={false} error={null} />
+         <CatalogView data={null} isLoading error={null} />
+         <CatalogView data={null} isLoading={false} error={new Error('Fetch failed')} />
+         <CatalogView data={catalogEmpty} isLoading={false} error={null} />
+         <CatalogView data={catalogFull} isLoading={false} error={null} />
        </View>
      );
    }

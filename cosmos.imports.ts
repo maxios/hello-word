@@ -4,7 +4,7 @@
 
 import type { RendererConfig, UserModuleWrappers } from 'react-cosmos-core';
 
-import * as fixture0 from './components/Hello.fixture';
+import * as fixture0 from './src/shared/components/Hello.fixture';
 
 export const rendererConfig: RendererConfig = {
   "webSocketUrl": "ws://192.168.100.86:5002",

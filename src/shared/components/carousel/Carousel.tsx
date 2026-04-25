@@ -95,7 +95,7 @@ export const Carousel: React.FC<CarouselProps> = ({
       accessibilityHint={`Currently showing item ${currentIndex + 1} of ${items.length}`}
     >
       <Animated.ScrollView
-        ref={scrollViewRef}
+        ref={scrollViewRef as React.Ref<Animated.ScrollView>}
         horizontal
         pagingEnabled={itemsPerView === 1}
         showsHorizontalScrollIndicator={false}

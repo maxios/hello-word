@@ -1,11 +1,11 @@
 dep_version: "0.1.0"
 
 project:
-  name: strnger-app
+  name: flota
   description: >-
-    React Native/Expo mobile app for meals, challenges, and movement tracking,
-    built on NativeWind, Expo Router, Yoga GraphQL, and a UI-as-API
-    micro-product architecture.
+    Opinionated Expo + Yoga GraphQL starter that doubles as a living reference
+    for the stack: NativeWind, Expo Router, graphql-request + codegen,
+    React Cosmos, and a UI-as-API micro-product architecture.
   docs_root: docs/dep
 
 audiences:

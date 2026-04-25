@@ -5,30 +5,30 @@ import { ImageCarousel } from "./variants/ImageCarousel";
 import { ProductCarousel } from "./variants/ProductCarousel";
 import { TestimonialCarousel } from "./variants/TestimonialCarousel";
 
-const sampleImages = [
-  require("../../assets/images/unsubscribeScroll/meal1.png"),
-  require("../../assets/images/unsubscribeScroll/meal2.png"),
-  require("../../assets/images/unsubscribeScroll/meal3.png"),
-];
+const placeholderImage = require("../../assets/images/intro/1.png");
+const placeholderImage2 = require("../../assets/images/intro/2.png");
+const placeholderImage3 = require("../../assets/images/intro/3.png");
+
+const sampleImages = [placeholderImage, placeholderImage2, placeholderImage3];
 
 const sampleCards = [
   {
     title: "Getting Started",
     description:
       "Learn the basics of our platform and get up to speed quickly.",
-    image: require("../../assets/images/unsubscribeScroll/meal1.png"),
+    image: placeholderImage,
     actions: <Button variant="primary" size="small" label="Learn More" />,
   },
   {
     title: "Advanced Features",
     description: "Unlock powerful capabilities to enhance your workflow.",
-    image: require("../../assets/images/unsubscribeScroll/meal2.png"),
+    image: placeholderImage2,
     actions: <Button variant="outlined" size="small" label="Explore" />,
   },
   {
     title: "Community",
     description: "Join thousands of users and share your experiences.",
-    image: require("../../assets/images/unsubscribeScroll/meal3.png"),
+    image: placeholderImage3,
     actions: <Button variant="text" size="small" label="Join Now" />,
   },
 ];
@@ -36,24 +36,24 @@ const sampleCards = [
 const sampleTestimonials = [
   {
     quote:
-      "This app has completely transformed how I manage my daily fitness routine. The carousel component is smooth and intuitive!",
+      "The documentation is excellent. I had a feature shipped end-to-end in under a day.",
     author: "Sarah Johnson",
-    role: "Fitness Enthusiast",
-    company: "STRNG Community",
+    role: "Frontend Engineer",
+    company: "Acme Corp",
     rating: 5,
   },
   {
     quote:
-      "The meal planning features are incredible. I've never been more organized with my nutrition.",
+      "The UI-as-API pattern made our codebase instantly more consistent across features.",
     author: "Michael Chen",
-    role: "Amateur Athlete",
+    role: "Tech Lead",
     rating: 5,
   },
   {
     quote:
-      "Outstanding design and user experience. Every interaction feels natural and responsive.",
+      "Clean separation of concerns. Pure UI components, hooks, mappers — everything clicks.",
     author: "Emily Rodriguez",
-    role: "UX Designer",
+    role: "UX Engineer",
     company: "Design Studio",
     rating: 4,
   },
@@ -61,29 +61,29 @@ const sampleTestimonials = [
 
 const sampleProducts = [
   {
-    name: "Premium Protein Powder",
+    name: "Standard Widget",
     price: 49.99,
-    image: require("../../assets/images/unsubscribeScroll/meal1.png"),
-    description: "High-quality whey protein isolate for muscle recovery",
+    image: placeholderImage,
+    description: "A generic widget demonstrating the product-card layout",
     badge: "NEW",
     discount: 20,
-    onAddToCart: () => console.log("Added to cart: Premium Protein"),
+    onAddToCart: () => console.log("Added to cart: Standard Widget"),
   },
   {
-    name: "Energy Pre-Workout",
+    name: "Premium Gizmo",
     price: 39.99,
-    image: require("../../assets/images/unsubscribeScroll/meal2.png"),
-    description: "Boost your workout intensity with our premium formula",
+    image: placeholderImage2,
+    description: "Another placeholder product for the carousel demo",
     badge: "POPULAR",
-    onAddToCart: () => console.log("Added to cart: Pre-Workout"),
+    onAddToCart: () => console.log("Added to cart: Premium Gizmo"),
   },
   {
-    name: "Recovery BCAA Complex",
+    name: "Bundle Pack",
     price: 34.99,
-    image: require("../../assets/images/unsubscribeScroll/meal3.png"),
-    description: "Essential amino acids for optimal muscle recovery",
+    image: placeholderImage3,
+    description: "Bundle placeholder with a discount badge",
     discount: 15,
-    onAddToCart: () => console.log("Added to cart: BCAA"),
+    onAddToCart: () => console.log("Added to cart: Bundle Pack"),
   },
 ];
 
@@ -329,12 +329,12 @@ export const components: PlaygroundComponent[] = [
     component: () => (
       <View className="space-y-4">
         <Text className="font-bold text-high-emphasis">Loading State:</Text>
-        <View className="bg-surface-6 h-[200px] items-center justify-center rounded-xl">
+        <View className="bg-surface-8 h-[200px] items-center justify-center rounded-xl">
           <Text className="text-medium-emphasis">Loading carousel...</Text>
         </View>
 
         <Text className="mt-4 font-bold text-high-emphasis">Empty State:</Text>
-        <View className="bg-surface-6 h-[200px] items-center justify-center rounded-xl">
+        <View className="bg-surface-8 h-[200px] items-center justify-center rounded-xl">
           <Text className="text-medium-emphasis">No items to display</Text>
         </View>
       </View>

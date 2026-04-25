@@ -17,19 +17,19 @@ dep:
 
 # Tutorial — Scaffold Your First Feature
 
-In this tutorial you will create a minimal feature called `greeting`
+In this tutorial you will create a minimal feature called `catalog`
 that follows the project's micro-product layout. By the end you will have
-a working directory under `src/features/greeting/` with one pure UI
+a working directory under `src/features/catalog/` with one pure UI
 component rendered through a container, exposed via the feature barrel and
 visible in the Cosmos playground. No GraphQL yet — that comes next.
 
 ## What You Will Build
 
-- A new feature directory at `src/features/greeting/`
-- A UI schema at `schemas/greeting.types.ts`
-- A pure component `GreetingView`
-- A container `GreetingContainer`
-- A trivial action hook `useGreetingActions`
+- A new feature directory at `src/features/catalog/`
+- A UI schema at `schemas/catalog.types.ts`
+- A pure component `CatalogView`
+- A container `CatalogContainer`
+- A trivial action hook `useCatalogActions`
 - A `.playground.tsx` fixture visible in Cosmos
 - A barrel `index.ts` exporting the feature's public surface
 
@@ -45,7 +45,7 @@ visible in the Cosmos playground. No GraphQL yet — that comes next.
 Inside `src/features/`, create:
 
 ```
-greeting/
+catalog/
 ├── components/
 ├── containers/
 ├── hooks/
@@ -63,16 +63,17 @@ untracked.
 
 ## Step 2 — Declare The UI Schema
 
-Create `schemas/greeting.types.ts`:
+Create `schemas/catalog.types.ts`:
 
 ```ts
-export interface Greeting {
-  recipient: string;
-  message: string;
+export interface CountrySummary {
+  id: string;
+  name: string;
+  flag: string;
 }
 
-export interface GreetingViewProps {
-  greeting: Greeting | null;
+export interface CatalogViewProps {
+  items: CountrySummary[];
   isLoading: boolean;
   onRefresh: () => void;
 }
@@ -82,19 +83,25 @@ export interface GreetingViewProps {
 
 ## Step 3 — Write The Pure Component
 
-Create `components/GreetingView.tsx`:
+Create `components/CatalogView.tsx`:
 
 ```tsx
-import { Text, Pressable, View } from 'react-native';
-import type { GreetingViewProps } from '../schemas/greeting.types';
+import { Text, Pressable, View, FlatList } from 'react-native';
+import type { CatalogViewProps } from '../schemas/catalog.types';
 
-export function GreetingView({ greeting, isLoading, onRefresh }: GreetingViewProps) {
+export function CatalogView({ items, isLoading, onRefresh }: CatalogViewProps) {
   return (
     <View className="p-4 gap-3">
       <Text className="text-heading-md font-heading">
-        {greeting ? `Hi ${greeting.recipient}` : 'No greeting yet'}
+        {items.length > 0 ? `${items.length} countries` : 'No items yet'}
       </Text>
-      {greeting ? <Text className="text-body-medium">{greeting.message}</Text> : null}
+      <FlatList
+        data={items}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Text className="text-body-medium">{item.flag} {item.name}</Text>
+        )}
+      />
       <Pressable onPress={onRefresh} disabled={isLoading} className="p-3 bg-primary rounded-md">
         <Text className="text-ui-default text-white">
           {isLoading ? 'Loading…' : 'Refresh'}
@@ -110,25 +117,28 @@ export function GreetingView({ greeting, isLoading, onRefresh }: GreetingViewPro
 
 ## Step 4 — Write The Action Hook
 
-Create `hooks/useGreetingActions.ts`. Since there is no backend yet, the
+Create `hooks/useCatalogActions.ts`. Since there is no backend yet, the
 hook returns static data with a simulated delay:
 
 ```ts
 import { useCallback, useState } from 'react';
-import type { Greeting } from '../schemas/greeting.types';
+import type { CountrySummary } from '../schemas/catalog.types';
 
-export function useGreetingActions() {
-  const [greeting, setGreeting] = useState<Greeting | null>(null);
+export function useCatalogActions() {
+  const [items, setItems] = useState<CountrySummary[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const refresh = useCallback(async () => {
     setIsLoading(true);
     await new Promise((r) => setTimeout(r, 400));
-    setGreeting({ recipient: 'Friend', message: 'Welcome to strnger-app.' });
+    setItems([
+      { id: 'US', name: 'United States', flag: '🇺🇸' },
+      { id: 'JP', name: 'Japan', flag: '🇯🇵' },
+    ]);
     setIsLoading(false);
   }, []);
 
-  return { greeting, isLoading, refresh };
+  return { items, isLoading, refresh };
 }
 ```
 
@@ -136,15 +146,15 @@ export function useGreetingActions() {
 
 ## Step 5 — Write The Container
 
-Create `containers/GreetingContainer.tsx`:
+Create `containers/CatalogContainer.tsx`:
 
 ```tsx
-import { GreetingView } from '../components/GreetingView';
-import { useGreetingActions } from '../hooks/useGreetingActions';
+import { CatalogView } from '../components/CatalogView';
+import { useCatalogActions } from '../hooks/useCatalogActions';
 
-export function GreetingContainer() {
-  const { greeting, isLoading, refresh } = useGreetingActions();
-  return <GreetingView greeting={greeting} isLoading={isLoading} onRefresh={refresh} />;
+export function CatalogContainer() {
+  const { items, isLoading, refresh } = useCatalogActions();
+  return <CatalogView items={items} isLoading={isLoading} onRefresh={refresh} />;
 }
 ```
 
@@ -156,29 +166,32 @@ output to one component's input.
 Fill in `index.ts`:
 
 ```ts
-export { GreetingView } from './components/GreetingView';
-export { GreetingContainer } from './containers/GreetingContainer';
-export { useGreetingActions } from './hooks/useGreetingActions';
-export * from './schemas/greeting.types';
+export { CatalogView } from './components/CatalogView';
+export { CatalogContainer } from './containers/CatalogContainer';
+export { useCatalogActions } from './hooks/useCatalogActions';
+export * from './schemas/catalog.types';
 ```
 
-**Expected:** other modules can import from `@/src/features/greeting`.
+**Expected:** other modules can import from `@/src/features/catalog`.
 
 ## Step 7 — Add A Playground Fixture
 
-Create `components/GreetingView.playground.tsx`:
+Create `components/CatalogView.playground.tsx`:
 
 ```tsx
 import { View } from 'react-native';
-import { GreetingView } from './GreetingView';
+import { CatalogView } from './CatalogView';
 
-export default function GreetingViewFixture() {
+export default function CatalogViewFixture() {
   return (
     <View className="p-4 gap-6">
-      <GreetingView greeting={null} isLoading={false} onRefresh={() => {}} />
-      <GreetingView greeting={null} isLoading onRefresh={() => {}} />
-      <GreetingView
-        greeting={{ recipient: 'Alex', message: 'Nice to meet you.' }}
+      <CatalogView items={[]} isLoading={false} onRefresh={() => {}} />
+      <CatalogView items={[]} isLoading onRefresh={() => {}} />
+      <CatalogView
+        items={[
+          { id: 'US', name: 'United States', flag: '🇺🇸' },
+          { id: 'JP', name: 'Japan', flag: '🇯🇵' },
+        ]}
         isLoading={false}
         onRefresh={() => {}}
       />
@@ -198,7 +211,7 @@ npm run cosmos
 
 ## What You Built
 
-You now have a minimal feature in `src/features/greeting/` that obeys the
+You now have a minimal feature in `src/features/catalog/` that obeys the
 project's layering contract: the UI schema is the boundary, the component
 is pure, the hook holds the (trivial) business logic, the container
 orchestrates them, and everything is re-exported from one barrel. The

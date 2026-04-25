@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "907857573622",
-    "project_id": "strng-92749",
-    "storage_bucket": "strng-92749.appspot.com"
+    "project_number": "000000000000",
+    "project_id": "flota-placeholder",
+    "storage_bucket": "flota-placeholder.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:907857573622:android:de24abfa6fb911c1a89ed7",
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
         "android_client_info": {
-          "package_name": "com.strong.andsxy"
+          "package_name": "com.flota.app"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "907857573622-89f39bi58ga52v351g2k2k6jjpd7eml1.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyClSsq_JofM4ITVJvXn5DkjbJfQpzrsqtE"
+          "current_key": "PLACEHOLDER_REPLACE_WITH_YOUR_FIREBASE_ANDROID_API_KEY"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "907857573622-89f39bi58ga52v351g2k2k6jjpd7eml1.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

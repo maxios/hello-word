@@ -37,3 +37,13 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# mobilecli screenshot scratch dir
+.screenshots/
+
+# Expo prebuild native projects (regenerate with `expo prebuild`)
+ios/
+android/
+
+# local env
+.env

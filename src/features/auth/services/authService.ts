@@ -1,16 +1,48 @@
 /**
  * Authentication Service Layer
- * Handles all external API communication and token management
+ * Handles all external API communication and token management.
+ *
+ * Storage strategy:
+ *   - Tokens live in expo-secure-store (Keychain on iOS, EncryptedSharedPreferences
+ *     on Android) so they survive app restarts and are OS-protected.
+ *   - User profile JSON lives in AsyncStorage — it is non-sensitive and larger
+ *     than the 2KB SecureStore limit.
  */
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as SecureStore from 'expo-secure-store';
+import { Platform } from 'react-native';
 
 // Storage keys
 const STORAGE_KEYS = {
-  AUTH_TOKEN: 'auth_token',
-  REFRESH_TOKEN: 'refresh_token',
-  USER_SESSION: 'user_session',
+  AUTH_TOKEN: 'flota_auth_token',
+  REFRESH_TOKEN: 'flota_refresh_token',
+  USER_SESSION: 'flota_user_session',
 } as const;
+
+// SecureStore isn't available on web — fall back to AsyncStorage there.
+const secureStorage = {
+  async getItem(key: string): Promise<string | null> {
+    if (Platform.OS === 'web') {
+      return AsyncStorage.getItem(key);
+    }
+    return SecureStore.getItemAsync(key);
+  },
+  async setItem(key: string, value: string): Promise<void> {
+    if (Platform.OS === 'web') {
+      await AsyncStorage.setItem(key, value);
+      return;
+    }
+    await SecureStore.setItemAsync(key, value);
+  },
+  async deleteItem(key: string): Promise<void> {
+    if (Platform.OS === 'web') {
+      await AsyncStorage.removeItem(key);
+      return;
+    }
+    await SecureStore.deleteItemAsync(key);
+  },
+};
 
 // Mock API responses (replace with actual Stytch or API integration)
 interface ApiLoginResponse {
@@ -204,7 +236,7 @@ class AuthService {
    */
   async refreshToken(): Promise<boolean> {
     try {
-      const refreshToken = await AsyncStorage.getItem(STORAGE_KEYS.REFRESH_TOKEN);
+      const refreshToken = await secureStorage.getItem(STORAGE_KEYS.REFRESH_TOKEN);
       if (!refreshToken) return false;
 
       // TODO: Implement token refresh
@@ -256,23 +288,23 @@ class AuthService {
   private async storeSession(data: ApiLoginResponse['data']): Promise<void> {
     if (!data) return;
 
-    await AsyncStorage.multiSet([
-      [STORAGE_KEYS.AUTH_TOKEN, data.session.access_token],
-      [STORAGE_KEYS.REFRESH_TOKEN, data.session.refresh_token],
-      [STORAGE_KEYS.USER_SESSION, JSON.stringify(data)],
+    await Promise.all([
+      secureStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, data.session.access_token),
+      secureStorage.setItem(STORAGE_KEYS.REFRESH_TOKEN, data.session.refresh_token),
+      AsyncStorage.setItem(STORAGE_KEYS.USER_SESSION, JSON.stringify(data)),
     ]);
   }
 
   private async clearSession(): Promise<void> {
-    await AsyncStorage.multiRemove([
-      STORAGE_KEYS.AUTH_TOKEN,
-      STORAGE_KEYS.REFRESH_TOKEN,
-      STORAGE_KEYS.USER_SESSION,
+    await Promise.all([
+      secureStorage.deleteItem(STORAGE_KEYS.AUTH_TOKEN),
+      secureStorage.deleteItem(STORAGE_KEYS.REFRESH_TOKEN),
+      AsyncStorage.removeItem(STORAGE_KEYS.USER_SESSION),
     ]);
   }
 
   private async getAccessToken(): Promise<string | null> {
-    return AsyncStorage.getItem(STORAGE_KEYS.AUTH_TOKEN);
+    return secureStorage.getItem(STORAGE_KEYS.AUTH_TOKEN);
   }
 }
 

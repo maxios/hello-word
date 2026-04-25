@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+**About this repo:** Flota is a generic Expo + Yoga GraphQL starter that doubles as a **living reference** for the stack. Every tab, component, and doc exists to demonstrate how to use one piece of the stack (Expo Router, NativeWind, GraphQL + codegen, React Cosmos, UI-as-API, DEP). When adding code, ask: "does this make the stack easier to learn, or is it specific to one app?" — if the latter, it probably doesn't belong.
+
 ## Documentation: DEP with `.docspec` as Source of Truth
 
 This project uses **DEP (Documentation Engineering Process)** for all project documentation. The `.docspec` file at the repository root is the **single source of truth** for documentation structure, audiences, governance, and generation rules.
@@ -65,8 +67,11 @@ When asked to write, update, or reorganize docs in this repo: read `.docspec` fi
 ### Project Structure
 
 - `app/` - File-based routing with Expo Router
-  - `(tabs)/` - Tab-based navigation with bottom tabs (home, meals, challenges, move, playground)
+  - `(tabs)/` - Tab-based navigation: `home`, `catalog` (6-layer query demo), `compose` (form + mutation demo), `settings` (theme demo), `playground` (React Cosmos)
+  - `(auth-gated)/` - Protected-route demo group
   - `auth/` - Authentication flows (login, signup, password reset)
+  - `api/graphql+api.ts` - Local Yoga mock for mutation/auth demos
+  - `modal.tsx` - Modal-route demo
   - `_layout.tsx` - Root layout with splash screen, font loading
 - `components/` - Reusable UI components
   - `playground/` - Component showcase system for development
@@ -97,7 +102,7 @@ When asked to write, update, or reorganize docs in this repo: read `.docspec` fi
 ### GraphQL Integration
 
 - **Client**: Uses `graphql-request` for lightweight GraphQL operations
-- **Endpoint**: `https://strng-payloadcms.vercel.app/api/graphql`
+- **Endpoint**: Driven by `EXPO_PUBLIC_GRAPHQL_URL`. Default: `https://countries.trevorblades.com/graphql` (public demo, queries only). Mutations in `compose` go to the local Yoga mock at `app/api/graphql+api.ts`.
 - **Code Generation**: Automatic TypeScript type generation from GraphQL schema
 - **Usage**: Import `request` from `lib/graphql.ts` to make GraphQL queries
 - **Schema**: GraphQL schema and introspection files generated in `src/gql/`

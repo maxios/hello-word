@@ -29,14 +29,14 @@ dep:
 
 # Entry Point — New Feature Developer
 
-You have been asked to ship a feature in strnger-app and this is your first
+You have been asked to ship a feature in Flota and this is your first
 one. This page exists to orient you before you write any code: it explains
 the two ideas that shape how features are built in this repository, and then
 hands you off to the specific documents you'll need in sequence.
 
 ## The Two Ideas That Shape This Codebase
 
-Every feature in strnger-app is built under two overlapping conventions. You
+Every feature in Flota is built under two overlapping conventions. You
 will feel friction if you try to deviate from them, because tooling,
 playgrounds, tests, and review expectations all assume they hold.
 

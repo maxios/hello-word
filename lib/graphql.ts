@@ -1,6 +1,9 @@
 import { GraphQLClient } from 'graphql-request';
 
-const GRAPHQL_ENDPOINT = 'https://strng-payloadcms.vercel.app/api/graphql';
+const DEFAULT_ENDPOINT = 'https://countries.trevorblades.com/graphql';
+
+export const GRAPHQL_ENDPOINT =
+  process.env.EXPO_PUBLIC_GRAPHQL_URL ?? DEFAULT_ENDPOINT;
 
 export const graphqlClient = new GraphQLClient(GRAPHQL_ENDPOINT, {
   headers: {

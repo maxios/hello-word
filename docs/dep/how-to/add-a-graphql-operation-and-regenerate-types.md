@@ -22,8 +22,9 @@ feature's service with full TypeScript types and, if desired, a React Query
 hook.
 
 **Prerequisites:** running `npm install`; feature directory exists; a live
-connection to `https://strng-payloadcms.vercel.app/api/graphql` (codegen
-introspects the schema over HTTP).
+connection to the GraphQL endpoint in `EXPO_PUBLIC_GRAPHQL_URL` (defaults to
+`https://countries.trevorblades.com/graphql` — codegen introspects the schema
+over HTTP).
 
 ## Steps
 
@@ -31,12 +32,13 @@ introspects the schema over HTTP).
    template in a `.ts`/`.tsx` file under `src/`:
 
    ```graphql
-   # src/features/meal-plan/queries/getMealPlan.graphql
-   query GetMealPlan($id: ID!) {
-     mealPlan(id: $id) {
-       id
-       title
-       meals { id name calories }
+   # src/features/catalog/queries/getCountry.graphql
+   query GetCountry($code: ID!) {
+     country(code: $code) {
+       code
+       name
+       emoji
+       languages { code name }
      }
    }
    ```
@@ -57,12 +59,12 @@ introspects the schema over HTTP).
    `src/gql/`:
 
    ```ts
-   // src/features/meal-plan/services/mealPlanService.ts
+   // src/features/catalog/services/catalogService.ts
    import { request } from '@/lib/graphql';
-   import { GetMealPlanDocument } from '@/src/gql/graphql';
+   import { GetCountryDocument } from '@/src/gql/graphql';
 
-   export const mealPlanService = {
-     getOne: (id: string) => request(GetMealPlanDocument, { id }),
+   export const catalogService = {
+     getOne: (code: string) => request(GetCountryDocument, { code }),
      // ...other methods
    };
    ```
@@ -71,7 +73,7 @@ introspects the schema over HTTP).
    when the operation is meant to be consumed directly from a container:
 
    ```ts
-   import { useGetMealPlanQuery } from '@/src/gql/hooks';
+   import { useGetCountryQuery } from '@/src/gql/hooks';
    ```
 
    Prefer this path only when the operation does not require
@@ -92,7 +94,7 @@ introspects the schema over HTTP).
 | Symptom | Cause | Fix |
 |---------|-------|-----|
 | `Cannot find module '@/src/gql/graphql'` | Codegen did not run | Run `npm run codegen` |
-| Codegen exits with schema-fetch error | Endpoint unreachable | Verify network to `strng-payloadcms.vercel.app` |
+| Codegen exits with schema-fetch error | Endpoint unreachable | Verify network to the URL in `EXPO_PUBLIC_GRAPHQL_URL` (default `countries.trevorblades.com`) |
 | Types missing for custom scalar | Scalar not mapped in codegen | Add to `scalars` in [codegen.ts](../../../codegen.ts) |
 
 ## Next

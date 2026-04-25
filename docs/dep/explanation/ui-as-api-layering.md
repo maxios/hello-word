@@ -19,7 +19,7 @@ dep:
 
 # Why UI-as-API Layering
 
-Inside a feature directory, strnger-app splits responsibilities into six
+Inside a feature directory, Flota splits responsibilities into six
 sharply defined layers: schemas, mappers, services, hooks, components, and
 containers. This page explains why the split exists, what each layer buys
 you, and what kinds of bugs the separation is designed to prevent.

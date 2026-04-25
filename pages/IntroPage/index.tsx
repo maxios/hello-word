@@ -1,7 +1,6 @@
-import strngLogo from "@/assets/images/intro/strng_logo.png";
 import { Button } from "@/components/Button";
 import { router } from "expo-router";
-import { Image, View } from "react-native";
+import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PerksCarousel } from "./PerksCarousel";
 
@@ -15,27 +14,29 @@ const IntroPage = () => {
   return (
     <View className="size-full flex-1 bg-background">
       <View className="relative size-full flex-1">
-        <View className="absolute left-[16px] top-[25px] z-10">
+        <View className="absolute left-4 top-6 z-10">
           <View style={{ paddingTop: insets.top - 32 }} />
-          <Image source={strngLogo} />
+          <Text className="font-heading text-heading-lg font-bold uppercase text-high-emphasis">
+            Flota
+          </Text>
         </View>
         <PerksCarousel />
       </View>
       <View className="flex-col justify-center gap-2 px-4">
         <Button
           variant="primary"
-          label="Start Your STRNG Workout"
+          label="Explore the demos"
           onPress={() => handleNavigation("/home")}
         />
         <Button
           variant="outlined"
-          label="Get started"
+          label="Create an account"
           onPress={() => handleNavigation("/auth/signup")}
         />
         <Button
           variant="text"
           label="Log in"
-          onPress={() => handleNavigation("/auth/new-app-perks")}
+          onPress={() => handleNavigation("/auth/login")}
         />
 
         <View style={{ paddingBottom: insets.bottom }} />

@@ -37,16 +37,16 @@ for the data exists under `schemas/`.
    `lib/graphql.ts` and calls the mapper:
 
    ```ts
-   // src/features/meal-plan/services/mealPlanService.ts
+   // src/features/catalog/services/catalogService.ts
    import { request } from '@/lib/graphql';
-   import { GetMealPlanDocument } from '@/src/gql/graphql';
-   import { MealPlanMapper } from '../mappers/mealPlanMapper';
-   import type { MealPlan } from '../schemas/mealPlan.types';
+   import { GetCountryDocument } from '@/src/gql/graphql';
+   import { CatalogMapper } from '../mappers/catalogMapper';
+   import type { CountryDetail } from '../schemas/catalog.types';
 
-   export const mealPlanService = {
-     async getOne(id: string): Promise<MealPlan> {
-       const { mealPlan } = await request(GetMealPlanDocument, { id });
-       return MealPlanMapper.fromApi(mealPlan);
+   export const catalogService = {
+     async getOne(code: string): Promise<CountryDetail> {
+       const { country } = await request(GetCountryDocument, { code });
+       return CatalogMapper.fromApi(country);
      },
    };
    ```
@@ -55,19 +55,19 @@ for the data exists under `schemas/`.
    error state:
 
    ```ts
-   // src/features/meal-plan/hooks/useMealPlanActions.ts
+   // src/features/catalog/hooks/useCatalogActions.ts
    import { useCallback, useState } from 'react';
-   import { mealPlanService } from '../services/mealPlanService';
-   import type { MealPlan } from '../schemas/mealPlan.types';
+   import { catalogService } from '../services/catalogService';
+   import type { CountryDetail } from '../schemas/catalog.types';
 
-   export function useMealPlanActions() {
-     const [data, setData] = useState<MealPlan | null>(null);
+   export function useCatalogActions() {
+     const [data, setData] = useState<CountryDetail | null>(null);
      const [isLoading, setLoading] = useState(false);
      const [error, setError] = useState<Error | null>(null);
 
-     const load = useCallback(async (id: string) => {
+     const load = useCallback(async (code: string) => {
        setLoading(true); setError(null);
-       try { setData(await mealPlanService.getOne(id)); }
+       try { setData(await catalogService.getOne(code)); }
        catch (e) { setError(e as Error); }
        finally { setLoading(false); }
      }, []);
@@ -80,16 +80,16 @@ for the data exists under `schemas/`.
    pure component:
 
    ```tsx
-   // src/features/meal-plan/containers/MealPlanContainer.tsx
+   // src/features/catalog/containers/CatalogDetailContainer.tsx
    import { useEffect } from 'react';
-   import { useMealPlanActions } from '../hooks/useMealPlanActions';
-   import { MealPlanView } from '../components/MealPlanView';
+   import { useCatalogActions } from '../hooks/useCatalogActions';
+   import { CatalogDetailView } from '../components/CatalogDetailView';
 
-   export function MealPlanContainer({ id }: { id: string }) {
-     const { data, isLoading, error, load } = useMealPlanActions();
-     useEffect(() => { load(id); }, [id, load]);
+   export function CatalogDetailContainer({ code }: { code: string }) {
+     const { data, isLoading, error, load } = useCatalogActions();
+     useEffect(() => { load(code); }, [code, load]);
      return (
-       <MealPlanView data={data} isLoading={isLoading} error={error} />
+       <CatalogDetailView data={data} isLoading={isLoading} error={error} />
      );
    }
    ```
@@ -97,12 +97,12 @@ for the data exists under `schemas/`.
 4. Export the container from the feature barrel (`index.ts`):
 
    ```ts
-   export { MealPlanContainer } from './containers/MealPlanContainer';
+   export { CatalogDetailContainer } from './containers/CatalogDetailContainer';
    ```
 
 ## Verification
 
-- The component (`MealPlanView`) imports nothing from `services/`,
+- The component (`CatalogDetailView`) imports nothing from `services/`,
   `hooks/`, `lib/graphql.ts`, or `@/src/gql/`.
 - The service returns the UI schema type, not the GraphQL result type.
 - The container is the only file in the feature that imports both a hook

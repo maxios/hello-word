@@ -25,13 +25,13 @@ dep:
 
 You are about to cut a build or ship an OTA update, and you need to pick the
 right EAS profile and update channel without inventing the answer. This page
-explains the release surface of strnger-app — the profile/channel matrix,
+explains the release surface of Flota — the profile/channel matrix,
 what each combination means, and where the guardrails live — so that the
 decision becomes mechanical rather than inferential.
 
 ## What You're Releasing
 
-strnger-app is an Expo application built on Expo 53 / React Native 0.79,
+Flota is an Expo application built on Expo 53 / React Native 0.79,
 distributed through **EAS Build** (native binaries) and **EAS Update** (OTA
 JavaScript bundles). Native changes — new modules, permission strings,
 config plugins — require an EAS Build and, for production, a store

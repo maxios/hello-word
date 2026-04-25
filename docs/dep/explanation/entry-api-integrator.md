@@ -34,13 +34,14 @@ its own thing instead of being folded into the component.
 
 ## The Data Path, End To End
 
-The project uses **Yoga GraphQL** served at
-`https://strng-payloadcms.vercel.app/api/graphql`, consumed from the client
-via `graphql-request` (see [lib/graphql.ts](../../../lib/graphql.ts)). The
-reason the stack stayed lightweight — rather than adopting Apollo or urql —
-is that most of the app's state lives in feature-local collections rather
-than in a single normalised client cache, so we traded a heavier client for
-explicitly-owned data.
+The project uses **Yoga GraphQL** served at the endpoint in
+`EXPO_PUBLIC_GRAPHQL_URL` (default `https://countries.trevorblades.com/graphql`),
+consumed from the client via `graphql-request` (see
+[lib/graphql.ts](../../../lib/graphql.ts)). The reason the stack stayed
+lightweight — rather than adopting Apollo or urql — is that most of the
+app's state lives in feature-local collections rather than in a single
+normalised client cache, so we traded a heavier client for explicitly-owned
+data.
 
 Types are not hand-written. Operations declared in `.graphql` files (or
 inline `gql` tags) are fed through **GraphQL Code Generator** (see

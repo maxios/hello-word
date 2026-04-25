@@ -6,10 +6,6 @@ export interface Perk {
 }
 
 export interface PerksCarouselItemProps {
-  item: {
-    image: any;
-    title: string;
-    description: string;
-  };
+  item: Perk;
   index: number;
 }

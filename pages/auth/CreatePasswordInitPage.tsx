@@ -48,14 +48,8 @@ const CreatePasswordInitPage: React.FC<{ email: string }> = (props) => {
       <View className="w-full flex-1 gap-8">
         <View className="w-full gap-2">
           <Text className="text-body-small text-medium-emphasis">
-            To access STRNG 2.0, you&apos;ll have to set up a new password and
-            go through the onboarding process once more. We know it&apos;s a bit
-            of a hassle and we truly apologize. Trust us, it&apos;ll be more
-            than worth the few extra minutes to upgrade to the new content.
-          </Text>
-          <Text className="text-body-small text-medium-emphasis">
-            Please provide the email for your account and we will send you a
-            link to set a new password.
+            Please provide the email associated with your account and we will
+            send you a link to set a new password.
           </Text>
         </View>
         <EmailField control={control} name="email" />

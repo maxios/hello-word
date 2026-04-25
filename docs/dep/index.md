@@ -11,9 +11,9 @@ dep:
   links: []
 ---
 
-# strnger-app — Documentation Root
+# flota — Documentation Root
 
-> React Native/Expo mobile app for meals, challenges, and movement tracking, built on NativeWind, Expo Router, Yoga GraphQL, and a UI-as-API micro-product architecture.
+> Opinionated Expo + Yoga GraphQL starter that doubles as a living reference for the stack: NativeWind, Expo Router, graphql-request + codegen, React Cosmos, and a UI-as-API micro-product architecture.
 
 ---
 

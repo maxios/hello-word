@@ -19,7 +19,7 @@ dep:
 
 # Tutorial — Wire Query → Mapper → Service → Hook End-To-End
 
-In this tutorial you will replace the static data in the `greeting`
+In this tutorial you will replace the static data in the `catalog`
 feature built in the previous tutorial with a real Yoga GraphQL query,
 passed through a mapper and a service, and exposed to the container
 through an updated action hook. By the end you will have touched every
@@ -30,39 +30,37 @@ layer of the UI-as-API architecture in one small feature.
 - A GraphQL query declared in the feature
 - Generated TypeScript types for the query
 - A mapper that turns the query's response into the UI schema
-- A service exposing `getCurrent()` that returns the UI schema
+- A service exposing `list()` that returns the UI schema
 - An updated action hook that calls the service
 - A container that is unchanged — proof the layering paid off
 
 ## Prerequisites
 
 - You completed [Scaffold Your First Feature](./scaffold-your-first-feature.md)
-  and have `src/features/greeting/` in place.
-- You have network access to the GraphQL endpoint
-  `https://strng-payloadcms.vercel.app/api/graphql`.
+  and have `src/features/catalog/` in place.
+- You have network access to the GraphQL endpoint in
+  `EXPO_PUBLIC_GRAPHQL_URL` (default `https://countries.trevorblades.com/graphql`).
 - The project's codegen tooling works: `npm run codegen` exits cleanly on
   a fresh checkout.
 
 ## Step 1 — Declare The Query
 
-For tutorial purposes we'll reuse an existing field on the schema — pick
-any root query that returns a single object with identifiable string
-fields. Create the query file:
+Create the query file:
 
 ```graphql
-# src/features/greeting/queries/getGreeting.graphql
-query GetGreeting {
-  meTODO: me {
-    id
-    firstName
-    welcomeMessage
+# src/features/catalog/queries/getCountries.graphql
+query GetCountries {
+  countries {
+    code
+    name
+    emoji
   }
 }
 ```
 
-Replace `meTODO`/`me` and the fields with a query that exists on the
-live schema — your IDE or `src/gql/introspection.json` can tell you what
-is available.
+The default schema (Countries API) exposes `countries` as a root field —
+your IDE or `src/gql/introspection.json` can tell you what is available
+if you have pointed `EXPO_PUBLIC_GRAPHQL_URL` at a different endpoint.
 
 **Expected:** the file exists under the feature's `queries/` directory.
 
@@ -72,23 +70,24 @@ is available.
 npm run codegen
 ```
 
-**Expected:** `src/gql/graphql.ts` now contains `GetGreetingDocument`
-and `GetGreetingQuery` types; `tsc --noEmit` passes.
+**Expected:** `src/gql/graphql.ts` now contains `GetCountriesDocument`
+and `GetCountriesQuery` types; `tsc --noEmit` passes.
 
 ## Step 3 — Write The Mapper
 
-Create `mappers/greetingMapper.ts`:
+Create `mappers/catalogMapper.ts`:
 
 ```ts
-import type { GetGreetingQuery } from '@/src/gql/graphql';
-import type { Greeting } from '../schemas/greeting.types';
+import type { GetCountriesQuery } from '@/src/gql/graphql';
+import type { CountrySummary } from '../schemas/catalog.types';
 
-export const GreetingMapper = {
-  fromApi(api: GetGreetingQuery['me']): Greeting {
-    return {
-      recipient: api.firstName ?? 'Friend',
-      message: api.welcomeMessage ?? 'Welcome to strnger-app.',
-    };
+export const CatalogMapper = {
+  fromApi(api: GetCountriesQuery['countries']): CountrySummary[] {
+    return api.map((c) => ({
+      id: c.code,
+      name: c.name,
+      flag: c.emoji ?? '',
+    }));
   },
 };
 ```
@@ -98,45 +97,46 @@ export const GreetingMapper = {
 
 ## Step 4 — Write The Service
 
-Create `services/greetingService.ts`:
+Create `services/catalogService.ts`:
 
 ```ts
 import { request } from '@/lib/graphql';
-import { GetGreetingDocument } from '@/src/gql/graphql';
-import { GreetingMapper } from '../mappers/greetingMapper';
-import type { Greeting } from '../schemas/greeting.types';
+import { GetCountriesDocument } from '@/src/gql/graphql';
+import { CatalogMapper } from '../mappers/catalogMapper';
+import type { CountrySummary } from '../schemas/catalog.types';
 
-export const greetingService = {
-  async getCurrent(): Promise<Greeting> {
-    const { me } = await request(GetGreetingDocument);
-    return GreetingMapper.fromApi(me);
+export const catalogService = {
+  async list(): Promise<CountrySummary[]> {
+    const { countries } = await request(GetCountriesDocument);
+    return CatalogMapper.fromApi(countries);
   },
 };
 ```
 
-**Expected:** the service returns `Greeting`, not the raw GraphQL type.
+**Expected:** the service returns `CountrySummary[]`, not the raw
+GraphQL type.
 
 ## Step 5 — Update The Action Hook
 
 Replace the static implementation with one that calls the service:
 
 ```ts
-// src/features/greeting/hooks/useGreetingActions.ts
+// src/features/catalog/hooks/useCatalogActions.ts
 import { useCallback, useState } from 'react';
-import { greetingService } from '../services/greetingService';
-import type { Greeting } from '../schemas/greeting.types';
+import { catalogService } from '../services/catalogService';
+import type { CountrySummary } from '../schemas/catalog.types';
 
-export function useGreetingActions() {
-  const [greeting, setGreeting] = useState<Greeting | null>(null);
+export function useCatalogActions() {
+  const [items, setItems] = useState<CountrySummary[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const refresh = useCallback(async () => {
     setIsLoading(true);
-    try { setGreeting(await greetingService.getCurrent()); }
+    try { setItems(await catalogService.list()); }
     finally { setIsLoading(false); }
   }, []);
 
-  return { greeting, isLoading, refresh };
+  return { items, isLoading, refresh };
 }
 ```
 
@@ -145,9 +145,9 @@ directly.
 
 ## Step 6 — Confirm The Container Is Untouched
 
-Open `containers/GreetingContainer.tsx`. It should not need any edit —
+Open `containers/CatalogContainer.tsx`. It should not need any edit —
 this is the proof that the layering paid off. The container's contract
-with the hook (`{ greeting, isLoading, refresh }`) has not changed, even
+with the hook (`{ items, isLoading, refresh }`) has not changed, even
 though everything underneath has.
 
 **Expected:** no diff on the container file.
@@ -156,8 +156,8 @@ though everything underneath has.
 
 1. Run `npm run codegen` one more time to confirm everything is in sync.
 2. Start the dev server (`npm run dev`) and navigate to a route that
-   mounts `GreetingContainer`.
-3. Tap the refresh button. You should see the greeting populate from
+   mounts `CatalogContainer`.
+3. Tap the refresh button. You should see the list populate from
    live data.
 4. Start Cosmos (`npm run cosmos`). Your fixture still renders because it
    feeds the component synthetic data directly — it never touched the

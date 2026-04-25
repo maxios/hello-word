@@ -23,16 +23,17 @@ Accepted.
 
 ## Context
 
-The project's backend exposes a Yoga GraphQL endpoint at
-`https://strng-payloadcms.vercel.app/api/graphql`. The client-side question
-was which GraphQL client to adopt. The candidates were Apollo Client, urql,
-and `graphql-request`. The choice is not primarily about query syntax
-(codegen handles that for all three) but about *where state lives*.
+The project talks to a Yoga GraphQL endpoint configured via
+`EXPO_PUBLIC_GRAPHQL_URL` (default `https://countries.trevorblades.com/graphql`).
+The client-side question was which GraphQL client to adopt. The candidates
+were Apollo Client, urql, and `graphql-request`. The choice is not
+primarily about query syntax (codegen handles that for all three) but
+about *where state lives*.
 
 Apollo and urql both centre on a normalised client-side cache as the source
 of truth. Components read from the cache; mutations update the cache; a
 large portion of the developer experience is cache-policy tuning. In the
-strnger-app architecture, however, state lives in feature-local services
+Flota architecture, however, state lives in feature-local services
 (see [Why UI-as-API Layering](../explanation/ui-as-api-layering.md)).
 Paying for a normalised cache — in bundle size, API surface, and mental
 model — duplicates infrastructure the architecture already provides.

@@ -1,4 +1,4 @@
-import fade from "@/assets/images/move/fade.png";
+import fade from "@/assets/images/intro/fade.png";
 import { BlurUpImageBackground } from "@/components/BlurUpImage";
 import clsx from "clsx";
 import { useRouter } from "expo-router";

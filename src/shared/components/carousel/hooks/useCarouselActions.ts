@@ -18,7 +18,7 @@ export const useCarouselActions = (
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   
-  const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const maxIndex = Math.max(0, totalItems - itemsPerView);
 
   const clearAutoplayTimer = useCallback(() => {

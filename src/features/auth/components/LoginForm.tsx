@@ -58,7 +58,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         {/* Header */}
         <Header
           heading="Log in"
-          subtext="Log in to your STRNG account."
+          subtext="Log in to your Flota account."
           variant="heading"
           pt={0}
         />

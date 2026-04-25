@@ -72,7 +72,7 @@ Reference implementation: `src/features/auth/index.ts`.
 
 | Element | Pattern | Example |
 |---------|---------|---------|
-| Feature directory | kebab-case | `src/features/meal-plan/` |
+| Feature directory | kebab-case | `src/features/catalog/` |
 | UI component file | PascalCase, matches exported component | `LoginForm.tsx` |
 | Container file | PascalCase, suffix `Container` | `LoginContainer.tsx` |
 | Action hook file | camelCase, prefix `use`, suffix `Actions`/`State` | `useLoginActions.ts` |

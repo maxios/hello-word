@@ -32,12 +32,13 @@ follows the canonical layout.
 1. Open the feature's UI schema and identify the target interface:
 
    ```ts
-   // src/features/meal-plan/schemas/mealPlan.types.ts
-   export interface MealPlan {
+   // src/features/catalog/schemas/catalog.types.ts
+   export interface CountryDetail {
      id: string;
-     title: string;
-     totalCalories: number;
-     items: MealItem[];
+     name: string;
+     flag: string;
+     languageCount: number;
+     languages: { id: string; name: string }[];
    }
    ```
 
@@ -46,17 +47,18 @@ follows the canonical layout.
    type alongside the UI schema:
 
    ```ts
-   // src/features/meal-plan/mappers/mealPlanMapper.ts
-   import type { GetMealPlanQuery } from '@/src/gql/graphql';
-   import type { MealPlan } from '../schemas/mealPlan.types';
+   // src/features/catalog/mappers/catalogMapper.ts
+   import type { GetCountryQuery } from '@/src/gql/graphql';
+   import type { CountryDetail } from '../schemas/catalog.types';
 
-   export const MealPlanMapper = {
-     fromApi(api: GetMealPlanQuery['mealPlan']): MealPlan {
+   export const CatalogMapper = {
+     fromApi(api: GetCountryQuery['country']): CountryDetail {
        return {
-         id: api.id,
-         title: api.title,
-         totalCalories: api.meals.reduce((s, m) => s + m.calories, 0),
-         items: api.meals.map((m) => ({ id: m.id, name: m.name })),
+         id: api.code,
+         name: api.name,
+         flag: api.emoji ?? '',
+         languageCount: api.languages.length,
+         languages: api.languages.map((l) => ({ id: l.code, name: l.name })),
        };
      },
    };
@@ -65,16 +67,16 @@ follows the canonical layout.
 3. Export the mapper from the feature's barrel (`index.ts`):
 
    ```ts
-   export { MealPlanMapper } from './mappers/mealPlanMapper';
+   export { CatalogMapper } from './mappers/catalogMapper';
    ```
 
 4. Invoke the mapper from the feature's service — never from a component
    or container:
 
    ```ts
-   // src/features/meal-plan/services/mealPlanService.ts
-   const result = await request(GetMealPlanDocument, { id });
-   return MealPlanMapper.fromApi(result.mealPlan);
+   // src/features/catalog/services/catalogService.ts
+   const result = await request(GetCountryDocument, { code });
+   return CatalogMapper.fromApi(result.country);
    ```
 
 ## Verification

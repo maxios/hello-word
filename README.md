@@ -1,50 +1,71 @@
-# Welcome to your Expo app 👋
+# Flota
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An opinionated Expo + Yoga GraphQL starter that doubles as a **living reference** for the stack.
 
-## Get started
+Every tab, component, and doc exists to answer one question: *how do I use `<stack piece>` in this project?*
 
-1. Install dependencies
+## Stack
 
-   ```bash
-   npm install
-   ```
+- **Expo 53** + **React Native 0.79** — cross-platform runtime
+- **Expo Router** — file-based routing with nested layouts, dynamic routes, modals, protected routes
+- **NativeWind 4** + **Tailwind** — utility-first styling with design tokens and dark mode
+- **Yoga GraphQL** + **graphql-request** + **GraphQL Code Generator** — type-safe API layer
+- **@tanstack/react-query** — server-state with optimistic updates
+- **react-hook-form** + **valibot** — form state + schema validation
+- **React Cosmos** — component playground
+- **DEP** (Documentation Engineering Process) — `.docspec`-driven docs under `docs/dep/`
 
-2. Start the app
+## Architecture
 
-   ```bash
-   npx expo start
-   ```
+Flota follows a **UI-as-API micro-product** pattern (full write-up in [CLAUDE.md](CLAUDE.md) and [docs/dep/explanation/ui-as-api-layering.md](docs/dep/explanation/ui-as-api-layering.md)). Each feature ships six layers: schemas → mapper → collection → action hook → pure UI → container.
 
-In the output, you'll find options to open the app in a
+The `catalog` tab (`app/(tabs)/catalog/`) is the canonical end-to-end example.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Quick start
 
 ```bash
-npm run reset-project
+npm install
+cp .env.example .env   # optional — defaults to public Countries GraphQL API
+npm run start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Then press `i`, `a`, or `w` to open iOS, Android, or web.
 
-## Learn more
+## Tabs at a glance
 
-To learn more about developing your project with Expo, look at the following resources:
+| Tab | Demonstrates |
+| --- | --- |
+| `home` | Entry point, design-token usage, links to every other demo, modal and protected-route launchers |
+| `catalog` | GraphQL query + dynamic route `[id]` + full 6-layer UI-as-API feature |
+| `compose` | Every field component composed into one form + GraphQL mutation with optimistic update |
+| `settings` | Dark-mode toggle, typography scale, color-token gallery |
+| `playground` | React Cosmos component catalog |
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Scripts
 
-## Join the community
+| Script | Purpose |
+| --- | --- |
+| `npm run start` | Expo dev server |
+| `npm run dev` | Dev server with custom dev client |
+| `npm run ios` / `npm run android` / `npm run web` | Platform shortcuts |
+| `npm run cosmos` | React Cosmos component playground |
+| `npm run codegen` | Generate TypeScript types from the GraphQL schema |
+| `npm run codegen:watch` | Watch-mode codegen |
+| `npm run lint` | ESLint |
 
-Join our community of developers creating universal apps.
+## Before shipping your own app
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Replace placeholder IDs across [app.json](app.json), [eas.json](eas.json), [GoogleService-Info.plist](GoogleService-Info.plist), [google-services.json](google-services.json). See [docs/dep/how-to/replace-placeholder-identifiers.md](docs/dep/how-to/replace-placeholder-identifiers.md).
+2. Point `EXPO_PUBLIC_GRAPHQL_URL` at your own Yoga GraphQL server in `.env`.
+3. Run `eas init` to generate a real `projectId` and `updates.url`.
+4. Drop in a real icon, splash screen, and favicon under [src/shared/assets/](src/shared/assets/).
+
+## Docs
+
+- [CLAUDE.md](CLAUDE.md) — architecture overview for AI assistants and humans
+- [docs/dep/index.md](docs/dep/index.md) — DEP documentation entry point
+- [.docspec](.docspec) — documentation source of truth
+
+## License
+
+MIT.

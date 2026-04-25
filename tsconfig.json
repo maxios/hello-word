@@ -9,7 +9,9 @@
       "@/assets/*": ["./src/shared/assets/*"],
       "@/components/*": ["./src/shared/components/*"],
       "@/constants/*": ["./src/shared/constants/*"],
-      "@/hooks/*": ["./src/shared/hooks/*"]
+      "@/hooks/*": ["./src/shared/hooks/*"],
+      "@/features/*": ["./src/features/*"],
+      "@/gql/*": ["./src/gql/*"]
     },
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -26,7 +28,7 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "exclude": ["node_modules", "dist"],
+  "exclude": ["node_modules", "dist", "**/__tests__/**", "**/*.test.ts", "**/*.test.tsx"],
   "include": [
     "**/*",
     "./tailwind.config.ts",

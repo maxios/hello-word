@@ -8,6 +8,7 @@ import {
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "../global.css";
 // import Toast from 'react-native-root-toast';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Asset, useAssets } from "expo-asset";
 import { loadAsync } from "expo-font";
 import * as Linking from "expo-linking";
@@ -50,6 +51,15 @@ configureReanimatedLogger({
   level: ReanimatedLogLevel.warn,
 });
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60, // 1 minute
+      retry: 1,
+    },
+  },
+});
+
 // Instruct SplashScreen not to hide yet, we want to do this manually
 
 const AnimatedAppLoader: React.FC<{ children: React.ReactNode }> = ({
@@ -87,13 +97,11 @@ const AnimatedSplashScreen: React.FC<{
     const getUrlAsync = async () => {
       if (initialUrl) {
         const { queryParams } = Linking.parse(initialUrl);
-        // if (loggedInUser) {
-        //   if (queryParams && typeof queryParams.strng === 'string') {
-        //     router.navigate({
-        //       pathname: queryParams.strng,
-        //     });
-        //   }
-        // }
+        // Deep-link handling: if a logged-in user arrives with a `?route=/catalog`
+        // query param, navigate to that path. Wire this up once auth is rehydrated.
+        if (queryParams && typeof queryParams.route === 'string') {
+          router.navigate({ pathname: queryParams.route });
+        }
       }
     };
     if (isAppReady) {
@@ -245,28 +253,21 @@ function App() {
   //   }, []);
 
   return (
-    <GestureHandlerRootView>
-      <RootSiblingParent>
-        <SafeAreaProvider>
-          <ToastProvider>
-            <StatusBar animated barStyle="light-content" />
-            {/* Introduction Video */}
-
-            <View className="absolute bottom-[30%] right-2 z-50">
-              <Button
-                variant="primary"
-                leftIcon={<EyeIcon />}
-                onPress={() => router.push("/playground")}
+    <QueryClientProvider client={queryClient}>
+      <GestureHandlerRootView>
+        <RootSiblingParent>
+          <SafeAreaProvider>
+            <ToastProvider>
+              <StatusBar animated barStyle="light-content" />
+              <Stack
+                initialRouteName="index"
+                screenOptions={{ headerShown: false }}
               />
-            </View>
-            <Stack
-              initialRouteName="index"
-              screenOptions={{ headerShown: false }}
-            />
-          </ToastProvider>
-        </SafeAreaProvider>
-      </RootSiblingParent>
-    </GestureHandlerRootView>
+            </ToastProvider>
+          </SafeAreaProvider>
+        </RootSiblingParent>
+      </GestureHandlerRootView>
+    </QueryClientProvider>
   );
 }
 
