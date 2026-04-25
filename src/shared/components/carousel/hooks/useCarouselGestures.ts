@@ -1,11 +1,5 @@
-import { useRef } from 'react';
+import { Gesture } from 'react-native-gesture-handler';
 import {
-  PanGestureHandler,
-  PanGestureHandlerGestureEvent,
-  State,
-} from 'react-native-gesture-handler';
-import {
-  useAnimatedGestureHandler,
   useSharedValue,
   withSpring,
   runOnJS,
@@ -29,22 +23,22 @@ export const useCarouselGestures = ({
   const translateX = useSharedValue(0);
   const startX = useSharedValue(0);
 
-  const gestureHandler = useAnimatedGestureHandler<PanGestureHandlerGestureEvent>({
-    onStart: (event) => {
+  const gesture = Gesture.Pan()
+    .onStart(() => {
       startX.value = translateX.value;
-    },
-    onActive: (event) => {
+    })
+    .onUpdate((event) => {
       if (!enabled) return;
-      
+
       const maxTranslate = itemWidth / 3;
       const translation = Math.max(
         -maxTranslate,
         Math.min(maxTranslate, event.translationX)
       );
-      
+
       translateX.value = startX.value + translation;
-    },
-    onEnd: (event) => {
+    })
+    .onEnd((event) => {
       if (!enabled) {
         translateX.value = withSpring(0);
         return;
@@ -52,9 +46,9 @@ export const useCarouselGestures = ({
 
       const velocity = event.velocityX;
       const translation = event.translationX;
-      
-      const shouldSwipe = 
-        Math.abs(translation) > threshold || 
+
+      const shouldSwipe =
+        Math.abs(translation) > threshold ||
         Math.abs(velocity) > 500;
 
       if (shouldSwipe) {
@@ -64,16 +58,15 @@ export const useCarouselGestures = ({
           runOnJS(onSwipeRight)();
         }
       }
-      
+
       translateX.value = withSpring(0);
-    },
-    onCancel: () => {
+    })
+    .onFinalize(() => {
       translateX.value = withSpring(0);
-    },
-  });
+    });
 
   return {
-    gestureHandler,
+    gesture,
     translateX,
   };
 };

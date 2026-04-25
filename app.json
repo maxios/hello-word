@@ -1,8 +1,5 @@
 {
   "expo": {
-    "experiments": {
-      "tsconfigPaths": true
-    },
     "scheme": "flota",
     "web": {
       "bundler": "metro",
@@ -40,7 +37,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#141414"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": false,
@@ -96,7 +95,10 @@
           "launchMode": "most-recent"
         }
       ],
-      "expo-tracking-transparency"
+      "expo-tracking-transparency",
+      "expo-image",
+      "expo-sharing",
+      "expo-web-browser"
     ]
   }
 }

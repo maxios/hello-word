@@ -3,7 +3,8 @@ import { CategoryCard } from "@/components/playground/CategoryCard";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { clsx } from "clsx";
 import { useRouter } from "expo-router";
-import { SafeAreaView, ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // Component categories overview
 const categories: PlaygroundCategory[] = Object.entries(playground).map(

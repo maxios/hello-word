@@ -2,12 +2,12 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { clsx } from 'clsx';
 import React, { useState } from 'react';
 import {
-    SafeAreaView,
     ScrollView,
     Text,
     TouchableOpacity,
     View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Import components to showcase
 import { EyeIcon, EyeSlashIcon } from '@/components/icons';

@@ -15,7 +15,7 @@
       },
       "ios": {
         "resourceClass": "m-medium",
-        "image": "macos-sequoia-15.3-xcode-16.2"
+        "image": "latest"
       }
     },
     "development-simulator": {
@@ -58,7 +58,7 @@
         "EAS_BUILD_DISABLE_COCOAPODS_CACHE": "1"
       },
       "ios": {
-        "image": "macos-sequoia-15.3-xcode-16.2",
+        "image": "latest",
         "distribution": "store",
         "resourceClass": "large"
       },
@@ -77,7 +77,7 @@
         "EAS_BUILD_DISABLE_COCOAPODS_CACHE": "1"
       },
       "ios": {
-        "image": "macos-sequoia-15.3-xcode-16.2",
+        "image": "latest",
         "resourceClass": "large"
       },
       "android": {

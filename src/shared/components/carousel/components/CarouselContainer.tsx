@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ActivityIndicator, Text, Pressable } from 'react-native';
-import { PanGestureHandler } from 'react-native-gesture-handler';
+import { GestureDetector } from 'react-native-gesture-handler';
 import Animated from 'react-native-reanimated';
 import { Carousel } from '../Carousel';
 import { useCarouselActions } from '../hooks/useCarouselActions';
@@ -51,7 +51,7 @@ export const CarouselContainer: React.FC<CarouselContainerProps> = ({
     reset,
   } = useCarouselActions(items.length, config, onSlideChange);
 
-  const { gestureHandler, translateX } = useCarouselGestures({
+  const { gesture, translateX } = useCarouselGestures({
     onSwipeLeft: next,
     onSwipeRight: previous,
     enabled: config.enableGestures !== false,
@@ -111,10 +111,10 @@ export const CarouselContainer: React.FC<CarouselContainerProps> = ({
   }
 
   return (
-    <PanGestureHandler onGestureEvent={gestureHandler}>
+    <GestureDetector gesture={gesture}>
       <Animated.View style={{ transform: [{ translateX: translateX }] }}>
         {carouselElement}
       </Animated.View>
-    </PanGestureHandler>
+    </GestureDetector>
   );
 };
