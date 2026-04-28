@@ -1,10 +1,9 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { render, fireEvent, waitFor, renderHook, act } from '@testing-library/react-native';
 import { Carousel } from './Carousel';
 import { ImageCarousel } from './variants/ImageCarousel';
 import { CardCarousel } from './variants/CardCarousel';
 import { useCarouselActions } from './hooks/useCarouselActions';
-import { renderHook, act } from '@testing-library/react-hooks';
 
 const mockItems = [
   { id: '1', type: 'image' as const, source: { uri: 'image1.jpg' } },

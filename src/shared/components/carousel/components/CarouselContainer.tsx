@@ -41,14 +41,9 @@ export const CarouselContainer: React.FC<CarouselContainerProps> = ({
   const {
     currentIndex,
     isAutoPlaying,
-    isPaused,
-    isTransitioning,
     next,
     previous,
     goToSlide,
-    play,
-    pause,
-    reset,
   } = useCarouselActions(items.length, config, onSlideChange);
 
   const { gesture, translateX } = useCarouselGestures({

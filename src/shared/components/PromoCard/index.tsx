@@ -1,6 +1,6 @@
 import fade from "@/assets/images/intro/fade.png";
 import { BlurUpImageBackground } from "@/components/BlurUpImage";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { useRouter } from "expo-router";
 import { Image, Pressable, Text, View } from "react-native";
 import { ChevronVertical } from "../icons/ChevronVertical";

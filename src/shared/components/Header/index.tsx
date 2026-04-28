@@ -1,5 +1,5 @@
 import { colors } from "@/constants/Colors";
-import clsx from "clsx";
+import { clsx } from "clsx";
 import { Text, View } from "react-native";
 
 export interface HeaderProps {

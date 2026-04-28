@@ -32,7 +32,7 @@ export default {
         'heading-sm': ['1.5rem', { lineHeight: '1.12' }],
         'heading-xs': ['1.25rem', { lineHeight: '1.12' }],
         
-        // Body font variations from Tamagui
+        // Body font variations
         'body-large': ['1.375rem', { lineHeight: '1.733rem', letterSpacing: '0' }], // 22px -> 1.375rem, 27.72px -> 1.733rem
         'body-large-emphasis': ['1.375rem', { lineHeight: '1.733rem', letterSpacing: '0', fontWeight: '600' }],
         'body-medium': ['1.125rem', { lineHeight: '1.463rem', letterSpacing: '0' }], // 18px -> 1.125rem, 23.4px -> 1.463rem
@@ -42,7 +42,7 @@ export default {
         'body-x-small': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0' }], // 12px -> 0.75rem, 15px -> 1rem
         'body-x-small-emphasis': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0', fontWeight: '600' }],
         
-        // UI font variations from Tamagui
+        // UI font variations
         'ui-default': ['1rem', { lineHeight: '1.25rem', letterSpacing: '0.03125rem', fontWeight: '700' }], // 16px -> 1rem, 20px -> 1.25rem, 0.5px -> 0.03125rem
         'ui-link': ['1rem', { lineHeight: '1.25rem', letterSpacing: '0.03125rem', fontWeight: '700' }],
         'ui-small': ['0.75rem', { lineHeight: '0.75rem', letterSpacing: '0.03125rem', fontWeight: '700' }], // 12px -> 0.75rem

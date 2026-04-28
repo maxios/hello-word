@@ -80,18 +80,18 @@ export const components: PlaygroundComponent[] = [
             <NumberFieldUI
               value={value}
               onChange={setValue}
-              label="Weight (kg)"
-              placeholder="Enter weight in kilograms"
-              helperText="Enter your weight for calorie calculations"
+              label="Quantity"
+              placeholder="Enter quantity"
+              helperText="Enter the number of items"
             />
           );
         },
         code: `<NumberFieldUI
   value={value}
   onChange={setValue}
-  label="Weight (kg)"
-  placeholder="Enter weight in kilograms"
-  helperText="Enter your weight for calorie calculations"
+  label="Quantity"
+  placeholder="Enter quantity"
+  helperText="Enter the number of items"
 />`,
       },
       {
@@ -240,8 +240,8 @@ export const components: PlaygroundComponent[] = [
               value={value}
               onChange={setValue}
               label="Duration (minutes)"
-              placeholder="Exercise duration"
-              helperText="How long did the exercise take?"
+              placeholder="Enter duration"
+              helperText="How long did the task take?"
             />
           );
         },
@@ -249,8 +249,8 @@ export const components: PlaygroundComponent[] = [
   value={value}
   onChange={setValue}
   label="Duration (minutes)"
-  placeholder="Exercise duration"
-  helperText="How long did the exercise take?"
+  placeholder="Enter duration"
+  helperText="How long did the task take?"
 />`,
       },
     ],

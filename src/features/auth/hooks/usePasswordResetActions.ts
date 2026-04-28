@@ -56,7 +56,7 @@ export const usePasswordResetActions = (): UsePasswordResetActionsReturn => {
           type: 'error',
         });
       }
-    } catch (err) {
+    } catch {
       const authError: AuthError = {
         code: AuthErrorCode.NETWORK_ERROR,
         message: 'Network error. Please check your connection.',

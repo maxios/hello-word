@@ -18,23 +18,6 @@ interface ToastProps {
   hasSettingsIcon?: boolean;
   delay?: number;
 }
-type ColorType =
-  | "success"
-  | "error"
-  | "surface0"
-  | "surface8"
-  | "textHighEmphasis"
-  | "textMediumEmphasis"
-  | "textLowEmphasis"
-  | "brandLight"
-  | "brandMid"
-  | "brandDark"
-  | "brandDarkest"
-  | "errorDark"
-  | "semanticErrorDark"
-  | "warningDark"
-  | "successDark";
-
 interface ToastManagerContextProps {
   showToast: (toast: ToastProps) => void;
 }
@@ -60,18 +43,6 @@ const getChevronColor = (type?: string) => {
       return colors.brand.mid;
     default:
       return colors.brand.mid;
-  }
-};
-
-const getTextColor = (type?: string): ColorType => {
-  switch (type) {
-    case "success":
-    case "error":
-    case "warning":
-    case "info":
-      return "surface0"; // Ensure 'surface0' is a valid type in your theme
-    default:
-      return "surface0"; // Ensure 'surface0' is a valid type in your theme
   }
 };
 

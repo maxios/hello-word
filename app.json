@@ -5,16 +5,20 @@
       "bundler": "metro",
       "favicon": "./src/shared/assets/favicon.png"
     },
-    "owner": "TODO-your-expo-account",
+    "owner": "ontologyio",
     "extra": {
       "storybookEnabled": true,
       "enablePlayground": true,
       "eas": {
-        "projectId": "TODO-run-eas-init-to-generate",
+        "projectId": "ef8549d0-0b3d-456b-955a-4f17e2e241f3",
         "build": {
           "experimental": {
             "ios": {
               "appExtensions": [
+                {
+                  "targetName": "NotificationService",
+                  "bundleIdentifier": "com.flota.app.richpush"
+                },
                 {
                   "targetName": "NotificationService",
                   "bundleIdentifier": "com.flota.app.richpush"
@@ -23,10 +27,11 @@
             }
           }
         }
-      }
+      },
+      "router": {}
     },
     "name": "Flota",
-    "slug": "flota",
+    "slug": "hello-word",
     "version": "1.0.0",
     "runtimeVersion": "1.0",
     "orientation": "portrait",
@@ -37,9 +42,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#141414"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": false,
@@ -59,10 +62,12 @@
     "android": {
       "googleServicesFile": "./google-services.json",
       "icon": "./src/shared/assets/icon.png",
-      "package": "com.flota.app"
+      "package": "com.flota.app",
+      "permissions": ["com.google.android.gms.permission.AD_ID"]
     },
     "updates": {
-      "url": "TODO-set-after-eas-init"
+      "enabled": false,
+      "url": "https://u.expo.dev/ef8549d0-0b3d-456b-955a-4f17e2e241f3"
     },
     "plugins": [
       "expo-font",

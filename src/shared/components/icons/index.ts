@@ -1,8 +1,7 @@
 // Generic icon set. Convert new SVGs with
 // https://react-svgr.com/playground/?native=true&typescript=true
 //
-// Domain-themed icons (food, fitness) were removed during the flota rebrand;
-// add a new icon file alongside the existing ones and re-export it below.
+// Add a new icon file alongside the existing ones and re-export it below.
 
 import { AlertIcon } from './AlertIcon';
 import { AppleMusicIcon } from './AppleMusic';

@@ -14,7 +14,7 @@ import { LoginFormData } from '../schemas/auth.types';
  */
 export const LoginContainer: React.FC = () => {
   const router = useRouter();
-  const { login, isLoading, error, clearError } = useLoginActions();
+  const { login, isLoading, error } = useLoginActions();
 
   // Handle form submission
   const handleSubmit = async (data: LoginFormData) => {

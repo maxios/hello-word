@@ -3,7 +3,6 @@ import { View, Pressable } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   withSpring,
-  interpolate,
 } from 'react-native-reanimated';
 import { CarouselIndicatorsProps } from '../schemas/carousel.types';
 

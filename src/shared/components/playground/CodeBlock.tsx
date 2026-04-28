@@ -14,7 +14,7 @@ export const CodeBlock: React.FC<{ code: string; visible: boolean }> = ({
       await Clipboard.setStringAsync(code);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch {
       Alert.alert("Error", "Failed to copy to clipboard");
     }
   };

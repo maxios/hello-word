@@ -1,23 +1,16 @@
 ---
-description: Component-specific Tamagui to NativeWind migration patterns
+description: Component NativeWind patterns
 globs: ["components/**/*.tsx", "components/**/*.jsx"]
 alwaysApply: true
 ---
 
-# Component Migration Patterns
+# Component Patterns
 
 ## Reusable Component Guidelines
 
 ### Component Wrapper Pattern
 
 ```tsx
-// ❌ Old Tamagui Pattern
-const StyledView = styled(View, {
-  borderRadius: 20,
-  variants: { size: { small: { width: 50 } } },
-});
-
-// ✅ New NativeWind Pattern
 const StyledView = ({ size, className, ...props }) => (
   <View
     className={clsx("rounded-xl", size === "small" && "w-[50px]", className)}
@@ -28,7 +21,7 @@ const StyledView = ({ size, className, ...props }) => (
 
 ### Button Components
 
-- Replace Tamagui Button with TouchableOpacity/Pressable + className
+- Use TouchableOpacity/Pressable + className
 - Use conditional classes for size variants
 - Include Text component with appropriate styling
 

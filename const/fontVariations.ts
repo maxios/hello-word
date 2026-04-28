@@ -1,6 +1,5 @@
 /**
  * Font variations constants for easy usage with TailwindCSS/NativeWind
- * Converted from Tamagui bodyFont configuration
  */
 
 export const FontVariations = {

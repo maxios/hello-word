@@ -5,7 +5,7 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   interpolate,
-  withTiming,
+  SharedValue,
 } from 'react-native-reanimated';
 import { CarouselSchema, CarouselItem } from './schemas/carousel.types';
 import { CarouselIndicators } from './components/CarouselIndicators';
@@ -13,6 +13,84 @@ import { CarouselControls } from './components/CarouselControls';
 import { CarouselItemRenderer } from './components/CarouselItem';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
+
+interface AnimatedCarouselItemProps {
+  item: CarouselItem;
+  index: number;
+  scrollX: SharedValue<number>;
+  itemWidth: number;
+  spacing: number;
+  isLast: boolean;
+  centerMode: boolean;
+  fadeEdges: boolean;
+  height: number;
+  renderItem?: (item: CarouselItem, index: number) => React.ReactNode;
+  onSlidePress?: (item: CarouselItem, index: number) => void;
+}
+
+const AnimatedCarouselItem: React.FC<AnimatedCarouselItemProps> = ({
+  item,
+  index,
+  scrollX,
+  itemWidth,
+  spacing,
+  isLast,
+  centerMode,
+  fadeEdges,
+  height,
+  renderItem,
+  onSlidePress,
+}) => {
+  const inputRange = [
+    (index - 1) * itemWidth,
+    index * itemWidth,
+    (index + 1) * itemWidth,
+  ];
+
+  const animatedStyle = useAnimatedStyle(() => {
+    const scale = interpolate(
+      scrollX.value,
+      inputRange,
+      centerMode ? [0.9, 1, 0.9] : [1, 1, 1]
+    );
+
+    const opacity = interpolate(
+      scrollX.value,
+      inputRange,
+      fadeEdges ? [0.7, 1, 0.7] : [1, 1, 1]
+    );
+
+    return {
+      transform: [{ scale }],
+      opacity,
+    };
+  });
+
+  return (
+    <Animated.View
+      key={item.id || index}
+      style={[
+        animatedStyle,
+        {
+          width: itemWidth,
+          marginRight: isLast ? 0 : spacing,
+        },
+      ]}
+    >
+      {renderItem ? (
+        renderItem(item, index)
+      ) : (
+        <CarouselItemRenderer
+          item={item}
+          index={index}
+          width={itemWidth}
+          height={height}
+          onPress={() => onSlidePress?.(item, index)}
+        />
+      )}
+    </Animated.View>
+  );
+};
 
 interface CarouselProps extends CarouselSchema {
   currentIndex: number;
@@ -108,57 +186,22 @@ export const Carousel: React.FC<CarouselProps> = ({
           paddingHorizontal: spacing,
         }}
       >
-        {items.map((item, index) => {
-          const inputRange = [
-            (index - 1) * itemWidth,
-            index * itemWidth,
-            (index + 1) * itemWidth,
-          ];
-
-          const animatedStyle = useAnimatedStyle(() => {
-            const scale = interpolate(
-              scrollX.value,
-              inputRange,
-              centerMode ? [0.9, 1, 0.9] : [1, 1, 1]
-            );
-
-            const opacity = interpolate(
-              scrollX.value,
-              inputRange,
-              fadeEdges ? [0.7, 1, 0.7] : [1, 1, 1]
-            );
-
-            return {
-              transform: [{ scale }],
-              opacity,
-            };
-          });
-
-          return (
-            <Animated.View
-              key={item.id || index}
-              style={[
-                animatedStyle,
-                {
-                  width: itemWidth,
-                  marginRight: index < items.length - 1 ? spacing : 0,
-                },
-              ]}
-            >
-              {renderItem ? (
-                renderItem(item, index)
-              ) : (
-                <CarouselItemRenderer
-                  item={item}
-                  index={index}
-                  width={itemWidth}
-                  height={height}
-                  onPress={() => onSlidePress?.(item, index)}
-                />
-              )}
-            </Animated.View>
-          );
-        })}
+        {items.map((item, index) => (
+          <AnimatedCarouselItem
+            key={item.id || index}
+            item={item}
+            index={index}
+            scrollX={scrollX}
+            itemWidth={itemWidth}
+            spacing={spacing}
+            isLast={index === items.length - 1}
+            centerMode={centerMode}
+            fadeEdges={fadeEdges}
+            height={height}
+            renderItem={renderItem}
+            onSlidePress={onSlidePress}
+          />
+        ))}
       </Animated.ScrollView>
 
       {showIndicators && items.length > 1 && (

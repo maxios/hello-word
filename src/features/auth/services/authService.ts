@@ -44,7 +44,7 @@ const secureStorage = {
   },
 };
 
-// Mock API responses (replace with actual Stytch or API integration)
+// Mock API responses (replace with actual API integration)
 interface ApiLoginResponse {
   success: boolean;
   data?: {
@@ -69,7 +69,7 @@ interface ApiLoginResponse {
   };
 }
 
-interface ApiSignupResponse extends ApiLoginResponse {}
+type ApiSignupResponse = ApiLoginResponse;
 
 class AuthService {
   private baseUrl = process.env.EXPO_PUBLIC_API_URL || 'https://api.example.com';
@@ -112,7 +112,7 @@ class AuthService {
       }
 
       return mockResponse;
-    } catch (error) {
+    } catch {
       return {
         success: false,
         error: {
@@ -166,7 +166,7 @@ class AuthService {
       }
 
       return mockResponse;
-    } catch (error) {
+    } catch {
       return {
         success: false,
         error: {
@@ -192,7 +192,7 @@ class AuthService {
 
       // Clear stored session
       await this.clearSession();
-    } catch (error) {
+    } catch {
       // Still clear local session even if API call fails
       await this.clearSession();
     }
@@ -261,25 +261,12 @@ class AuthService {
   /**
    * Request password reset
    */
-  async requestPasswordReset(email: string): Promise<{ success: boolean; message?: string }> {
-    try {
-      // TODO: Implement password reset request
-      // const response = await fetch(`${this.baseUrl}/auth/password-reset/request`, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email }),
-      // });
-
-      return {
-        success: true,
-        message: 'Password reset email sent',
-      };
-    } catch {
-      return {
-        success: false,
-        message: 'Failed to send password reset email',
-      };
-    }
+  async requestPasswordReset(_email: string): Promise<{ success: boolean; message?: string }> {
+    // TODO: Implement password reset request with actual API call
+    return {
+      success: true,
+      message: 'Password reset email sent',
+    };
   }
 
   /**

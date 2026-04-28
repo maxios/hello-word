@@ -59,7 +59,7 @@ const SignupPage = () => {
       // TODO: Implement signup
 
       navigation.dispatch(StackActions.popToTop());
-      router.replace("/plans");
+      router.replace("/(tabs)/home");
       setTermsErrorMessage("");
     } catch (error) {
       showToast({
@@ -161,9 +161,8 @@ const SignupPage = () => {
           <CheckboxField
             control={control}
             name="terms"
-            label="Agree to the Flota Terms & Conditions"
+            label="Agree to the Terms & Conditions"
             linkText="Terms & Conditions"
-            onLinkPress={() => router.push("/settings/terms-and-conditions")}
             required
             error={
               errors.terms ||
@@ -177,7 +176,7 @@ const SignupPage = () => {
           <CheckboxField
             control={control}
             name="marketing"
-            description="Sign up to Flota product updates, including announcements and news."
+            description="Sign up for product updates, including announcements and news."
             disabled={isLoading}
           />
         </View>

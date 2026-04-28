@@ -1,18 +1,17 @@
 ---
-description: App screen-level Tamagui to NativeWind migration patterns
+description: App screen-level NativeWind patterns
 globs: ["app/**/*.tsx", "app/**/*.jsx"]
 alwaysApply: true
 ---
 
-# Screen-Level Migration Patterns
+# Screen-Level Patterns
 
 ## App Screen Structure
 
 ```tsx
-// ✅ NativeWind Screen Pattern
 export default function Screen() {
   const colorScheme = useColorScheme();
-  
+
   return (
     <View className={clsx('flex-1 bg-background', colorScheme === 'dark' && 'dark')}>
       <SafeAreaView className="flex-1">
@@ -27,12 +26,12 @@ export default function Screen() {
 
 - Ensure navigation components work with NativeWind classes
 - Update tab bar styling to use className
-- Migrate header configurations to NativeWind approach
+- Use NativeWind approach for header configurations
 
 ## Tab Screens (`(tabs)/`)
 
-- Migrate tab icons to use Tailwind color classes
-- Update tab bar background styling
+- Use Tailwind color classes for tab icons
+- Style tab bar background with className
 - Ensure consistent theming across tabs
 
 ## Dark Mode Implementation
@@ -44,11 +43,8 @@ export default function Screen() {
 ## Import Guidelines
 
 ```tsx
-// ✅ Correct imports for screens
+// Standard imports for screens
 import { View, Text, SafeAreaView } from 'react-native';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { clsx } from 'clsx';
-
-// ❌ Avoid Tamagui imports
-// import { Stack, Text } from 'tamagui';
 ```

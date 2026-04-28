@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { CarouselItem } from '../schemas/carousel.types';
 
 interface UseCarouselDataProps {
@@ -26,10 +26,13 @@ export const useCarouselData = ({
   const [items, setItems] = useState<CarouselItem[]>(staticItems || []);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+  const fetchDataRef = useRef(fetchData);
+  fetchDataRef.current = fetchData;
 
-  const loadData = async () => {
-    if (!fetchData) return;
-    
+  const loadData = useCallback(async () => {
+    const fetcher = fetchDataRef.current;
+    if (!fetcher) return;
+
     if (enableCache && cacheKey && carouselCache.has(cacheKey)) {
       setItems(carouselCache.get(cacheKey)!);
       return;
@@ -39,9 +42,9 @@ export const useCarouselData = ({
     setError(null);
 
     try {
-      const data = await fetchData();
+      const data = await fetcher();
       setItems(data);
-      
+
       if (enableCache && cacheKey) {
         carouselCache.set(cacheKey, data);
       }
@@ -51,22 +54,22 @@ export const useCarouselData = ({
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [enableCache, cacheKey]);
 
-  const refetch = async () => {
+  const refetch = useCallback(async () => {
     if (cacheKey) {
       carouselCache.delete(cacheKey);
     }
     await loadData();
-  };
+  }, [cacheKey, loadData]);
 
   useEffect(() => {
     if (staticItems) {
       setItems(staticItems);
-    } else if (fetchData) {
+    } else {
       loadData();
     }
-  }, []);
+  }, [staticItems, loadData]);
 
   return {
     items,

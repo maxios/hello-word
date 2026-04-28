@@ -35,7 +35,7 @@ export function useGraphQLQuery<
 ): UseQueryResult<TData, TError> {
   const operationName =
     (config.document as unknown as {
-      definitions?: Array<{ name?: { value: string } }>;
+      definitions?: { name?: { value: string } }[];
     }).definitions?.[0]?.name?.value ?? "anonymous";
 
   const queryKey =

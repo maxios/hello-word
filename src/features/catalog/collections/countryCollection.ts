@@ -31,7 +31,21 @@ const state: CountryCollectionState = {
 
 const listeners = new Set<Listener>();
 
-const emit = () => listeners.forEach((l) => l());
+// Cached snapshots for useSyncExternalStore (must return stable references)
+let cachedList: CatalogListItem[] = [];
+let cachedDetail: Record<string, CatalogDetail | null> = {};
+
+const rebuildCache = () => {
+  cachedList = state.orderedCodes
+    .map((code) => state.list[code])
+    .filter((item): item is CatalogListItem => Boolean(item));
+  cachedDetail = { ...state.detail };
+};
+
+const emit = () => {
+  rebuildCache();
+  listeners.forEach((l) => l());
+};
 
 export const countryCollection = {
   upsertList(items: CatalogListItem[]) {
@@ -54,12 +68,10 @@ export const countryCollection = {
     emit();
   },
   getList(): CatalogListItem[] {
-    return state.orderedCodes
-      .map((code) => state.list[code])
-      .filter((item): item is CatalogListItem => Boolean(item));
+    return cachedList;
   },
   getDetail(code: string): CatalogDetail | null {
-    return state.detail[code] ?? null;
+    return cachedDetail[code] ?? null;
   },
   subscribe(listener: Listener) {
     listeners.add(listener);

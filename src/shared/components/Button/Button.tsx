@@ -118,8 +118,9 @@ export function Button({
         label={label}
         leftIcon={leftIcon}
         rightIcon={rightIcon}
-        children={children}
-      />
+      >
+        {children}
+      </ButtonContent>
     </Pressable>
   );
 }

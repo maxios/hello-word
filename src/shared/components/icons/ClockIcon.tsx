@@ -1,8 +1,6 @@
 import Svg, {SvgProps, Path} from 'react-native-svg';
 
-interface ClockIconProps extends SvgProps {}
-
-export const ClockIcon = (props: ClockIconProps) => {
+export const ClockIcon = (props: SvgProps) => {
   return (
     <Svg width="19" height="18" viewBox="0 0 19 18" fill="none" {...props}>
       <Path

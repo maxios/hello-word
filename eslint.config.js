@@ -6,7 +6,10 @@ const tailwindcss = require('eslint-plugin-tailwindcss');
 module.exports = defineConfig([
   expoConfig,
   {
-    plugins: { 
+    ignores: ['src/gql/**', 'dist/**', 'ios/**', 'android/**', '**/*.playground.tsx'],
+  },
+  {
+    plugins: {
       tailwindcss: tailwindcss
     },
     rules: {
@@ -14,7 +17,6 @@ module.exports = defineConfig([
       ...tailwindcss.configs.recommended.rules,
       "tailwindcss/no-custom-classname": "off",
     },
-    ignores: ['src/gql/*', 'dist/*', 'node_modules/*', 'ios/*', 'android/*', './**/*.playground.tsx'],
     settings: {
       "import/resolver": {
         "typescript": {

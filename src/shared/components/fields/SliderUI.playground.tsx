@@ -88,24 +88,24 @@ export const components: PlaygroundComponent[] = [
             <SliderUI
               value={value}
               onChange={setValue}
-              label="Daily Calorie Goal"
-              minimumValue={1200}
-              maximumValue={4000}
+              label="Monthly Budget"
+              minimumValue={500}
+              maximumValue={5000}
               step={50}
-              valueSuffix=" cal"
-              helperText="Recommended daily calorie intake"
+              valueSuffix="$"
+              helperText="Set your monthly spending limit"
             />
           );
         },
         code: `<SliderUI
   value={value}
   onChange={setValue}
-  label="Daily Calorie Goal"
-  minimumValue={1200}
-  maximumValue={4000}
+  label="Monthly Budget"
+  minimumValue={500}
+  maximumValue={5000}
   step={50}
-  valueSuffix=" cal"
-  helperText="Recommended daily calorie intake"
+  valueSuffix="$"
+  helperText="Set your monthly spending limit"
 />`,
       },
       {
@@ -165,31 +165,31 @@ export const components: PlaygroundComponent[] = [
 />`,
       },
       {
-        name: "Workout Intensity",
+        name: "Rating",
         component: () => {
           const [value, setValue] = useState(7);
           return (
             <SliderUI
               value={value}
               onChange={setValue}
-              label="Workout Intensity"
+              label="Satisfaction Rating"
               minimumValue={1}
               maximumValue={10}
               step={1}
               valueSuffix="/10"
-              helperText="Rate your workout intensity (1-10)"
+              helperText="Rate your experience (1-10)"
             />
           );
         },
         code: `<SliderUI
   value={value}
   onChange={setValue}
-  label="Workout Intensity"
+  label="Satisfaction Rating"
   minimumValue={1}
   maximumValue={10}
   step={1}
   valueSuffix="/10"
-  helperText="Rate your workout intensity (1-10)"
+  helperText="Rate your experience (1-10)"
 />`,
       },
       {
@@ -246,31 +246,31 @@ export const components: PlaygroundComponent[] = [
 />`,
       },
       {
-        name: "Exercise Duration",
+        name: "Timer Duration",
         component: () => {
           const [value, setValue] = useState(30);
           return (
             <SliderUI
               value={value}
               onChange={setValue}
-              label="Exercise Duration"
+              label="Timer Duration"
               minimumValue={5}
               maximumValue={120}
               step={5}
               valueSuffix=" min"
-              helperText="How long do you want to exercise?"
+              helperText="Set the timer duration"
             />
           );
         },
         code: `<SliderUI
   value={value}
   onChange={setValue}
-  label="Exercise Duration"
+  label="Timer Duration"
   minimumValue={5}
   maximumValue={120}
   step={5}
   valueSuffix=" min"
-  helperText="How long do you want to exercise?"
+  helperText="Set the timer duration"
 />`,
       },
     ],

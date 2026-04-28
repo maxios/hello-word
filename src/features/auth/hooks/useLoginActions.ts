@@ -94,7 +94,7 @@ export const useLoginActions = (): UseLoginActionsReturn => {
         const authError = AuthMapper.mapError(response.error);
         handleLoginError(authError);
       }
-    } catch (err) {
+    } catch {
       // Handle unexpected errors
       const authError: AuthError = {
         code: AuthErrorCode.UNKNOWN_ERROR,
