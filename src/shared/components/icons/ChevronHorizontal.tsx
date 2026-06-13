@@ -2,7 +2,7 @@ import Svg, { ClipPath, Defs, G, Path, Rect, SvgProps } from "react-native-svg";
 
 export const ChevronHorizontal = (props: SvgProps) => (
   <Svg width={141} height={12} fill="none">
-    <G opacity="0.8" clip-path="url(#clip0_757_36883)" {...props}>
+    <G opacity="0.8" clipPath="url(#clip0_757_36883)" {...props}>
       <Path
         d="M12.6784 12H0L7.31929 0H20L12.6784 12Z"
         fill={props.color || "#85D97E"}

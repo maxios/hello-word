@@ -18,6 +18,7 @@ import {
   TextAreaField,
   TextField,
 } from "@/components/fields";
+import { useTabBarPadding } from "@/hooks/useTabBarPadding";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ActivityIndicator, Pressable, ScrollView, Text, View } from "react-native";
@@ -27,6 +28,7 @@ import type {
   ComposeFormValues,
   ComposedItem,
 } from "../schemas/compose.types";
+import content from "../content/composeForm.content";
 
 export interface ComposeFormViewProps {
   items: ComposedItem[];
@@ -37,16 +39,16 @@ export interface ComposeFormViewProps {
 }
 
 const categories = [
-  { label: "General", value: "general" },
-  { label: "Bug report", value: "bug" },
-  { label: "Feature request", value: "feature" },
-  { label: "Feedback", value: "feedback" },
+  { label: content.categoryGeneral, value: "general" },
+  { label: content.categoryBug, value: "bug" },
+  { label: content.categoryFeature, value: "feature" },
+  { label: content.categoryFeedback, value: "feedback" },
 ];
 
 const priorities = [
-  { label: "Low", value: "low" },
-  { label: "Medium", value: "medium" },
-  { label: "High", value: "high" },
+  { label: content.priorityLow, value: "low" },
+  { label: content.priorityMedium, value: "medium" },
+  { label: content.priorityHigh, value: "high" },
 ];
 
 const defaultValues: ComposeFormValues = {
@@ -68,6 +70,7 @@ export const ComposeFormView = ({
   onRemoveItem,
 }: ComposeFormViewProps) => {
   const insets = useSafeAreaInsets();
+  const bottomPadding = useTabBarPadding();
   const {
     control,
     handleSubmit,
@@ -88,7 +91,7 @@ export const ComposeFormView = ({
     if (!values.acceptTerms) {
       setError("acceptTerms", {
         type: "required",
-        message: "You must accept the terms.",
+        message: content.acceptTermsError,
       });
       return;
     }
@@ -99,7 +102,7 @@ export const ComposeFormView = ({
     if (!emailAvailable) {
       setError("contactEmail", {
         type: "async",
-        message: "That email address is already in use.",
+        message: content.emailTakenError,
       });
       return;
     }
@@ -123,17 +126,16 @@ export const ComposeFormView = ({
       contentContainerStyle={{
         paddingTop: insets.top + 16,
         paddingHorizontal: 16,
-        paddingBottom: insets.bottom + 120,
+        paddingBottom: bottomPadding,
         gap: 16,
       }}
     >
       <View className="gap-1">
         <Text className="font-heading text-heading-lg font-bold uppercase text-high-emphasis">
-          Compose
+          {content.heading}
         </Text>
         <Text className="text-body-small text-medium-emphasis">
-          Every field component, composed. Submits to a local mock with
-          optimistic updates + server-error mapping.
+          {content.subtext}
         </Text>
       </View>
 
@@ -141,40 +143,40 @@ export const ComposeFormView = ({
         <TextField
           control={control}
           name="name"
-          label="Name"
-          placeholder="Short, descriptive title"
+          label={content.nameLabel}
+          placeholder={content.namePlaceholder}
           required
           error={errors.name}
         />
         <TextAreaField
           control={control}
           name="description"
-          label="Description"
-          placeholder="What's this about?"
+          label={content.descriptionLabel}
+          placeholder={content.descriptionPlaceholder}
           error={errors.description}
         />
         <EmailField
           control={control}
           name="contactEmail"
-          label="Contact email"
+          label={content.contactEmailLabel}
           error={errors.contactEmail}
           helperText={
             isCheckingEmail
-              ? "Checking availability…"
-              : "Try an email containing 'taken' to trigger async validation."
+              ? content.emailCheckingHint
+              : content.emailHelperHint
           }
         />
         <SelectField
           control={control}
           name="category"
-          label="Category"
+          label={content.categoryLabel}
           options={categories}
           error={errors.category}
         />
         <RadioField
           control={control}
           name="priority"
-          label="Priority"
+          label={content.priorityLabel}
           options={priorities}
           direction="horizontal"
           error={errors.priority}
@@ -182,19 +184,19 @@ export const ComposeFormView = ({
         <DateField
           control={control}
           name="dueDate"
-          label="Due date"
+          label={content.dueDateLabel}
           error={errors.dueDate}
         />
         <SwitchField
           control={control}
           name="isPublic"
-          label="Make it public"
+          label={content.isPublicLabel}
           error={errors.isPublic}
         />
         <CheckboxField
           control={control}
           name="acceptTerms"
-          label="I accept the flota demo terms"
+          label={content.acceptTermsLabel}
           required
           error={errors.acceptTerms}
         />
@@ -207,7 +209,7 @@ export const ComposeFormView = ({
 
         <Button
           variant="primary"
-          label={isSubmitting ? "Submitting…" : "Submit"}
+          label={isSubmitting ? content.submittingLabel : content.submitLabel}
           onPress={handleSubmit(onValid)}
           disabled={isSubmitting}
         />
@@ -215,12 +217,11 @@ export const ComposeFormView = ({
 
       <View className="gap-2">
         <Text className="font-heading text-heading-xs font-bold uppercase text-high-emphasis">
-          Submitted items ({items.length})
+          {content.submittedTitle({ count: items.length })}
         </Text>
         {items.length === 0 ? (
           <Text className="text-body-small text-medium-emphasis">
-            Nothing here yet. Optimistic items appear instantly; a failed server
-            call rolls them back.
+            {content.emptyState}
           </Text>
         ) : (
           items.map((item) => (
@@ -237,7 +238,7 @@ export const ComposeFormView = ({
                 </Text>
                 <Text className="text-body-x-small text-medium-emphasis">
                   {item.category} · {item.priority}
-                  {item.isPublic ? " · public" : ""}
+                  {item.isPublic ? content.publicBadge : ""}
                 </Text>
               </View>
               <Pressable
@@ -245,7 +246,7 @@ export const ComposeFormView = ({
                 className="rounded-full bg-surface-8 px-3 py-1"
               >
                 <Text className="text-body-x-small text-medium-emphasis">
-                  remove
+                  {content.removeAction}
                 </Text>
               </Pressable>
             </View>

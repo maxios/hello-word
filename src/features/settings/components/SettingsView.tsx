@@ -1,3 +1,4 @@
+import { useTabBarPadding } from "@/hooks/useTabBarPadding";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type {
@@ -5,6 +6,7 @@ import type {
   ThemePreference,
   TypographyExample,
 } from "../schemas/settings.types";
+import content from "../content/settings.content";
 
 export interface SettingsViewProps {
   preference: ThemePreference;
@@ -15,9 +17,9 @@ export interface SettingsViewProps {
 }
 
 const PREFERENCE_OPTIONS: { label: string; value: ThemePreference }[] = [
-  { label: "System", value: "system" },
-  { label: "Light", value: "light" },
-  { label: "Dark", value: "dark" },
+  { label: content.systemOption, value: "system" },
+  { label: content.lightOption, value: "light" },
+  { label: content.darkOption, value: "dark" },
 ];
 
 export const SettingsView = ({
@@ -28,27 +30,27 @@ export const SettingsView = ({
   onSelectPreference,
 }: SettingsViewProps) => {
   const insets = useSafeAreaInsets();
+  const bottomPadding = useTabBarPadding();
 
   return (
     <ScrollView
       contentContainerStyle={{
         paddingTop: insets.top + 16,
         paddingHorizontal: 16,
-        paddingBottom: insets.bottom + 120,
+        paddingBottom: bottomPadding,
         gap: 24,
       }}
     >
       <View className="gap-1">
         <Text className="font-heading text-heading-lg font-bold uppercase text-high-emphasis">
-          Settings
+          {content.heading}
         </Text>
         <Text className="text-body-small text-medium-emphasis">
-          Theme · tokens · typography. The three things you need open when
-          styling a new screen.
+          {content.subtext}
         </Text>
       </View>
 
-      <Section title="Theme preference">
+      <Section title={content.themePreferenceTitle}>
         <View className="flex-row gap-2">
           {PREFERENCE_OPTIONS.map((option) => {
             const active = preference === option.value;
@@ -72,14 +74,13 @@ export const SettingsView = ({
           })}
         </View>
         <Text className="text-body-x-small text-medium-emphasis">
-          Active scheme: {activeScheme ?? "—"}
+          {content.activeSchemeLabel} {activeScheme ?? "—"}
         </Text>
       </Section>
 
-      <Section title="Color tokens">
+      <Section title={content.colorTokensTitle}>
         <Text className="text-body-x-small text-medium-emphasis">
-          Defined in <Text className="font-bold">src/shared/constants/Colors.ts</Text>
-          , consumed via NativeWind classes like <Text className="font-bold">bg-brand-mid</Text>.
+          {content.colorTokensDescription}
         </Text>
         <View className="flex-row flex-wrap gap-2">
           {swatches.map((swatch) => (
@@ -104,10 +105,9 @@ export const SettingsView = ({
         </View>
       </Section>
 
-      <Section title="Typography scale">
+      <Section title={content.typographyTitle}>
         <Text className="text-body-x-small text-medium-emphasis">
-          Defined in <Text className="font-bold">tailwind.config.ts</Text> under{" "}
-          <Text className="font-bold">theme.extend.fontSize</Text>.
+          {content.typographyDescription}
         </Text>
         <View className="gap-3 rounded-xl border border-surface-16 bg-surface-4 p-4">
           {typography.map((t) => (

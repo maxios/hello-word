@@ -4,7 +4,9 @@
 
 import { ActivityIndicator, Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useTabBarPadding } from "@/hooks/useTabBarPadding";
 import type { CatalogDetail } from "../schemas/catalog.types";
+import content from "../content/catalogDetail.content";
 
 export interface CatalogDetailViewProps {
   detail: CatalogDetail | null;
@@ -22,6 +24,7 @@ export const CatalogDetailView = ({
   onRetry,
 }: CatalogDetailViewProps) => {
   const insets = useSafeAreaInsets();
+  const bottomPadding = useTabBarPadding();
 
   if (isLoading && !detail) {
     return (
@@ -35,7 +38,7 @@ export const CatalogDetailView = ({
     return (
       <View className="flex-1 items-center justify-center gap-3 bg-background px-6">
         <Text className="text-center text-body-medium text-high-emphasis">
-          Could not load this item.
+          {content.loadError}
         </Text>
         <Text className="text-center text-body-small text-medium-emphasis">
           {error.message}
@@ -44,7 +47,7 @@ export const CatalogDetailView = ({
           onPress={onRetry}
           className="rounded-full bg-brand-mid px-6 py-3"
         >
-          <Text className="text-ui-default text-brand-darkest">Retry</Text>
+          <Text className="text-ui-default text-brand-darkest">{content.retry}</Text>
         </Pressable>
       </View>
     );
@@ -60,12 +63,12 @@ export const CatalogDetailView = ({
         contentContainerStyle={{
           paddingTop: insets.top + 16,
           paddingHorizontal: 16,
-          paddingBottom: insets.bottom + 120,
+          paddingBottom: bottomPadding,
           gap: 20,
         }}
       >
         <Pressable onPress={onBack} className="self-start py-2">
-          <Text className="text-body-small text-brand-mid">← Back</Text>
+          <Text className="text-body-small text-brand-mid">{content.back}</Text>
         </Pressable>
 
         <View className="items-center gap-2">
@@ -79,14 +82,14 @@ export const CatalogDetailView = ({
         </View>
 
         <View className="gap-3 rounded-xl border border-surface-16 bg-surface-4 p-4">
-          <Row label="Capital" value={detail.capital ?? "—"} />
-          <Row label="Currency" value={detail.currency ?? "—"} />
-          <Row label="Phone code" value={`+${detail.phoneCode}`} />
-          <Row label="Continent" value={detail.continent.name} />
+          <Row label={content.capitalLabel} value={detail.capital ?? content.emptyValue} />
+          <Row label={content.currencyLabel} value={detail.currency ?? content.emptyValue} />
+          <Row label={content.phoneCodeLabel} value={`+${detail.phoneCode}`} />
+          <Row label={content.continentLabel} value={detail.continent.name} />
         </View>
 
         {detail.languages.length > 0 ? (
-          <Section title="Languages">
+          <Section title={content.languagesTitle}>
             {detail.languages.map((lang) => (
               <Text
                 key={lang.code}
@@ -99,7 +102,7 @@ export const CatalogDetailView = ({
         ) : null}
 
         {detail.states.length > 0 ? (
-          <Section title={`States · ${detail.states.length}`}>
+          <Section title={content.statesTitle({ count: detail.states.length })}>
             <View className="flex-row flex-wrap gap-2">
               {detail.states.map((state, idx) => (
                 <View

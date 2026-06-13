@@ -4,6 +4,7 @@ import type { Config } from 'tailwindcss';
 import { colors } from './src/shared/constants/Colors';
 
 export default {
+  darkMode: 'class',
   // NOTE: Update this to include the paths to all files that contain Nativewind classes.
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
@@ -13,6 +14,10 @@ export default {
   presets: [nativewind],
   theme: {
     extend: {
+      screens: {
+        md: '768px',
+        lg: '1024px',
+      },
       borderWidth: {
         '1': '1px',
       },

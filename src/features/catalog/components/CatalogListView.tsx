@@ -3,9 +3,11 @@
  * props and owns no state, no fetching logic, no navigation side-effects.
  */
 
+import { useTabBarPadding } from "@/hooks/useTabBarPadding";
 import { ActivityIndicator, FlatList, Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { CatalogListItem } from "../schemas/catalog.types";
+import content from "../content/catalogList.content";
 
 export interface CatalogListViewProps {
   items: CatalogListItem[];
@@ -23,6 +25,7 @@ export const CatalogListView = ({
   onRetry,
 }: CatalogListViewProps) => {
   const insets = useSafeAreaInsets();
+  const bottomPadding = useTabBarPadding();
 
   if (isLoading && items.length === 0) {
     return (
@@ -36,7 +39,7 @@ export const CatalogListView = ({
     return (
       <View className="flex-1 items-center justify-center gap-3 bg-background px-6">
         <Text className="text-center text-body-medium text-high-emphasis">
-          Could not load the catalog.
+          {content.loadError}
         </Text>
         <Text className="text-center text-body-small text-medium-emphasis">
           {error.message}
@@ -45,7 +48,7 @@ export const CatalogListView = ({
           onPress={onRetry}
           className="rounded-full bg-brand-mid px-6 py-3"
         >
-          <Text className="text-ui-default text-brand-darkest">Retry</Text>
+          <Text className="text-ui-default text-brand-darkest">{content.retry}</Text>
         </Pressable>
       </View>
     );
@@ -58,16 +61,16 @@ export const CatalogListView = ({
       contentContainerStyle={{
         paddingTop: insets.top + 16,
         paddingHorizontal: 16,
-        paddingBottom: insets.bottom + 120,
+        paddingBottom: bottomPadding,
         gap: 8,
       }}
       ListHeaderComponent={
         <View className="mb-4 gap-1">
           <Text className="font-heading text-heading-lg font-bold uppercase text-high-emphasis">
-            Catalog
+            {content.heading}
           </Text>
           <Text className="text-body-small text-medium-emphasis">
-            {items.length} items · loaded from Countries GraphQL
+            {content.itemSummary({ count: items.length })}
           </Text>
         </View>
       }

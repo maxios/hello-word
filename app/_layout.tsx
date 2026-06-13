@@ -10,7 +10,7 @@ import "../global.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Asset, useAssets } from "expo-asset";
 import { loadAsync } from "expo-font";
-import { Slot, SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack } from "expo-router";
 import { RootSiblingParent } from "react-native-root-siblings";
 import splashImage from "@/assets/splash.png";
 import { ToastProvider } from "@/components/Toast";
@@ -46,7 +46,7 @@ const AnimatedAppLoader: React.FC<{ children: React.ReactNode }> = ({
   }, [assets, error]);
 
   if (!isSplashReady) {
-    return <Slot />;
+    return null;
   }
 
   return (

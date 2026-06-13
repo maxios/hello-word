@@ -22,7 +22,7 @@ export const DoubleCheckIcon = ({color, size, ...rest}: Props) => {
       <Path
         d="M0 12.83L5.59 18.42L7 17L1.42 11.42M21.83 5L11.25 15.59L7.09 11.42L5.66 12.83L11.25 18.42L23.25 6.42M17.59 6.42L16.18 5L9.83 11.35L11.25 12.76L17.59 6.42Z"
         fill={color || 'white'}
-        fill-opacity={color ? 0 : '0.92'}
+        fillOpacity={color ? 0 : '0.92'}
       />
     </Svg>
   );

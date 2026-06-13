@@ -15,6 +15,7 @@ import {
   LoginFormData,
   LoginFormProps
 } from '../schemas/auth.types';
+import content from '../content/login.content';
 
 /**
  * Pure Login Form Component
@@ -47,7 +48,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
     <AppLayout
       buttons={[
         {
-          label: 'Log in',
+          label: content.submitButton,
           size: 'medium',
           onPress: handleSubmit(handleFormSubmit),
           isLoading,
@@ -57,8 +58,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({
       <View className="w-full flex-1 gap-8">
         {/* Header */}
         <Header
-          heading="Log in"
-          subtext="Log in to your Flota account."
+          heading={content.heading}
+          subtext={content.subtext}
           variant="heading"
           pt={0}
         />
@@ -70,8 +71,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({
             <TextField
               control={control}
               name="email"
-              label="Email"
-              placeholder="Email"
+              label={content.emailLabel}
+              placeholder={content.emailPlaceholder}
               autoCapitalize="none"
               keyboardType="email-address"
               returnKeyType="next"
@@ -93,9 +94,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({
             <PasswordField
               control={control}
               name="password"
-              placeholder="Password"
+              placeholder={content.passwordPlaceholder}
               secureTextEntry
-              label="Password"
+              label={content.passwordLabel}
               autoCapitalize="none"
               returnKeyType="done"
             />
@@ -127,17 +128,17 @@ export const LoginForm: React.FC<LoginFormProps> = ({
             variant="text"
             size="medium"
             onPress={onForgotPassword}
-            label="Forgot Your Password?"
+            label={content.forgotPassword}
             disabled={isLoading}
           />
 
           <View className="flex-row items-center justify-center gap-1">
-            <Text className="text-gray-600">{`Don't have an account?`}</Text>
+            <Text className="text-gray-600">{content.noAccount}</Text>
             <Button
               variant="text"
               size="small"
               onPress={onNavigateToSignup}
-              label="Sign up"
+              label={content.signUpLink}
               disabled={isLoading}
             />
           </View>

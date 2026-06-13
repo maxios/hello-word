@@ -71,37 +71,39 @@ export interface PasswordResetConfirm {
 }
 
 // Validation rules for forms
+import v from '../content/validation.content';
+
 export const ValidationRules = {
   email: {
-    required: 'Email is required',
+    required: v.emailRequired,
     pattern: {
       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-      message: 'Invalid email address',
+      message: v.emailInvalid,
     },
   },
   password: {
-    required: 'Password is required',
+    required: v.passwordRequired,
     minLength: {
       value: 8,
-      message: 'Password must be at least 8 characters',
+      message: v.passwordMinLength,
     },
   },
   firstName: {
-    required: 'First name is required',
+    required: v.firstNameRequired,
     minLength: {
       value: 2,
-      message: 'First name must be at least 2 characters',
+      message: v.firstNameMinLength,
     },
   },
   lastName: {
-    required: 'Last name is required',
+    required: v.lastNameRequired,
     minLength: {
       value: 2,
-      message: 'Last name must be at least 2 characters',
+      message: v.lastNameMinLength,
     },
   },
   acceptTerms: {
-    required: 'You must accept the terms and conditions',
+    required: v.acceptTermsRequired,
   },
 } as const;
 

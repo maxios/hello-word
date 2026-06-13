@@ -6,7 +6,7 @@ export const ChevronDownIcon = (props: SvgProps) => {
       <Path
         d="M1.175 0.150055L5 3.97506L8.825 0.150055L10 1.33339L5 6.33339L0 1.33339L1.175 0.150055Z"
         fill="white"
-        fill-opacity={0.92}
+        fillOpacity={0.92}
       />
     </Svg>
   );

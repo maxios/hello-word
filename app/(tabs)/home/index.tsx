@@ -1,8 +1,10 @@
 import { Button } from "@/components/Button";
 import { PlaygroundButton } from "@/components/PlaygroundButton";
+import { useTabBarPadding } from "@/hooks/useTabBarPadding";
 import { router } from "expo-router";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import content from "./content/home.content";
 
 type DemoCard = {
   title: string;
@@ -13,57 +15,52 @@ type DemoCard = {
 
 const demoCards: DemoCard[] = [
   {
-    title: "Catalog",
-    stack: "GraphQL query · codegen · 6-layer feature",
-    description:
-      "List + detail against a public GraphQL API. Demonstrates the full UI-as-API stack: schemas, mapper, collection, action hook, pure UI, container.",
+    title: content.catalogTitle,
+    stack: content.catalogStack,
+    description: content.catalogDescription,
     href: "/catalog",
   },
   {
-    title: "Compose",
-    stack: "react-hook-form · valibot · GraphQL mutation",
-    description:
-      "Every field component composed into one form. Submits via a local Yoga mock with optimistic update + server-error-to-field mapping.",
+    title: content.composeTitle,
+    stack: content.composeStack,
+    description: content.composeDescription,
     href: "/compose",
   },
   {
-    title: "Settings",
-    stack: "NativeWind · design tokens · dark mode",
-    description:
-      "Dark-mode toggle, typography scale, and color-token gallery. Everything you need when theming a new screen.",
+    title: content.settingsTitle,
+    stack: content.settingsStack,
+    description: content.settingsDescription,
     href: "/settings",
   },
   {
-    title: "Playground",
-    stack: "React Cosmos · component catalog",
-    description:
-      "Browse every component's variants, fixture code, and usage guidelines.",
+    title: content.playgroundTitle,
+    stack: content.playgroundStack,
+    description: content.playgroundDescription,
     href: "/playground",
   },
 ];
 
 const routingDemos: { title: string; description: string; href: string }[] = [
   {
-    title: "Modal route",
-    description: "Demonstrates Expo Router's modal presentation at /modal.",
+    title: content.modalRouteTitle,
+    description: content.modalRouteDescription,
     href: "/modal",
   },
   {
-    title: "Protected route",
-    description:
-      "Gated area requiring a session. Redirects to /auth/login when absent.",
+    title: content.protectedRouteTitle,
+    description: content.protectedRouteDescription,
     href: "/protected",
   },
   {
-    title: "Dynamic route",
-    description:
-      "See /catalog/[code] — the detail page rendered from URL params.",
+    title: content.dynamicRouteTitle,
+    description: content.dynamicRouteDescription,
     href: "/catalog",
   },
 ];
 
 export default function HomeScreen() {
   const insets = useSafeAreaInsets();
+  const bottomPadding = useTabBarPadding();
 
   return (
     <View className="flex-1 bg-background">
@@ -71,24 +68,23 @@ export default function HomeScreen() {
         contentContainerStyle={{
           paddingTop: insets.top + 16,
           paddingHorizontal: 16,
-          paddingBottom: insets.bottom + 120,
+          paddingBottom: bottomPadding,
           gap: 20,
         }}
         showsVerticalScrollIndicator={false}
       >
         <View className="gap-1">
           <Text className="font-heading text-heading-lg font-bold uppercase text-high-emphasis">
-            Flota
+            {content.heading}
           </Text>
           <Text className="text-body-medium text-medium-emphasis">
-            A generic Expo + Yoga GraphQL starter. Each tab below demonstrates
-            one slice of the stack.
+            {content.subtext}
           </Text>
         </View>
 
         <View className="gap-3">
           <Text className="font-heading text-heading-sm font-bold uppercase text-high-emphasis">
-            Stack demos
+            {content.stackDemosTitle}
           </Text>
           {demoCards.map((card) => (
             <Pressable
@@ -111,7 +107,7 @@ export default function HomeScreen() {
 
         <View className="gap-3">
           <Text className="font-heading text-heading-sm font-bold uppercase text-high-emphasis">
-            Routing demos
+            {content.routingDemosTitle}
           </Text>
           {routingDemos.map((demo) => (
             <Pressable
@@ -135,12 +131,12 @@ export default function HomeScreen() {
         <View className="gap-2 pt-4">
           <Button
             variant="outlined"
-            label="Sign in"
+            label={content.signInButton}
             onPress={() => router.push("/auth/login")}
           />
           <Button
             variant="text"
-            label="Create an account"
+            label={content.createAccountButton}
             onPress={() => router.push("/auth/signup")}
           />
         </View>
